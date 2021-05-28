@@ -1,0 +1,1549 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>BIOS版本实现 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="uefi-detail.html" />
+    
+    
+    <link rel="prev" href="grub-mod.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../elf/">
+            
+                <a href="../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elf/elf-1.html">
+            
+                <a href="../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../elf/elf-2.html">
+            
+                <a href="../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../elf/elf-3.html">
+            
+                <a href="../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hardware/">
+            
+                <a href="../hardware/">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hardware/address/">
+            
+                <a href="../hardware/address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hardware/address/summary.html">
+            
+                <a href="../hardware/address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hardware/address/real_address.html">
+            
+                <a href="../hardware/address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hardware/address/segmented_address.html">
+            
+                <a href="../hardware/address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../hardware/address/page_address.html">
+            
+                <a href="../hardware/address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../hardware/address/example.html">
+            
+                <a href="../hardware/address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hardware/disk/">
+            
+                <a href="../hardware/disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hardware/disk/summary.html">
+            
+                <a href="../hardware/disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hardware/disk/disk-chs-lba.html">
+            
+                <a href="../hardware/disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hardware/disk/disk-bios.html">
+            
+                <a href="../hardware/disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hardware/disk/uefi.html">
+            
+                <a href="../hardware/disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hardware/disk/uefi-example.html">
+            
+                <a href="../hardware/disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../hardware/disk/end.html">
+            
+                <a href="../hardware/disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hardware/inst/">
+            
+                <a href="../hardware/inst/">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hardware/inst/inst-1.html">
+            
+                <a href="../hardware/inst/inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hardware/inst/inst-2.html">
+            
+                <a href="../hardware/inst/inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hardware/inst/inst-3.html">
+            
+                <a href="../hardware/inst/inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hardware/inst/inst-4.html">
+            
+                <a href="../hardware/inst/inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hardware/inst/inst-5.html">
+            
+                <a href="../hardware/inst/inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../hardware/inst/inst-6.html">
+            
+                <a href="../hardware/inst/inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../hardware/inst/inst-7.html">
+            
+                <a href="../hardware/inst/inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../hardware/inst/inst-8.html">
+            
+                <a href="../hardware/inst/inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../hardware/inst/inst-9.html">
+            
+                <a href="../hardware/inst/inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../hardware/inst/inst-10.html">
+            
+                <a href="../hardware/inst/inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="../hardware/inst/inst-addon-1.html">
+            
+                <a href="../hardware/inst/inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="../hardware/inst/inst-addon-2.html">
+            
+                <a href="../hardware/inst/inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="../hardware/inst/inst-addon-3.html">
+            
+                <a href="../hardware/inst/inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="../hardware/inst/inst-addon-4.html">
+            
+                <a href="../hardware/inst/inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="summary.html">
+            
+                <a href="summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bios-make.html">
+            
+                <a href="bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="uefi-make.html">
+            
+                <a href="uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="secure-uefi-bios.html">
+            
+                <a href="secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="debug.html">
+            
+                <a href="debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="grub-mod.html">
+            
+                <a href="grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.7" data-path="bios-detail.html">
+            
+                <a href="bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="uefi-detail.html">
+            
+                <a href="uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../other/">
+            
+                <a href="../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >BIOS版本实现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="paragraph">
+<p>&#x5728;linux&#x542F;&#x52A8;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x7ECF;&#x5E38;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x83DC;&#x5355;&#xFF0C;&#x8FD9;&#x4E2A;&#x83DC;&#x5355;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x5E0C;&#x671B;&#x542F;&#x52A8;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6240;&#x6307;&#x793A;&#x7684;&#x7CFB;&#x7EDF;&#x90FD;&#x662F;&#x57FA;&#x4E8E;Linux&#x7684;&#x7CFB;&#x7EDF;&#x3002;&#x8FD9;&#x4E2A;&#x83DC;&#x5355;&#x7531;&#x5F15;&#x5BFC;&#x5668;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x3002;&#x8FD9;&#x91CC;&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/7.jpg" alt="&#x542F;&#x52A8;&#x754C;&#x9762;"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x542F;&#x52A8;&#x754C;&#x9762;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Qemu&#x6A21;&#x62DF;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x83DC;&#x5355;&#x9009;&#x9879;&#xFF0C;&#x8FD9;&#x4E2A;&#x83DC;&#x5355;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7531;busybox&#x4F5C;&#x4E3A;&#x6839;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x4E86;linux&#x505A;&#x4E3A;&#x5185;&#x6838;&#x3002;&#x5982;&#x679C;&#x60A8;&#x597D;&#x5947;&#x8FD9;&#x4E2A;&#x80CC;&#x540E;&#x7684;&#x539F;&#x7406;&#xFF0C;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x975E;&#x5E38;&#x9002;&#x5408;&#x60A8;&#x3002;&#x5728;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x6211;&#x4EEC;&#x5C06;&#x4EE5;&#x5B9E;&#x73B0;&#x8005;&#x7684;&#x89D2;&#x5EA6;&#x4ECB;&#x7ECD;&#x8FD9;&#x4E2A;&#x754C;&#x9762;&#x7684;&#x7531;&#x6765;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x4E4B;&#x524D;&#x5F88;&#x591A;&#x7684;&#x6587;&#x7AE0;&#x4E5F;&#x4ECB;&#x7ECD;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x5C06;&#x8BE6;&#x7EC6;&#x7684;&#x63CF;&#x8FF0;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7684;&#x6280;&#x672F;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>BIOS&#x5F15;&#x5BFC;&#x542F;&#x52A8;&#x540E;&#x5C06;MBR&#x5206;&#x533A;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#x52A0;&#x8F7D;&#x5230; <em>0x7c00</em> &#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x65E9;&#x671F;&#x7684;Linux&#x53EF;&#x4EE5;&#x7531;&#x5185;&#x6838;&#x76F4;&#x63A5;&#x5F15;&#x5BFC;&#xFF0C;&#x4F46;&#x4E13;&#x4E1A;&#x7684;&#x4E8B;&#x4EA4;&#x7ED9;&#x4E13;&#x4E1A;&#x7684;&#x4EBA;&#x3002;&#x968F;&#x7740;&#x591A;&#x79CD;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x53D1;&#x5C55;&#xFF0C;&#x5BF9;&#x4E8E;&#x591A;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x7684;&#x9700;&#x6C42;&#x4E5F;&#x65E5;&#x76CA;&#x8FEB;&#x5207;&#xFF0C;&#x6240;&#x4EE5;&#x7531;&#x72EC;&#x7ACB;&#x9664;&#x4E86;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#x4E13;&#x95E8;&#x8D1F;&#x8D23;&#x5F15;&#x5BFC;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x591A;&#x4E2A;&#x7CFB;&#x7EDF;&#x548C;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x542F;&#x52A8;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x7684;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#x5373;GRUB&#xFF0C;GRUB&#x65E9;&#x671F;&#x7684;&#x7248;&#x672C;&#x5DF2;&#x7ECF;&#x88AB;&#x9057;&#x5F03;&#xFF0C;&#x73B0;&#x5728;&#x6240;&#x8BF4;&#x7684;GRUB&#x57FA;&#x672C;&#x6307;&#x7684;&#x662F;GRUB2&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x518D;&#x8BF4;&#x5386;&#x53F2;&#x7248;&#x672C;&#xFF0C;&#x6211;&#x4EEC;&#x6240;&#x6307;&#x7684;GRUB&#x5C31;&#x662F;GRUB2&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x800C;GRUB&#x4E13;&#x95E8;&#x8D1F;&#x8D23;&#x5F15;&#x5BFC;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x542F;&#x52A8;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E13;&#x95E8;&#x6307;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6307;&#x7684;&#x662F;Linux&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;Grub&#x7531;&#x5206;&#x4E3A;BIOS&#x7248;&#x672C;&#x548C;UEFI&#x7248;&#x672C;&#x3002;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x770B;BIOS&#x7248;&#x672C;&#x7684;GRUB&#x5F15;&#x5BFC;&#x8FC7;&#x7A0B;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x6211;&#x4EEC;&#x5C06;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x5728;BIOS&#x56FA;&#x4EF6;&#x4E2D;&#xFF0C;GRUB&#x7684;&#x539F;&#x7406;&#xFF0C;&#x8C03;&#x8BD5;&#x7B49;&#x65B9;&#x5F0F;&#x3002;</p>
+</div>
+<div class="sect1">
+<h2 id="_grub">GRUB&#x786C;&#x76D8;&#x5E03;&#x5C40;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x73B0;&#x5728;&#x7684;&#x53D1;&#x884C;&#x7248;&#x7684;linux&#xFF0C;&#x5927;&#x591A;&#x90FD;&#x662F;&#x901A;&#x8FC7;GRUB&#x5F15;&#x5BFC;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x4ECE;&#x603B;&#x4F53;&#x4E0A;&#x770B;&#x4E00;&#x4E0B;&#x5728;GRUB&#x5728;BIOS&#x4E2D;&#x7684;&#x5E03;&#x5C40;&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x9759;&#x6001;&#x7684;&#xFF0C;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x4E00;&#x4E0B;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/bios-grub-image.jpg" alt="bios&#x4E2D;grub&#x683C;&#x5F0F;"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x5F20;&#x56FE;&#x4E2D;&#x8BE6;&#x7EC6;&#x7684;&#x8BF4;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;MBR&#x78C1;&#x76D8;&#x5206;&#x533A;&#x7684;&#x78C1;&#x76D8;&#xFF0C;&#x4EE5;GRUB&#x4F5C;&#x4E3A;&#x5F15;&#x5BFC;&#x5668;&#x7684;&#x524D;&#x51E0;&#x4E2A;&#x6247;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x60C5;&#x51B5;&#x3002;&#x4EE5;&#x4E0B;&#x7684;&#x63CF;&#x8FF0;&#x57FA;&#x4E8E;i386&#x7684;&#x5904;&#x7406;&#x5668;&#x63CF;&#x8FF0;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x56FE;&#x4F8B;&#x603B;&#x7684;1&#x662F;MBR&#x524D;446&#x5B57;&#x8282;&#x5BF9;&#x5E94;grub&#x4E2D;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x8FD9;&#x662F;MBR&#x5206;&#x533A;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x4F7F;&#x7528;grub&#x5B89;&#x88C5;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5C06;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6; <em>boot.img</em> &#x586B;&#x5145;&#x5230;&#x8FD9;&#x4E2A;&#x6247;&#x533A;&#x4E2D;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7531;&#x6C47;&#x7F16;&#x7F16;&#x5199;&#x800C;&#x6210;&#xFF0C;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x4E3A;&#x4E86;&#x52A0;&#x8F7D;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#x7684;&#x4FE1;&#x606F;</p>
+</li>
+<li>
+<p>&#x7F16;&#x53F7;&#x4E3A;2&#x7684;&#x4F4D;&#x7F6E;&#x662F;MBR&#x7684;&#x4E3B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#xFF0C;&#x8BE6;&#x7EC6;&#x7684;&#x63CF;&#x8FF0;&#x53C2;&#x8003;&#x300A;&#x8BA1;&#x7B97;&#x673A;&#x542F;&#x52A8;&#x77E5;&#x8BC6;&#x7CFB;&#x5217; - BIOS/MBR&#x300B;</p>
+</li>
+<li>
+<p>&#x7F16;&#x53F7;&#x4E3A;3&#x548C;4&#x662F;&#x78C1;&#x76D8;&#x4E2D;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E5F;&#x662F;&#x7531;&#x6C47;&#x7F16;&#x7F16;&#x5199;&#x800C;&#x6210;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x529F;&#x80FD;&#x662F;&#x6839;&#x636E;&#x5B89;&#x88C5;&#x65F6;&#x5019;&#x586B;&#x5145;&#x7684;&#x540E;&#x7EED;&#x4EE3;&#x7801;&#x7684;&#x4FE1;&#x606F;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x7279;&#x6B8A;&#x6807;&#x8BB0;&#x4E86;4&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x7531;grub&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x586B;&#x5145;&#xFF0C;&#x4E3B;&#x8981;&#x544A;&#x8BC9;&#x540E;&#x7EED;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</p>
+</li>
+<li>
+<p>&#x7F16;&#x53F7;5&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x7528;&#x4E8E;&#x5C06;&#x5904;&#x7406;&#x5668;&#x5207;&#x6362;&#x5230;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x538B;&#x7F29;&#x7684;grub&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x89E3;&#x538B;&#x5230;&#x5185;&#x5B58;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;</p>
+</li>
+<li>
+<p>&#x7F16;&#x53F7;5&#xFF0C;6&#x7EC4;&#x6210;&#x4E86;grub&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4F1A;&#x5728;&#x5B89;&#x88C5;&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;5&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x89E3;&#x538B;&#x3002;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x7F16;&#x53F7;1&#xFF0C;2&#x7EC4;&#x6210;&#x4E86;boot.img&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x88AB;&#x586B;&#x5145;&#x5230;&#x78C1;&#x76D8;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#x3002;&#x800C;&#x7F16;&#x53F7;3&#xFF0C;4&#xFF0C;5&#xFF0C;6&#xFF0C;7&#x5219;&#x7EC4;&#x6210;&#x4E86;core.img&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;core.img&#x4E2D;&#x5305;&#x542B;&#x4E86;grub&#x7684;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#xFF0C;grub&#x4E2D;&#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;&#x90FD;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x5B8C;&#x6210;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grub_2">GRUB &#x5185;&#x5B58;&#x5E03;&#x5C40;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x4E0A;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x786C;&#x76D8;&#x7684;&#x56FA;&#x6001;&#x5F62;&#x5F0F;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;&#x6570;&#x636E;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5E03;&#x5C40;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/bios-grub-mm.jpg" alt="grub&#x5185;&#x5B58;&#x5E03;&#x5C40;"></span></p>
+</div>
+<div class="paragraph">
+<p>BIOS&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5C06;&#x78C1;&#x76D8;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x70B9;&#x5C31;&#x662F;GRUB&#x89E6;&#x53D1;&#x540E;&#x7EED;&#x5DE5;&#x4F5C;&#x7684;&#x521D;&#x59CB;&#x70B9;&#xFF0C;&#x5728;&#x56FE;&#x4E2D;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x9996;&#x5148;&#xFF0C;BIOS&#x5C06;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#x52A0;&#x8F7D;&#x5230; <em>0x7c00</em> &#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x6B64;&#x65F6;&#x5904;&#x4E8E;&#x5B9E;&#x5730;&#x5740;&#x6A21;&#x5F0F;&#x3002;&#x5BF9;&#x5E94;&#x7684;GRUB&#x4E2D;boot.img&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x4E4B;&#x524D;&#x5C06;GRUB&#x786C;&#x76D8;&#x5E03;&#x5C40;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x8BF4;&#x4E86;boot.img&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5B83;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x52A0;&#x8F7D;&#x540E;&#x7EED;&#x7684;grub&#x4EE3;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;boot.img&#x4F1A;&#x5C06;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#x7684;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5230; <em>0x8000</em> &#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;</p>
+</li>
+<li>
+<p>&#x7B2C;&#x4E8C;&#xFF0C;diskboot.img&#x662F;&#x9ED8;&#x8BA4;&#x78C1;&#x76D8;&#x5F15;&#x5BFC;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x5BF9;&#x5E94;&#x4E86;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#xFF0C;&#x8FD9;&#x4E2A;&#x6247;&#x533A;&#x4F1A;&#x6839;&#x636E;grub&#x5B89;&#x88C5;&#x7684;&#x65F6;&#x5019;&#x914D;&#x7F6E;&#x7684;&#x52A0;&#x8F7D;&#x4FE1;&#x606F;&#x5C06;&#x540E;&#x7EED;&#x7684;&#x4EE3;&#x7801;&#x52A0;&#x8F7D;&#x5230; <em>0x8200</em></p>
+</li>
+<li>
+<p>&#x7B2C;&#x4E09;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x6247;&#x533A;&#x5F00;&#x59CB;&#x5C31;&#x662F;&#x771F;&#x6B63;&#x7684;grub&#x4EE3;&#x7801;&#x4E86;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5305;&#x542B;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x7528;&#x4E8E;&#x5C06;&#x5904;&#x7406;&#x5668;&#x5207;&#x6362;&#x5230;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x548C;&#x89E3;&#x538B;grub&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x5C31;&#x662F;&#x88AB;&#x538B;&#x7F29;&#x7684;grub&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x3002;grub&#x4E3B;&#x8981;&#x7531;&#x6A21;&#x5757;&#x548C;&#x5185;&#x6838;&#x7EC4;&#x6210;&#xFF0C;grub&#x6A21;&#x5757;&#x4E3A;grub&#x63D0;&#x4F9B;&#x4E86;&#x4E30;&#x5BCC;&#x7684;&#x529F;&#x80FD;&#x3002;&#x7B2C;&#x4E09;&#x4E2A;&#x6247;&#x533A;&#x5F00;&#x59CB;&#x5305;&#x542B;&#x4E86;&#x7528;&#x4E8E;&#x89E3;&#x538B;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x4E3B;&#x8981;&#x5C06;&#x6838;&#x5FC3;&#x538B;&#x7F29;&#x7684;&#x6570;&#x636E;&#x89E3;&#x538B;&#x5230; <em>0x100000</em> &#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x3002;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x63CF;&#x8FF0;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x5728;&#x5B9E;&#x6A21;&#x5F0F;&#x4E0B;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9ED8;&#x8BA4;&#x5C06;CS&#x6BB5;&#x5BC4;&#x5B58;&#x5668;&#x8BBE;&#x7F6E;&#x4E3A;0&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8BBE;&#x7F6E;&#x5230;grub&#x5728;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x5E03;&#x5C40;&#x548C;&#x5185;&#x5B58;&#x52A0;&#x8F7D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x5C06;&#x5206;&#x6790;grub&#x5728;bios&#x56FA;&#x4EF6;&#x4E0B;&#x5185;&#x6838;&#x5F15;&#x5BFC;&#x542F;&#x52A8;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x8FD9;&#x91CC;&#x4E0D;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EA;&#x4F1A;&#x4ECB;&#x7ECD;&#x6211;&#x8BA4;&#x4E3A;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x4EE3;&#x7801;</p>
+</div>
+<div class="sect2">
+<h3 id="_grub_3">GRUB&#x6E90;&#x7801;&#x5206;&#x6790;</h3>
+<div class="paragraph">
+<p>&#x78C1;&#x76D8;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x52A0;&#x8F7D;&#x5230; <em>0x7c00</em> &#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;gdb&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#x3002;&#x8FD9;&#x91CC;&#x4E0D;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x8C03;&#x8BD5;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x8BE6;&#x7EC6;&#x7684;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - &#x5982;&#x4F55;&#x8C03;&#x8BD5;&#x300B;&#x7AE0;&#x8282;&#x4E2D;&#x5173;&#x4E8E;bios&#x8C03;&#x8BD5;&#x7684;&#x63CF;&#x8FF0;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">real-mode-gdb$ b *0x7c00
+...
+---------------------------[ CODE ]----
+=&gt; 0x7c00:      jmp    0x7c65
+   0x7c02:      nop
+   0x7c03:      add    BYTE PTR [bx+si],al
+   0x7c05:      add    BYTE PTR [bx+si],al
+   0x7c07:      add    BYTE PTR [bx+si],al
+   0x7c09:      add    BYTE PTR [bx+si],al
+   0x7c0b:      add    BYTE PTR [bx+si],al
+   0x7c0d:      add    BYTE PTR [bx+si],al
+   0x7c0f:      add    BYTE PTR [bx+si],al
+   0x7c11:      add    BYTE PTR [bx+si],al
+...
+real-mode-gdb$ x/10i 0x7c65
+   0x7c65:      cli
+   0x7c66:      nop
+   0x7c67:      nop
+   0x7c68:      test   dl,0x80
+   0x7c6b:      je     0x7c72
+   0x7c6d:      test   dl,0x70
+   0x7c70:      je     0x7c74
+   0x7c72:      mov    dl,0x80
+   0x7c74:      jmp    0x0:0x7c79
+   0x7c79:      xor    ax,ax</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x6BB5;&#x6C47;&#x7F16;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x4F4D;&#x4E8E; <em>grub-core/boot/i386/pc/boot.S</em> &#x7684;&#x4EE3;&#x7801;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x4E4B;&#x524D;&#x8BF4;&#x8FC7;&#x8FD9;&#x6BB5;&#x6C47;&#x7F16;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x7528;&#x4E8E;&#x52A0;&#x8F7D;&#x78C1;&#x76D8;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5F15;&#x5BFC;&#x6247;&#x533A;&#x3002;&#x8FD9;&#x6BB5;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x662F;&#x4EE5;&#x4E0B;&#x8FD9;&#x6BB5;&#x6C47;&#x7F16;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">	xorw	%ax, %ax
+	movw	%ax, 4(%si)
+
+	incw	%ax
+	/* set the mode to non-zero */
+	movb	%al, -1(%si)
+
+	/* the blocks */
+	movw	%ax, 2(%si)
+
+	/* the size and the reserved byte */
+	movw	$0x0010, (%si)
+
+	/* the absolute address */
+	movl	LOCAL(kernel_sector), %ebx
+	movl	%ebx, 8(%si)                             /*&#x8BBE;&#x7F6E;lba&#x7684;&#x4F4E;4&#x5B57;&#x8282;*/
+	movl	LOCAL(kernel_sector_high), %ebx
+	movl	%ebx, 12(%si)                            /*&#x8BBE;&#x7F6E;lba&#x7684;&#x9AD8;4&#x5B57;&#x8282;*/
+
+	/* the segment of buffer address */
+	movw	$GRUB_BOOT_MACHINE_BUFFER_SEG, 6(%si)
+
+/*
+ * BIOS call &quot;INT 0x13 Function 0x42&quot; to read sectors from disk into memory
+ *	Call with	%ah = 0x42
+ *			%dl = drive number
+ *			%ds:%si = segment:offset of disk address packet
+ *	Return:
+ *			%al = 0x0 on success; err code on failure
+ */
+
+	movb	$0x42, %ah
+	int	$0x13</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6BB5;&#x6C47;&#x7F16;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x4F7F;&#x7528;bios&#x63D0;&#x4F9B;&#x7684;&#x529F;&#x80FD;&#x52A0;&#x8F7D;&#x78C1;&#x76D8;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#x3002;&#x5B83;&#x4F7F;&#x7528;&#x4E86;BIOS <em>0x13</em> &#x53F7;&#x7684; <em>0x42</em> &#x5B50;&#x529F;&#x80FD;&#xFF0C;&#x4F7F;&#x7528;lba&#x5BFB;&#x5740;&#x7684;&#x65B9;&#x5F0F;&#x52A0;&#x8F7D;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B50;&#x529F;&#x80FD;&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x53EB;&#x505A; <em>disk address packet</em> &#x3002;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#x5305;&#x542B;&#x4E86;&#x7528;&#x4E8E;&#x8BFB;&#x53D6;&#x78C1;&#x76D8;&#x6570;&#x636E;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x3002;&#x800C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x7EC4;&#x88C5;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x4E00;&#x4E0B;&#x7F51;&#x4E0A;&#x5BF9;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x4ECB;&#x7ECD;&#x3002;</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. 0x42&#x529F;&#x80FD;&#x8868;</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="4"><p class="tableblock"><strong>0x42&#x529F;&#x80FD;&#x8868;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#x5BC4;&#x5B58;&#x5668; </strong></p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>&#x63CF;&#x8FF0;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AH</p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock">&#x529F;&#x80FD;&#x53F7;&#xFF0C;&#x8FD9;&#x91CC;&#x503C;&#x4E3A;0x42</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DL</p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock">&#x9A71;&#x52A8;&#x5668;&#x7F16;&#x53F7;&#xFF0C;&#x7B2C;&#x4E00;&#x5757;&#x786C;&#x76D8;&#x7F16;&#x53F7;&#x4E3A;0x80</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="8"><p class="tableblock">DS:SI</p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock">&#x6307;&#x5411;DAP&#x6570;&#x636E;&#x7ED3;&#x6784;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>DAP(Disk Address Packet)</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#x504F;&#x79FB;&#x91CF;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#x5927;&#x5C0F;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#x63CF;&#x8FF0;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">disk address packet &#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x56FA;&#x5B9A;&#x503C; 0x10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4FDD;&#x7559;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x02-0x03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x7684;&#x6247;&#x533A;&#x4E2A;&#x6570;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x04-0x07</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6BB5;&#x63CF;&#x8FF0;&#x7B26;:&#x504F;&#x79FB;&#x91CF;&#xFF0C;Intel&#x662F;&#x5C0F;&#x6BB5;&#x5E8F;&#xFF0C;&#x504F;&#x79FB;&#x91CF;&#x5728;&#x4F4E;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x6BB5;&#x63CF;&#x8FF0;&#x7B26;&#x5360;&#x9AD8;2&#x4E2A;&#x5B57;&#x8282;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x08-0x0F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4F7F;&#x7528;lba&#x5BFB;&#x5740;&#x7684;&#x6247;&#x533A;&#x7F16;&#x53F7;&#xFF0C;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5206;&#x4E3A;&#x9AD8;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x548C;&#x4F4E;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x4F4E;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x4FDD;&#x5B58;&#x6247;&#x533A;&#x7F16;&#x53F7;&#x7684;&#x4F4E;&#x4F4D;&#x6570;&#xFF0C;&#x9AD8;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x4FDD;&#x5B58;&#x6247;&#x533A;&#x7F16;&#x53F7;&#x7684;&#x9AD8;&#x5B57;&#x8282;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x56FE;&#x4E2D;&#x8BE6;&#x7EC6;&#x7684;&#x63CF;&#x8FF0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x6240;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5176;&#x4E2D;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x5173;&#x6CE8; <em>disk address packet</em> &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5176;&#x5B9E;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x590D;&#x6742;&#x7684;&#x662F;&#x6570;&#x636E;&#x7684;&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;&#xFF0C;Intel&#x4E2D;&#x662F;&#x5C0F;&#x6BB5;&#x5E8F;&#xFF0C;&#x9AD8;&#x5B57;&#x8282;&#x5728;&#x9AD8;&#x5730;&#x5740;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x548C;&#x529F;&#x80FD;&#x8868;&#x5BF9;&#x5E94;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5C06;&#x663E;&#x800C;&#x6613;&#x89C1;&#x3002;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x586B;&#x5145;&#x8BFB;&#x53D6;&#x78C1;&#x76D8;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#x6240;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#x504F;&#x79FB;&#x91CF;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#x5927;&#x5C0F;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#x5185;&#x5BB9;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x02-0x03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x04-0x07</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x70000000&#xFF0C;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;&#x503C;&#x4E3A;0x7000&#xFF0C;&#x504F;&#x79FB;&#x91CF;&#x4E3A;0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x08-0x0F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00000000 00000001&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#xFF0C;lba&#x4EE5;0&#x5F00;&#x59CB;&#x7F16;&#x53F7;&#xFF0C;&#x5373;&#x78C1;&#x76D8;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x5C06;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#x8BFB;&#x53D6;&#x5230; <em>DS:SI</em> &#x7684;&#x4E34;&#x65F6;&#x533A;&#x57DF;&#x540E;&#xFF0C;grub&#x5C06;&#x8FD9;&#x4E2A;&#x4E34;&#x65F6;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x5230; <em>GRUB_BOOT_MACHINE_KERNEL_ADDR</em> &#x3002;&#x8FD9;&#x91CC;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x4E3A; <em>0x8000</em>&#x3002;&#x5BF9;&#x4E8E;&#x786C;&#x76D8;&#x5F15;&#x5BFC;&#x540E;&#x9762;&#x5C31;&#x8FDB;&#x5165;&#x4E86; <em>grub-core/boot/i386/pc/diskboot.S</em> &#x4EE3;&#x7801;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>diskboot.S&#x5C06;&#x6839;&#x636E;&#x5B89;&#x88C5;&#x65F6;&#x5019;&#x914D;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#x6309;&#x7167;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x78C1;&#x76D8;&#x4E2D;&#x540E;&#x7EED;&#x7684;grub&#x4EE3;&#x7801;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">LOCAL(firstlist):	/* this label has to be before the first list entry!!! */
+        /* fill the first data listing with the default */
+blocklist_default_start:
+	/* this is the sector start parameter, in logical sectors from
+	   the start of the disk, sector 0 */
+	.long 2, 0
+blocklist_default_len:
+	/* this is the number of sectors to read.  grub-mkimage
+	   will fill this up */
+	.word 0
+blocklist_default_seg:
+	/* this is the segment of the starting address to load the data into */
+	.word (GRUB_BOOT_MACHINE_KERNEL_SEG + 0x20)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x7531;grub_install&#x7A0B;&#x5E8F;&#x5728;&#x5B89;&#x88C5;grub&#x4EE3;&#x7801;&#x5230;&#x786C;&#x76D8;&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x586B;&#x5145;&#xFF0C;&#x5B83;&#x8BA1;&#x7B97;&#x540E;&#x7EED;&#x52A0;&#x8F7D;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x6247;&#x533A;&#x4E2A;&#x6570;&#x3002;&#x5C06;&#x540E;&#x7EED;&#x7684;&#x4EE3;&#x7801;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x540E;&#xFF0C;grub&#x5C31;&#x5F00;&#x59CB;&#x6267;&#x884C; <em>grub-core/boot/i386/pc/startup_raw.S</em> &#x7684;&#x4EE3;&#x7801;&#x3002;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5207;&#x6362;&#x5230;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x5E76;&#x4E14;&#x5C06;&#x538B;&#x7F29;&#x7684;grub&#x5185;&#x6838;&#x4EE3;&#x7801;&#x89E3;&#x538B;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x540E;&#xFF0C;&#x6267;&#x884C;grub&#x7684;&#x5185;&#x6838;&#x4EE3;&#x7801;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x5982;&#x4F55;&#x5C06;&#x5F53;&#x524D;&#x7684;&#x5904;&#x7406;&#x5668;&#x6A21;&#x5F0F;&#x5207;&#x6362;&#x5230;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">	/* transition to protected mode */
+	calll	real_to_prot
+
+	/* The &quot;.code32&quot; directive takes GAS out of 16-bit mode. */
+	.code32
+
+	cld</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x8C03;&#x7528;&#x4E86;real_to_prot&#x51FD;&#x6570;&#x5C06;&#x5904;&#x7406;&#x5668;&#x5207;&#x6362;&#x5230;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x5C06;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5355;&#x72EC;&#x62C9;&#x51FA;&#x6765;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x5B9E;&#x9645;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x662F;32&#x4F4D;&#x7684;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x7684;&#x662F;32&#x4F4D;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5728;&#x6267;&#x884C;call&#x6307;&#x4EE4;&#x540E;&#xFF0C;&#x538B;&#x5165;&#x6808;&#x7684;&#x662F;&#x4E00;&#x4E2A;32&#x4F4D;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5B83;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#x3002;&#x5C06;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x6210;&#x8FD0;&#x884C;&#x7684;&#x6C47;&#x7F16;&#x4E3A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>   0x8235:      call   0x82d2
+   0x823b:      cld</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x6BB5;&#x6307;&#x4EE4;&#x7F16;&#x8BD1;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x540E;&#x7684;&#x6570;&#x636E;&#x4E3A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>0x8235: 0x66    0xe8    0x97    0x00    0x00    0x00    0xfc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6BB5;&#x4E8C;&#x8FDB;&#x5236;&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x662F; <em>0x66    0xe8    0x97    0x00    0x00    0x00</em> &#xFF0C;&#x5728;&#x6307;&#x4EE4;&#x89E3;&#x6790;&#x7684;&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;&#x8FD0;&#x884C;&#x5728;16&#x4F4D;&#x5904;&#x7406;&#x5668;&#x4E2D;&#xFF0C;<em>0x66</em> &#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x7528;&#x4E8E;&#x66F4;&#x6539;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x8FD9;&#x91CC;&#x5C06;&#x64CD;&#x4F5C;&#x6570;&#x66F4;&#x6539;&#x4E3A;&#x4E86;32&#x4F4D;&#xFF0C;&#x5373; <em>0x00000097</em>&#x3002;&#x800C;<em>e8</em> &#x662F; <em>call</em> &#x6307;&#x4EE4;&#x7684;&#x7F16;&#x7801;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E14;&#x662F;&#x4E2A;&#x8FD1;&#x7AEF;&#x8DF3;&#x8F6C;&#x6307;&#x4EE4;(&#x6CA1;&#x6709;&#x66F4;&#x6539;&#x4EE3;&#x7801;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;)&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x662F; <em>CALL rel32</em> &#x3002;&#x6267;&#x884C;&#x7740;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x6808;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5982;&#x4E0B;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&#x9AD8;&#x5730;&#x5740;
+ --------
+|  0x00  |
+|  0x00  |
+|  0x82  |
+|  0x3b  |  &lt;- esp
+ --------
+&#x4F4E;&#x5730;&#x5740;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6808;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6574;&#x5BF9;&#x5E94;&#x4E8E;&#x4E0B;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#x7684;&#x5730;&#x5740;&#x3002;&#x800C; <em>real_to_prot</em> &#x51FD;&#x6570;&#x4F4D;&#x4E8E; grub-core/kern/i386/realmode.S&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x8FC7;lgdt&#x6307;&#x4EE4;&#x52A0;&#x8F7D;&#x6BB5;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x66F4;&#x6539;cr0&#x6307;&#x4EE4;&#x6253;&#x5F00;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x3002;&#x9700;&#x8981;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x662F;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	/* jump to relocation, flush prefetch queue, and reload %cs */
+	ljmpl	$GRUB_MEMORY_MACHINE_PROT_MODE_CSEG, $protcseg
+
+	.code32
+protcseg:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5728;&#x521D;&#x59CB;&#x5316;&#x4E86;&#x6BB5;&#x63CF;&#x8FF0;&#x7B26;&#x8868;&#x540E;&#xFF0C;&#x4F7F;&#x7528;&#x8DF3;&#x8F6C;&#x6307;&#x4EE4;&#x5C06; <em>CS</em> &#x5BC4;&#x5B58;&#x5668;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E86;8&#xFF0C;&#x6BB5;&#x9009;&#x62E9;&#x5B50;&#x7684;&#x503C;&#x4E3A;1&#xFF0C;&#x5BF9;&#x5E94;&#x5168;&#x5C40;&#x6BB5;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x7B2C;&#x4E00;&#x9879;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    CS = 0x8
+
+	/* -- code segment --
+	 * base = 0x00000000, limit = 0xFFFFF (4 KiB Granularity), present
+	 * type = 32bit code execute/read, DPL = 0
+	 */
+	.word	0xFFFF, 0
+	.byte	0, 0x9A, 0xCF, 0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x5217;&#x4E3E;&#x51FA;&#x6765;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x503C;&#x548C;&#x5BF9;&#x5E94;&#x7684;&#x6BB5;&#x63CF;&#x8FF0;&#x7B26;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x50CF;&#x5BF9;&#x6570;&#x636E;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;&#x4E00;&#x6837;&#x901A;&#x8FC7;&#x8D4B;&#x503C;&#x6307;&#x4EE4;&#x5411;CS&#x5BC4;&#x5B58;&#x5668;&#x8D4B;&#x503C;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x8DF3;&#x8F6C;&#x6307;&#x4EE4;&#x590D;&#x5199;&#x4EE3;&#x7801;&#x6BB5;&#x5BC4;&#x5B58;&#x5668;&#x5BF9;CS&#x5BC4;&#x5B58;&#x5668;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x3002;&#x540E;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x540C;&#x6837;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5728;&#x5206;&#x6790;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	/* return on the old (or initialized) stack! */
+	ret</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ret &#x6307;&#x4EE4;&#x5C06;&#x6808;&#x4E2D;&#x6570;&#x636E;&#x8D4B;&#x503C;&#x4E3A;EIP&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x5904;&#x7406;&#x5668;&#x6267;&#x884C;&#x51FD;&#x6570;&#x540E;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#xFF0C;&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x8BF4;&#x7684;&#xFF0C;&#x5B83;&#x53D6;&#x51FA;&#x7684;&#x662F;4&#x4E2A;&#x5B57;&#x8282;&#x6570;&#x636E;&#xFF0C;&#x53D6;&#x51FA;&#x540E;&#x6808;&#x4E2D;&#x6570;&#x636E;&#x5982;&#x4E0B;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&#x9AD8;&#x5730;&#x5740;
+ --------
+|  0x00  | &lt;- esp
+|  0x00  |
+|  0x00  |
+|  0x00  |
+ --------
+&#x4F4E;&#x5730;&#x5740;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6808;&#x6307;&#x9488;&#x4E5F;&#x6307;&#x5411;&#x7684;&#x6808;&#x9876;&#xFF0C;&#x5C06;&#x6808;&#x6062;&#x590D;&#x6210;&#x539F;&#x6765;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x6211;&#x4EEC;&#x6B64;&#x65F6;&#x5DF2;&#x7ECF;&#x5904;&#x4E8E;32&#x4F4D;&#x7684;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x4E2D;&#x4E86;&#x3002;&#x540E;&#x7EED;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x662F;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x4EE3;&#x7801;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x540E;&#x7EED;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x5C06;grub&#x4EE3;&#x7801;&#x89E3;&#x538B;&#x5230; <em>GRUB_MEMORY_MACHINE_DECOMPRESSION_ADDR</em> &#x4F4D;&#x7F6E;&#xFF0C;&#x8FD9;&#x91CC;&#x8FD9;&#x4E2A;&#x503C;&#x4E3A;0x100000&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4ECE; <em>grub-core/kern/i386/pc/startup.S</em> &#x5F00;&#x59CB;&#x3002;&#x8FD9;&#x91CC;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x4F5C;&#x7528;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x5C06;&#x4EE3;&#x7801;&#x62F7;&#x8D1D;&#x5230;&#x94FE;&#x63A5;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740; <em>0x9000</em>&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x7528;&#x4E8E;&#x6267;&#x884C;C&#x7A0B;&#x5E8F;&#x6240;&#x9700;&#x8981;&#x7684;&#x6808;&#x548C;BSS&#x7B49;&#x73AF;&#x5883;&#x3002;&#x7136;&#x540E;&#x5C31;&#x8DF3;&#x8F6C;&#x5230;&#x548C;grub&#x7684;C&#x8BED;&#x8A00;&#x4EE3;&#x7801;&#x5165;&#x53E3; <em>grub_main</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	/*
+	 *  Call the start of main body of C code.
+	 */
+	call EXT_C(grub_main)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x4E00;&#x4E9B;C&#x8BED;&#x8A00;&#x7684;&#x529F;&#x5E95;&#xFF0C;&#x4F8B;&#x5982;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	movl	$(_start), %edi
+	rep
+	movsb
+
+	movl	$LOCAL (cont), %esi
+	jmp	*%esi</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x7684; <em>_start</em> &#x6307;&#x7684;&#x662F;grub&#x7A0B;&#x5E8F;&#x6307;&#x4EE4;&#x90E8;&#x5206;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#xFF0C;&#x800C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	movl	$BSS_START_SYMBOL, %edi
+
+	/* compute the bss length */
+	movl	$END_SYMBOL, %ecx</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>BSS_START_SYMBOL</em> &#x8868;&#x793A;&#x7684;&#x662F;__bss_start&#x7B26;&#x53F7;&#x5F15;&#x7528;&#xFF0C;END_SYMBOL&#x662F;_end&#x7B26;&#x53F7;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x4E00;&#x4E2A;C&#x8BED;&#x8A00;&#x7684;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x901A;&#x5E38;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>High Addresses  ---&gt; .----------------------.
+                     |      Environment     |
+                     |----------------------|
+                     |                      |
+                     |         STACK        |
+base pointer    ---&gt; | - - - - - - - - - - -|
+                     |           |          |
+                     |           v          |
+                     :                      :
+                     .                      .
+                     .         Empty        .
+                     .                      .
+                     .                      .
+                     .                      .
+                     :                      :
+                     |           ^          |
+                     |           |          |
+ brk point      ---&gt; | - - - - - - - - - - -|
+                     |          HEAP        |
+                     |                      |
+      _end      ---&gt; |----------------------|
+                     |          BSS         |   Uninitialized data (BSS)
+__bss_start     ---&gt; |----------------------|
+                     |          Data        |   Initialized data (DS)
+                     |----------------------|
+                     |          Text        |   Binary code
+     _start     ---&gt; &apos;----------------------&apos;
+Low Addresses ----&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x662F;&#x4E00;&#x5F20;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x540E;&#x7A0B;&#x5E8F;&#x7684;&#x5E03;&#x5C40;&#xFF0C;&#x8FD9;&#x91CC;&#x5BF9;&#x8FD9;&#x4E2A;&#x56FE;&#x4E86;&#x89E3;&#x3002;&#x4EE5;&#x4E0B;&#xFF0C;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x8BE6;&#x7EC6;&#x7684;&#x6587;&#x7AE0;&#x4ECB;&#x7ECD;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#xFF0C;&#x8FD9;&#x91CC;&#x5176;&#x4E2D;&#x7684;Text&#xFF0C;BSS&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x518D;&#x8FD9;&#x91CC;&#x6807;&#x6CE8;&#x4E86;&#x76F8;&#x5173;&#x7B26;&#x53F7;&#x7684;&#x4F4D;&#x7F6E;&#x3002;Text&#x8282;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x6307;&#x4EE4;&#xFF0C;Data&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x5DF2;&#x7ECF;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;BSS&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5230;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C31;&#x8FDB;&#x5165;&#x4E86;C&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;GRUB&#x5185;&#x6838;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4E0D;&#x4F1A;&#x4E00;&#x884C;&#x884C;&#x7684;&#x89E3;&#x6790;GRUB&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x91CC;&#x8FD8;&#x9700;&#x8981;&#x5927;&#x5BB6;&#x53BB;&#x9605;&#x8BFB;&#x4E86;&#x89E3;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD;GRUB&#x4F7F;&#x7528;linux&#x6A21;&#x5757;&#x5F15;&#x5BFC;&#x5185;&#x6838;&#x542F;&#x52A8;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_grub_linux">Grub&#x7684;Linux&#x6A21;&#x5757;</h3>
+<div class="paragraph">
+<p><em>linux</em> &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;linux&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5F15;&#x5BFC;Linux&#x5185;&#x6838;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7528;&#x4E8E;linux&#x5F15;&#x5BFC;&#x7684;&#x914D;&#x7F6E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>linux /boot/bzImage root=/dev/sda1 rootwait console=tty1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x4E86;&#x5185;&#x6838;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x6839;&#x6587;&#x4EF6;&#x7B49;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x4E3A;linux&#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x3002;i386&#x7684;linux&#x6A21;&#x5757;&#x4F4D;&#x4E8E; <em>grub-core/loader/i386/linux.c</em> &#x3002;</p>
+</div>
+<div class="paragraph">
+<p>linux&#x6A21;&#x5757;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x53EF;&#x4EE5;&#x5F52;&#x7EB3;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x5C06;&#x5185;&#x6838;&#x6587;&#x4EF6;&#x4ECE;&#x78C1;&#x76D8;&#x8BFB;&#x5165;&#x5185;&#x5B58;</p>
+</li>
+<li>
+<p>&#x6839;&#x636E;Linux&#x5F15;&#x5BFC;&#x534F;&#x8BAE;&#x5F15;&#x5BFC;linux&#x5185;&#x6838;</p>
+</li>
+<li>
+<p>&#x7EC4;&#x7EC7;linux&#x542F;&#x52A8;&#x7684;&#x547D;&#x4EE4;&#x53C2;&#x6570;</p>
+</li>
+<li>
+<p>&#x5C06;CPU&#x7684;&#x63A7;&#x5236;&#x6743;&#x4EA4;&#x4ED8;&#x7ED9;Linux&#x5185;&#x6838;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x524D;3&#x6761;&#x53C2;&#x8003;&#x6E90;&#x7801;&#x57FA;&#x672C;&#x90FD;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x800C;&#x7B2C;&#x56DB;&#x6761;&#x5C31;&#x6709;&#x70B9;&#x590D;&#x6742;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7B2C;&#x56DB;&#x6761;&#x3002;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;gdb&#x4E2D;&#x76F4;&#x63A5;&#x8C03;&#x8BD5;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#x5982;&#x4F55;&#x8C03;&#x8BD5;grub&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5206;&#x6790;linux&#x6A21;&#x5757;&#xFF0C;&#x6240;&#x4EE5;&#x5C06; <em>gdb_grub</em> &#x6700;&#x540E;&#x4E00;&#x884C;&#x4FEE;&#x6539;&#x4E3A;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;grub&#x7684;&#x65F6;&#x5019;&#x76F4;&#x63A5;&#x8FDB;&#x5165;linux&#x6A21;&#x5757;&#x7684;&#x8C03;&#x8BD5;&#x70B9;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># inform when module is loaded
+break grub_dl_add
+commands
+        silent
+        load_module mod
+        if $_streq(mod-&gt;name, &quot;linux&quot;)
+                break grub_cmd_linux
+        end
+        cont
+end</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x5728;linux&#x6A21;&#x5757;&#x7684;&#x8FDB;&#x5165;&#x70B9; <em>grub_cmd_linux</em> &#x6253;&#x4E86;&#x4E00;&#x4E2A;&#x65AD;&#x70B9;&#xFF0C;&#x8FD0;&#x884C;gdb&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x8BD5;&#x4E86;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5206;&#x6790;&#x7684;&#x662F;32&#x4F4D;&#x52A0;&#x8F7D;&#x5185;&#x6838;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD;&#x7B2C;&#x56DB;&#x6761;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;linux&#x6A21;&#x5757;&#x5728;&#x5F15;&#x5BFC;&#x771F;&#x6B63;&#x7684;&#x5185;&#x6838;&#x955C;&#x50CF;&#x4E4B;&#x524D;&#xFF0C;&#x4F1A;&#x9996;&#x5148;&#x5C06;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x5185;&#x6838;&#x955C;&#x50CF;&#x52A0;&#x8F7D;&#x5230; <em>0x100000</em> &#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x6784;&#x5EFA;linux&#x542F;&#x52A8;&#x7684;&#x63A7;&#x5236;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x5730;&#x5740;&#x7531;grub&#x52A8;&#x6001;&#x5206;&#x914D;&#x3002;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#x52A0;&#x8F7D;&#x7684;&#x8BE6;&#x7EC6;&#x8FC7;&#x7A0B;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/load-kernel.jpg" alt="load kernel"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x4ECE; <em>0x100000</em> &#x5F00;&#x59CB;&#x52A0;&#x8F7D;&#x7684;&#x662F;&#x8FD0;&#x884C;&#x4E8E;32&#x4F4D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E0D;&#x5305;&#x62EC;&#x5185;&#x6838;&#x7684; <em>setup</em> &#x955C;&#x50CF;&#x3002; <em>grub_relocator32_start</em> &#x662F;&#x7531;&#x6C47;&#x7F16;&#x7F16;&#x5199;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x8D1F;&#x8D23;&#x5C06;&#x771F;&#x6B63;&#x7684;&#x5F15;&#x5BFC;&#x5185;&#x6838;&#x542F;&#x52A8;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>grub&#x5C06;&#x52A0;&#x8F7D;&#x5230; <em>0x100000</em> &#x7684;&#x5185;&#x6838;&#x91CD;&#x5B9A;&#x5411;&#x5230; <em>0x1000000</em> &#x4F4D;&#x7F6E;&#xFF0C;&#x5C06;linux&#x542F;&#x52A8;&#x53C2;&#x6570;&#x7531;grub&#x7684;&#x5185;&#x5B58;&#x91CD;&#x5B9A;&#x5411;&#x5230; <em>0x8b000</em> &#xFF0C;&#x540C;&#x65F6;&#x5C06; <em>grub_relocator32_start</em> &#x62F7;&#x8D1D;&#x5230; <em>0x1000</em> &#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#x5C06;&#x4EE3;&#x7801;&#x8C03;&#x8F6C;&#x5230; <em>0x1000</em> &#x540E;&#x6267;&#x884C; <em>grub_relocator32_start</em> &#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684; &#x529F;&#x80FD;&#x5C31;&#x662F; &#x5C06;<em>esi</em> &#x5BC4;&#x5B58;&#x5668;&#x8BBE;&#x7F6E;&#x4E3A; <em>real_mode_data</em> &#x7684;&#x5185;&#x5B58;&#x5730;&#x5740; <em>0x8b000</em> &#xFF0C;&#x7136;&#x540E;&#x8DF3;&#x8F6C;&#x5230;  <em>0x1000000</em> &#x4F4D;&#x7F6E;&#x6267;&#x884C;&#x5185;&#x6838;&#x4EE3;&#x7801;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#xFF08;&#x4F7F;&#x7528;gdb&#x8C03;&#x8BD5;&#xFF0C;&#x53CD;&#x7F16;&#x8BD1;&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;&#x5373;&#x53EF;&#xFF09;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">   0x3d9e000:   mov    $0x1000000,%eax
+   0x3d9e005:   mov    %eax,%edi
+   0x3d9e007:   mov    $0x100000,%eax
+   0x3d9e00c:   mov    %eax,%esi
+   0x3d9e00e:   mov    $0x2d9e000,%ecx
+   0x3d9e013:   add    %ecx,%esi
+   0x3d9e015:   add    %ecx,%edi
+   0x3d9e017:   sub    $0x1,%esi
+   0x3d9e01a:   sub    $0x1,%edi
+   0x3d9e01d:   std
+   0x3d9e01e:   rep movsb %ds:(%esi),%es:(%edi)       # &#x5C06;0x100000&#x7684;&#x5185;&#x5BB9;&#x62F7;&#x8D1D;&#x5230;0x1000000
+   0x3d9e020:   mov    $0x8b000,%eax
+   0x3d9e025:   mov    %eax,%edi
+   0x3d9e027:   mov    $0x1ffcd0b0,%eax
+   0x3d9e02c:   mov    %eax,%esi
+   0x3d9e02e:   mov    $0x5000,%ecx
+   0x3d9e033:   cld
+   0x3d9e034:   rep movsb %ds:(%esi),%es:(%edi)       # &#x5C06;0x1ffcd0b0&#x7684;&#x5185;&#x5BB9;&#x62F7;&#x8D1D;&#x5230;0x8b000
+   0x3d9e036:   mov    $0x1000,%eax
+   0x3d9e03b:   mov    %eax,%edi
+   0x3d9e03d:   mov    $0x1ffda790,%eax
+   0x3d9e042:   mov    %eax,%esi
+   0x3d9e044:   mov    $0xd0,%ecx
+   0x3d9e049:   cld
+   0x3d9e04a:   rep movsb %ds:(%esi),%es:(%edi)       # &#x5C06;0x1ffda790&#x7684;&#x5185;&#x5BB9;&#x62F7;&#x8D1D;&#x5230;0x1000
+   0x3d9e04c:   mov    $0x1000,%eax
+   0x3d9e051:   jmp    *%eax
+   0x3d9e053:   add    %al,(%eax)
+   0x3d9e055:   add    %al,(%eax)
+   0x3d9e057:   add    %al,(%eax)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6BB5;&#x6C47;&#x7F16;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x91CD;&#x5B9A;&#x5411;&#x76F8;&#x5173;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8BE6;&#x7EC6;&#x7684;&#x63CF;&#x8FF0;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x5728;&#x8D58;&#x8FF0;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x662F; <em>grub_relocator32_start</em> &#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">   0x1000:      mov    %eax,%esi
+   0x1002:      add    $0x9,%eax
+   0x1007:      jmp    *%eax
+   0x1009:      lea    0x48(%esi),%eax
+   0x100f:      mov    %eax,0x40(%esi)
+   0x1015:      lea    0xb0(%esi),%eax
+   0x101b:      mov    %eax,0x32(%esi)
+   0x1021:      lgdtl  0x30(%esi)              # &#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x6BB5;&#x63CF;&#x8FF0;&#x7B26;
+   0x1028:      ljmp   *0x40(%esi)
+   0x102e:      xchg   %ax,%ax
+   0x1030:      and    %al,(%eax)
+   0x1032:      add    %al,(%eax)
+   0x1034:      add    %al,(%eax)
+   0x1036:      lea    0x0(%esi,%eiz,1),%esi
+   0x103d:      lea    0x0(%esi),%esi
+   0x1040:      add    %al,(%eax)
+   0x1042:      add    %al,(%eax)
+   0x1044:      adc    %al,(%eax)
+   0x1046:      add    %al,(%eax)
+   0x1048:      mov    $0x18,%eax
+   0x104d:      mov    %eax,%ds
+   0x104f:      mov    %eax,%es
+   0x1051:      mov    %eax,%fs
+   0x1053:      mov    %eax,%gs
+   0x1055:      mov    %eax,%ss
+   0x1057:      mov    %cr0,%eax
+   0x105a:      and    $0x7fffffff,%eax
+   0x105f:      mov    %eax,%cr0
+   0x1062:      mov    %cr4,%eax
+   0x1065:      and    $0xffffffdf,%eax
+   0x1068:      mov    %eax,%cr4
+   0x106b:      jmp    0x106d
+   0x106d:      mov    $0x8b000,%eax
+   0x1072:      mov    %eax,%esp
+   0x1074:      mov    $0x0,%eax
+   0x1079:      mov    %eax,%ebp
+   0x107b:      mov    $0x8b000,%eax
+   0x1080:      mov    %eax,%esi               # &#x5C06;esi&#x8BBE;&#x7F6E;&#x4E3A;0x8b000
+   0x1082:      mov    $0x0,%eax
+   0x1087:      mov    %eax,%edi
+   0x1089:      mov    $0x0,%eax
+   0x108e:      mov    $0x0,%ebx
+   0x1093:      mov    $0x1ff7a270,%ecx
+   0x1098:      mov    $0x0,%edx
+   0x109d:      cld
+   0x109e:      ljmp   $0x10,$0x1000000        # &#x6267;&#x884C;&#x8DF3;&#x8F6C;&#xFF0C;CS=0x10&#xFF0C;OFFSET=0x1000000
+   0x10a5:      lea    0x0(%esi,%eiz,1),%esi
+   0x10ac:      lea    0x0(%esi,%eiz,1),%esi</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6240;&#x4EE5;&#xFF0C;grub&#x52A0;&#x8F7D;&#x5185;&#x6838;&#x540E;&#xFF0C;&#x5C06;CPU&#x63A7;&#x5236;&#x6743;&#x4EA4;&#x7ED9;&#x5185;&#x6838;32&#x4F4D;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x5173;&#x952E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x4FE1;&#x606F;&#x5982;&#x4E0B;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>eax = 0x0
+ecx = 0x1ff7a270
+edx = 0x0
+ebx = 0x0
+esp = 0x8b000
+ebp = 0x0
+esi = 0x8b000
+edi = 0x0
+eip = 0x1000000
+cs  = 0x10
+ss  = 0x18
+ds  = 0x18
+es  = 0x18
+fs  = 0x18
+gs  = 0x18</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="grub-mod.html" class="navigation navigation-prev " aria-label="Previous page: 如何编写一个Grub2的模块">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="uefi-detail.html" class="navigation navigation-next " aria-label="Next page: UEFI版本实现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"BIOS版本实现","publish":false,"level":"1.4.7","depth":2,"next":{"title":"UEFI版本实现","level":"1.4.8","depth":2,"path":"grub/uefi-detail.adoc","ref":"grub/uefi-detail.adoc","articles":[]},"previous":{"title":"如何编写一个Grub2的模块","level":"1.4.6","depth":2,"path":"grub/grub-mod.adoc","ref":"grub/grub-mod.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grub/bios-detail.adoc","mtime":"2021-05-24T07:12:17.803Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

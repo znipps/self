@@ -1,0 +1,1133 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>指令的解析 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="inst-addon-1.html" />
+    
+    
+    <link rel="prev" href="inst-9.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../elf/">
+            
+                <a href="../../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../elf/elf-1.html">
+            
+                <a href="../../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../elf/elf-2.html">
+            
+                <a href="../../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../elf/elf-3.html">
+            
+                <a href="../../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../address/">
+            
+                <a href="../address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../address/summary.html">
+            
+                <a href="../address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../address/real_address.html">
+            
+                <a href="../address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../address/segmented_address.html">
+            
+                <a href="../address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../address/page_address.html">
+            
+                <a href="../address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../address/example.html">
+            
+                <a href="../address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../disk/">
+            
+                <a href="../disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../disk/summary.html">
+            
+                <a href="../disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../disk/disk-chs-lba.html">
+            
+                <a href="../disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../disk/disk-bios.html">
+            
+                <a href="../disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../disk/uefi.html">
+            
+                <a href="../disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../disk/uefi-example.html">
+            
+                <a href="../disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../disk/end.html">
+            
+                <a href="../disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="inst-1.html">
+            
+                <a href="inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="inst-2.html">
+            
+                <a href="inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="inst-3.html">
+            
+                <a href="inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="inst-4.html">
+            
+                <a href="inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="inst-5.html">
+            
+                <a href="inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="inst-6.html">
+            
+                <a href="inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="inst-7.html">
+            
+                <a href="inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="inst-8.html">
+            
+                <a href="inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="inst-9.html">
+            
+                <a href="inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.10" data-path="inst-10.html">
+            
+                <a href="inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="inst-addon-1.html">
+            
+                <a href="inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="inst-addon-2.html">
+            
+                <a href="inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="inst-addon-3.html">
+            
+                <a href="inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="inst-addon-4.html">
+            
+                <a href="inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../grub/">
+            
+                <a href="../../grub/">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../grub/summary.html">
+            
+                <a href="../../grub/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../grub/bios-make.html">
+            
+                <a href="../../grub/bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../grub/uefi-make.html">
+            
+                <a href="../../grub/uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../grub/secure-uefi-bios.html">
+            
+                <a href="../../grub/secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../grub/debug.html">
+            
+                <a href="../../grub/debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../grub/grub-mod.html">
+            
+                <a href="../../grub/grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../grub/bios-detail.html">
+            
+                <a href="../../grub/bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../grub/uefi-detail.html">
+            
+                <a href="../../grub/uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../grub/memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../other/">
+            
+                <a href="../../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >指令的解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="&#x91CD;&#x8981;"></i>
+</td>
+<td class="content">
+&#x7531;&#x4E8E;mouseOs&#x7684;&#x7F51;&#x7AD9;&#x4E0D;&#x7EF4;&#x62A4;&#x4E86;&#xFF0C;&#x6211;&#x5728;&#x672C;&#x5730;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4EFD;&#x4E4B;&#x524D;&#x9093;&#x5FD7;&#x5173;&#x4E8E;intel&#x6307;&#x4EE4;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x8FD9;&#x4E2A;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x7AE0;&#x7248;&#x672C;&#x5F52;&#x5C5E;&#x9093;&#x5FD7;&#x6240;&#x6709;&#xFF0C;&#x4EC5;&#x4F9B;&#x501F;&#x9274;&#x3002;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x6211;&#x5C3D;&#x91CF;&#x4E0D;&#x52A8;&#xFF0C;&#x6709;&#x4E9B;&#x4FEE;&#x6539;&#x4E3B;&#x8981;&#x4E3A;&#x4E86;&#x6392;&#x7248;&#x3002;
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x60F3;&#x5199;&#x4E00;&#x6BB5;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#xFF0C;&#x4F5C;&#x4E3A;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x624B;&#x5DE5;&#x8BD1;&#x4E3A;&#x673A;&#x5668;&#x7F16;&#x7801;</p>
+</div>
+<div class="sect1">
+<h2 id="__">&#x7F16;&#x7801;</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_assembly">assembly &#x6E90;&#x4EE3;&#x7801;</h3>
+<div class="paragraph">
+<p>&#x8FD9;&#x6BB5;&#x662F;&#x6458;&#x81EA;&#x6211;&#x7684; mouseOS &#x91CC;&#x9762;&#x7684;&#x4E00;&#x6BB5;&#x4EE3;&#x7801; kstrcmp() &#x7528;&#x6765;&#x6BD4;&#x8F83;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">;-------------------------------------------------------
+; long kstrcmp(const char *s1, const char *s2);
+; input:         rdi: s1     rsi: s2
+; return value:    1: equal      0: not equal
+;-------------------------------------------------------
+__kstrcmp:
+
+  xor rax, rax
+
+kstrcmp_loop:
+
+  movzx r10, byte [rdi]
+  movzx r11, byte [rsi]
+  cmp r10, r11
+  jnz kstrcmp_done
+  test r10, r10
+  jz kstrcmp_eql
+  inc rdi
+  inc rsi
+  jmp kstrcmp_loop
+
+kstrcmp_eql:
+
+  inc rax
+
+kstrcmp_done:
+  ret</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_encodes">encodes&#xFF08;&#x673A;&#x5668;&#x7F16;&#x7801;&#xFF09;</h3>
+<div class="paragraph">
+<p>&#x4E0B;&#x9762;&#x662F;&#x6211;&#x5B8C;&#x5168;&#x7528;&#x4EBA;&#x5DE5;&#x8BD1;&#x51FA;&#x6765;&#x7684;&#x673A;&#x5668;&#x7801;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">0:        48 31 c0
+3:        4c 0f b6 17
+7:        4c 0f b6 1e
+b:        4d 39 da
+e:        75 10     * &#xFF08;jnz kstrcmp_done)
+10:       4d 85 d2
+13:       74 08    * (jz kstrcmp_eql)
+15:       48 ff c7
+18:       48 ff c6
+1b:       eb e6     * (jmp kstrcmp_loop)
+1d:       48 ff c0
+20:       c3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x4E0B;&#x9762;&#x518D;&#x770B;&#x4E00;&#x770B; nasm &#x7F16;&#x8BD1;&#x7684;&#x60C5;&#x51B5;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">00000000  4831C0            xor rax,rax
+00000003  4C0FB617          movzx r10,byte [rdi]
+00000007  4C0FB61E          movzx r11,byte [rsi]
+0000000B  4D39DA            cmp r10,r11
+0000000E  7513              jnz 0x23    * (jnz kstrcmp_done)
+00000010  4D85D2            test r10,r10
+00000013  740B              jz 0x20    * (jz kstrcmp_eql)
+00000015  48FFC7            inc rdi
+00000018  48FFC6            inc rsi
+0000001B  E9E3FFFFFF        jmp dword 0x3    * (jmp kstrcmp_loop)
+00000020  48FFC0            inc rax
+00000023  C3                ret</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5BF9;&#x6BD4; nasm &#x7F16;&#x8BD1;&#x51FA;&#x6765;&#x7684;&#x673A;&#x5668;&#x7801;&#xFF0C;&#x4E0D;&#x96BE;&#x53D1;&#x73B0; nasm &#x5E76;&#x4E0D;&#x80FD;&#x7F16;&#x8BD1;&#x51FA;&#x6700;&#x4F18;&#x79C0;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>nasm &#x8BD1;&#x51FA; 0x23 &#x4E2A; bytes&#xFF0C;&#x6BD4;&#x6211;&#x624B;&#x5DE5;&#x8BD1;&#x51FA;&#x6765;&#x7684;&#x8981;&#x591A; 3 &#x4E2A; bytes&#x3002;</p>
+</li>
+<li>
+<p>nasm &#x5BF9;&#x4E8E;&#x6307;&#x4EE4; jmp kstrcmp_loop &#x8BD1;&#x4E3A; 5 bytes&#xFF0C;&#x800C;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x9700;&#x8981;&#x8BD1;&#x4E3A; 2 bytes &#x5C31;&#x884C;&#x4E86;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A; nasm &#x4F7F;&#x7528;&#x4E86; 32 &#x4F4D;&#x7684; immediate &#x503C;&#xFF0C;&#x800C;&#x6211;&#x4F7F;&#x7528;&#x4E86; 8 &#x4F4D;&#x7684; immediate &#x503C;&#x3002;</p>
+</li>
+<li>
+<p>&#x7531;&#x4E8E;&#x4E0A;&#x9762;&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x8BD1;&#x6CD5;&#x4E0E;&#x6211;&#x7684;&#x8BD1;&#x6CD5;&#x4E0D;&#x540C;&#xFF0C;&#x4ECE;&#x800C;&#x5BFC;&#x81F4;&#x4E86; 3 &#x6761; jmp &#x6307;&#x4EE4;&#x90FD;&#x4E0D;&#x540C;&#x3002;</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>&#x6307;&#x4EE4; jnz kstrcmp_done &#x89E3;&#x6790;</p>
+</div>
+<div class="paragraph">
+<p>&#x6307;&#x4EE4; jnz &#x7684; Opcode &#x662F;&#x3000;<span class="red">75</span>&#xFF0C;&#x5B83;&#x7684;&#x63CF;&#x8FF0;&#x4E3A; JNZ Jb&#xFF0C;&#x5B83;&#x7684; operand &#x662F;&#x57FA;&#x4E8E; rip &#x7684; 8 &#x4F4D; offset &#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A; offset &#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x662F;&#xFF1A; target = rip + offset &#x3000;&#x6240;&#x662F;&#xFF1A; offset = target - rip</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x7531;&#x4E0A;&#x6240;&#x5F97;&#xFF1A;&#x5F53;&#x524D;&#x7684; rip &#x4E3A; 0x10&#xFF0C;&#x800C;&#x6807;&#x53F7; kstrcmp_done &#x7684;&#x5730;&#x5740; 0x20</p>
+</li>
+<li>
+<p>&#x6240;&#x4EE5;&#xFF1A; offset = target - rip = 0x20 - 0x10 = 0x10</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x56E0;&#x6B64;&#xFF1A;&#x5B83;&#x7684; encode &#x4E3A;&#xFF1A;<span class="red">75 10</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">&#x89E3;&#x7801;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x6458;&#x81EA; windows 7 &#x7684;&#x4E00;&#x6BB5;&#x673A;&#x5668;&#x7801;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>fffff800`026ede60   59 65 48 8b 0c 25 20 00 00 00 80 79 20 01 77 72
+fffff800`026ede70   0f 31 48 c1 e2 20 48 0b c2 48 2b 81 c0 67 00 00
+fffff800`026ede80   48 01 81 f8 67 00 00 48 01 81 c0 67 00 00 48 8b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x770B;&#x4E00;&#x770B;&#x5B83;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x4EE3;&#x7801;&#xFF1A;</p>
+</div>
+<div class="paragraph">
+<p>&#x4E0B;&#x9762;&#x6211;&#x7528;&#x4EBA;&#x5DE5;&#x8BD1;&#x7801;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">fffff800_026ede60:    59                           pop rcx
+fffff800_026ede61:    65 48 8b 0c 25 20 00 00 00   mov rcx, qword ptr gs:[0x20]
+fffff800_026ede6a:    80 79 20 01                  cmp byte ptr [rcx + 0x20], 0x01
+fffff800_026ede6e:    77 72                        ja .+0x72    *&#xFF08;.&#x8868;&#x793A;&#x5F53;&#x524D;&#x7684; rip &#x503C;&#xFF09;
+fffff800_026ede70:    0f 31                        rdtsc
+fffff800_026ede72:    48 c1 e2 20                  shl rdx, 0x20
+fffff800_026ede76:    48 0b c2                     or rax, rdx
+fffff800_026ede79:    48 2b 81 c0 67 00 00         sub rax, qword ptr [rcx + 0x67c0]
+fffff800_026ede80:    48 01 81 f8 67 00 00         add qword ptr [rcx + 0x67f8], rax
+fffff800_026ede87:    48 01 81 c0 67 00 00         add qword ptr [rcx + 0x67c0], rax
+fffff800_026ede8e:    48 8b ... ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x7EAF;&#x4F5C;&#x8BD1;&#x7801;&#x5DE5;&#x4F5C;&#xFF0C;&#x8FD9;&#x91CC;&#x770B;&#x4E0D;&#x51FA;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4F5C;&#x7528;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x4E0B;&#x9762;&#x518D;&#x770B;&#x770B; ndisasm &#x8BD1;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">00000000  59                pop rcx
+00000001  65488B0C25200000  mov rcx,[gs:0x20]
+         -00
+0000000A  80792001          cmp byte [rcx+0x20],0x1
+0000000E  7772              ja 0x82    *&#xFF08;0x10+0x72=0x82&#xFF09;
+00000010  0F31              rdtsc
+00000012  48C1E220          shl rdx,0x20
+00000016  480BC2            or rax,rdx
+00000019  482B81C0670000    sub rax,[rcx+0x67c0]
+00000020  480181F8670000    add [rcx+0x67f8],rax
+00000027  480181C0670000    add [rcx+0x67c0],rax
+0000002E  48                rex.w
+0000002F  8B                db 0x8b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x9664;&#x4E86;&#x663E;&#x793A;&#x683C;&#x5F0F;&#x4E0D;&#x540C;&#x5916;&#xFF0C; &#x7ED3;&#x679C;&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x6765;&#x770B;&#x4E00;&#x770B;&#x8FD9;&#x4E2A; encode&#xFF1A;<span class="red">65 48 8b 0c 25 20 00 00 00</span>&#x3000;&#x5E94;&#x8BE5;&#x600E;&#x4E48; decode</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>65&#x3000;&#x5B83;&#x662F;&#x4E00;&#x4E2A; prefix&#xFF0C;&#x662F; GS - segment override prefix</p>
+</li>
+<li>
+<p>48&#x3000;&#x5B83;&#x662F;&#x4E00;&#x4E2A; REX prefix&#xFF0C;REX.W = 1 &#x4F7F;&#x7528; 64 &#x4F4D;&#x7684; operands&#xFF0C;&#x800C; REX.R = REX.X = REX.B = 0</p>
+</li>
+<li>
+<p>8b&#x3000;&#x5B83;&#x662F; Opcode &#x7801;&#xFF0C;&#x8868;&#x793A;&#xFF1A;MOV Gv, Ev &#x5373;&#xFF1A;frist operand &#x662F; registers &#x800C; second operann &#x662F; register/memory&#xFF0C;</p>
+<div class="paragraph">
+<p>operand size &#x662F; effective operand size&#xFF0C;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x8FD8;&#x4E0D;&#x77E5;&#x9053; operand &#x662F;&#x4EC0;&#x4E48;</p>
+</div>
+</li>
+<li>
+<p>0c&#x3000;&#x7D27;&#x63A5;&#x7740; Opcode &#x7801;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x5B83;&#x5C31;&#x662F; ModRM &#x5B57;&#x8282;&#xFF0C; ModRM = 00-001-100</p>
+<div class="paragraph">
+<p>&#x5B83;&#x63D0;&#x4F9B;&#x7684; register &#x662F; rcx&#xFF0C; ModRM.r/m &#x63D0;&#x4F9B;&#x7684;&#x5BFB;&#x5740;&#x662F; 100 &#x8FD9;&#x662F; [SIB] &#x5B57;&#x8282;&#xFF0C;&#x5F15;&#x5BFC;&#x51FA; SIB&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4E0B;&#x4E00;&#x5B57;&#x8282;&#x5FC5;&#x5B9A;&#x662F; SIB &#x5B57;&#x8282;&#x3002;</p>
+</div>
+</li>
+<li>
+<p>25&#x3000;&#x7531;&#x7B2C; (4&#xFF09;&#x6B65;&#x5F97;&#x51FA;&#xFF0C;&#x5B83;&#x662F;&#x4E2A; SIB &#x5B57;&#x8282;&#xFF0C; SIB = 00-100-101 &#x4EE3;&#x8868; scale = 00&#xFF0C;index = 100&#xFF0C; base = 101</p>
+<div class="paragraph">
+<p>&#x7531;&#x4E8E; index = 100&#xFF08;rsp&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x4E0D;&#x5B58;&#x5728; index &#x90E8;&#x5206;&#xFF0C;&#x53EA;&#x6709; base &#x90E8;&#x5206;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>base = 101&#xFF08;rbp&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x5C06;&#x4EE3;&#x8868;&#x4E00;&#x4E2A; disp32 &#x503C;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x4E0B;&#x9762;&#x63A5;&#x4E0B;&#x6765;&#x7684; 4 &#x4E2A; bytes &#x5C31;&#x662F; displacement &#x503C;</p>
+</div>
+</li>
+<li>
+<p>20 00 00 00&#x3000;&#x8FD9;&#x662F;&#x7531;&#x7B2C;&#xFF08;5&#xFF09;&#x5F97;&#x77E5;&#xFF0C;&#x8FD9; 4 &#x4E2A; bytes &#x662F; displacement&#x3002;</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>&#x7ECF;&#x8FC7;&#x4E0A;&#x9762;&#x3000;6 &#x4E2A;&#x6B65;&#x805A;&#x7684;&#x5206;&#x6790;&#xFF0C;&#x5F97;&#x51FA;&#x6700;&#x7EC8;&#x7684;&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x662F;&#xFF1A;mov rcx, qword ptr gs:[0x20]</p>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="inst-9.html" class="navigation navigation-prev " aria-label="Previous page: immediate值">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="inst-addon-1.html" class="navigation navigation-next " aria-label="Next page: ModRM 与 SIB 设计上的 2 个原则">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"指令的解析","keywords":"instruction, x86_64","toc_max":4,"level":"1.3.3.10","depth":3,"next":{"title":"ModRM 与 SIB 设计上的 2 个原则","level":"1.3.3.11","depth":3,"path":"hardware/inst/inst-addon-1.adoc","ref":"hardware/inst/inst-addon-1.adoc","articles":[]},"previous":{"title":"immediate值","level":"1.3.3.9","depth":3,"path":"hardware/inst/inst-9.adoc","ref":"hardware/inst/inst-9.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hardware/inst/inst-10.adoc","mtime":"2021-05-28T05:36:00.318Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

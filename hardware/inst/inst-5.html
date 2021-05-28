@@ -1,0 +1,1658 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>指令opcod码 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="inst-6.html" />
+    
+    
+    <link rel="prev" href="inst-4.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../elf/">
+            
+                <a href="../../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../elf/elf-1.html">
+            
+                <a href="../../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../elf/elf-2.html">
+            
+                <a href="../../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../elf/elf-3.html">
+            
+                <a href="../../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../address/">
+            
+                <a href="../address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../address/summary.html">
+            
+                <a href="../address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../address/real_address.html">
+            
+                <a href="../address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../address/segmented_address.html">
+            
+                <a href="../address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../address/page_address.html">
+            
+                <a href="../address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../address/example.html">
+            
+                <a href="../address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../disk/">
+            
+                <a href="../disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../disk/summary.html">
+            
+                <a href="../disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../disk/disk-chs-lba.html">
+            
+                <a href="../disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../disk/disk-bios.html">
+            
+                <a href="../disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../disk/uefi.html">
+            
+                <a href="../disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../disk/uefi-example.html">
+            
+                <a href="../disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../disk/end.html">
+            
+                <a href="../disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="inst-1.html">
+            
+                <a href="inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="inst-2.html">
+            
+                <a href="inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="inst-3.html">
+            
+                <a href="inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="inst-4.html">
+            
+                <a href="inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.5" data-path="inst-5.html">
+            
+                <a href="inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="inst-6.html">
+            
+                <a href="inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="inst-7.html">
+            
+                <a href="inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="inst-8.html">
+            
+                <a href="inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="inst-9.html">
+            
+                <a href="inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="inst-10.html">
+            
+                <a href="inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="inst-addon-1.html">
+            
+                <a href="inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="inst-addon-2.html">
+            
+                <a href="inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="inst-addon-3.html">
+            
+                <a href="inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="inst-addon-4.html">
+            
+                <a href="inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../grub/">
+            
+                <a href="../../grub/">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../grub/summary.html">
+            
+                <a href="../../grub/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../grub/bios-make.html">
+            
+                <a href="../../grub/bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../grub/uefi-make.html">
+            
+                <a href="../../grub/uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../grub/secure-uefi-bios.html">
+            
+                <a href="../../grub/secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../grub/debug.html">
+            
+                <a href="../../grub/debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../grub/grub-mod.html">
+            
+                <a href="../../grub/grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../grub/bios-detail.html">
+            
+                <a href="../../grub/bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../grub/uefi-detail.html">
+            
+                <a href="../../grub/uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../grub/memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../other/">
+            
+                <a href="../../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >指令opcod码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="&#x91CD;&#x8981;"></i>
+</td>
+<td class="content">
+&#x7531;&#x4E8E;mouseOs&#x7684;&#x7F51;&#x7AD9;&#x4E0D;&#x7EF4;&#x62A4;&#x4E86;&#xFF0C;&#x6211;&#x5728;&#x672C;&#x5730;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4EFD;&#x4E4B;&#x524D;&#x9093;&#x5FD7;&#x5173;&#x4E8E;intel&#x6307;&#x4EE4;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x8FD9;&#x4E2A;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x7AE0;&#x7248;&#x672C;&#x5F52;&#x5C5E;&#x9093;&#x5FD7;&#x6240;&#x6709;&#xFF0C;&#x4EC5;&#x4F9B;&#x501F;&#x9274;&#x3002;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x6211;&#x5C3D;&#x91CF;&#x4E0D;&#x52A8;&#xFF0C;&#x6709;&#x4E9B;&#x4FEE;&#x6539;&#x4E3B;&#x8981;&#x4E3A;&#x4E86;&#x6392;&#x7248;&#x3002;
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>x86/x64 &#x901A;&#x7528;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x7684;&#x6838;&#x5FC3;&#x662F;&#xFF1A;Opcode&#xFF0C;ModRM &#x4EE5;&#x53CA; SIB</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Opcode &#x63D0;&#x4F9B;&#x6307;&#x4EE4;&#x7684;&#x64CD;&#x4F5C;&#x7801;</p>
+</li>
+<li>
+<p>ModRM &#x63D0;&#x4F9B;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x5BFB;&#x5740;&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9; opcode &#x8FDB;&#x884C;&#x8F85;&#x52A9;&#x8865;&#x5145;</p>
+</li>
+<li>
+<p>SIB &#x63D0;&#x4F9B;&#x66F4;&#x4E30;&#x5BCC;&#x7684; memory &#x5BFB;&#x5740;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x56E0;&#x6B64;&#xFF1A;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x662F; Opcode &#x7684;&#x8BBE;&#x8BA1;&#x8981;&#x8003;&#x8651;&#x517C;&#x987E; ModRM&#xFF0C;ModRM &#x8981;&#x670D;&#x52A1;&#x4E8E; Opcode&#xFF0C;SIB &#x662F;&#x5BF9; ModRM &#x7684;&#x8865;&#x5145;&#x8F85;&#x52A9;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5173;&#x4E8E; opcode &#x7684;&#x7EC4;&#x6210;&#x7ED3;&#x6784;&#xFF0C;&#x8BF7;&#x8BE6;&#x89C1;&#x300A;x86/x64 &#x6307;&#x4EE4;&#x7F16;&#x7801;&#x6784;&#x9020;&#x300B;&#x4E00;&#x6587;</p>
+</div>
+<div class="sect1">
+<h2 id="__opcode">&#x521D;&#x7AA5; Opcode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5728; 1 &#x4E2A;&#x5B57;&#x8282;&#x7684;&#x7A7A;&#x95F4;&#x91CC;&#xFF1A;00 - FF&#xFF0C;Prefix &#x4E0E; Opcode &#x5171;&#x540C;&#x5360;&#x7528;&#x8FD9;&#x4E2A;&#x7A7A;&#x95F4;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x7531;&#x4E8E; x86/x64 &#x662F; CISC &#x67B6;&#x6784;&#xFF0C;&#x6307;&#x4EE4;&#x4E0D;&#x5B9A;&#x957F;&#x3002;&#x89E3;&#x7801;&#x5668;&#x89E3;&#x7801;&#x7684;&#x552F;&#x4E00;&#x9014;&#x5F84;&#x5C31;&#x662F;&#x6309;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x7684;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x89E3;&#x7801;&#xFF0C;&#x5173;&#x952E;&#x662F;&#x7B2C; 1 &#x5B57;&#x8282;&#x662F;&#x4EC0;&#x4E48;&#xFF1F; &#x5982;&#xFF1A;&#x9047;&#x5230; 66h&#xFF0C;&#x5B83;&#x5C31;&#x662F; prefix&#xFF0C;&#x9047;&#x5230; 89h&#xFF0C;&#x5B83;&#x5C31;&#x662F; Opcode&#x3002;</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="&#x63D0;&#x793A;"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Prefix &#x4E0E; Opcode &#x5171;&#x4EAB;&#x7A7A;&#x95F4;&#x7684;&#x539F;&#x56E0;&#x662F;&#xFF1A;Prefix &#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5728;&#x7F16;&#x7801;&#x5E8F;&#x5217;&#x91CC;&#xFF0C;&#x53EA;&#x6709; Opcode &#x662F;&#x4E0D;&#x53EF;&#x7F3A;&#x5C11;&#x7684;&#xFF0C;&#x5176;&#x5B83;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x3002;&#x8FD9;&#x5C31;&#x51B3;&#x5B9A;&#x4E86;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x4E2D;&#x7684;&#x7B2C; 1 &#x4E2A;&#x5B57;&#x8282;&#x5BF9;&#x89E3;&#x7801;&#x5DE5;&#x4F5C;&#x7684;&#x91CD;&#x8981;&#x6027;&#x3002;</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>&#x9664;&#x4E86; 1 &#x4E2A;&#x5B57;&#x8282;&#x7684; Opcode &#x5916;&#xFF0C;&#x8FD8;&#x6709; 2 &#x4E2A;&#x5B57;&#x8282;&#x7684; Opcode &#x4EE5;&#x53CA; 3 &#x4E2A;&#x5B57;&#x8282;&#x7684; Opcode&#xFF0C;&#x7B2C; 2 &#x4E2A; Opcode &#x7801;&#x662F;&#x7531; 0F &#x5B57;&#x8282;&#x8FDB;&#x884C;&#x5F15;&#x5BFC;&#xFF0C;&#x8FD9;&#x4E2A; 0F &#x88AB;&#x79F0;&#x4E3A; escape prefix&#xFF08;escape opcode&#xFF09;&#x5373;&#xFF1A;2 &#x4E2A;&#x5B57;&#x8282;&#x7684; Opcode &#x7801;&#xFF0C;&#x5176;&#x7B2C; 1 &#x4E2A; Opcode &#x5FC5;&#x5B9A;&#x662F; 0F &#x5B57;&#x8282;&#x3002;</p>
+</div>
+<div class="sect2">
+<h3 id="_escape_opcode">escape opcode</h3>
+<div class="paragraph">
+<p>x86/x64 &#x5E73;&#x53F0;&#x4E0A;&#x7684; 3 &#x4E2A;&#x5B57;&#x8282;&#x7684; Opcode &#x7801;&#x662F;&#x901A;&#x8FC7; escape opcode + opcode &#x5F62;&#x5F0F;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E9B; escape opcode &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#xFF1A;opcode &#x7684; prefix&#xFF0C;&#x8FD9;&#x4E9B; prefix &#x53EF;&#x4EE5;&#x8BF4;&#x662F; opcode &#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E9B; escape opcode &#x662F;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0F</p>
+</li>
+<li>
+<p>0F 3A</p>
+</li>
+<li>
+<p>0F 38</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>3 &#x4E2A;&#x5B57;&#x8282;&#x7684; Opcode &#x7528;&#x4E8E; SIMD &#x6307;&#x4EE4;&#x4E0A;&#xFF08;SSE &#x7CFB;&#x5217;&#x6307;&#x4EE4;&#xFF09;&#xFF0C;&#x7136;&#x800C;&#x968F;&#x7740; AMD/Intel &#x5728;&#x672A;&#x6765;&#x6709;&#x53EF;&#x80FD;&#x52A0;&#x5165;&#x66F4;&#x591A;&#x7684;&#x6307;&#x4EE4;&#x5B50;&#x96C6;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x66F4;&#x591A;&#x7684; escape opcode&#xFF08;&#x5DF2;&#x7ECF;&#x88AB;&#x96C6;&#x6210;&#x5728; VEX prefix &#x6216; XOP preix &#x4E2D;&#xFF09;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_simd_prefix">SIMD prefix</h3>
+<div class="paragraph">
+<p>&#x5728;&#x591A;&#x6570; SIMD &#x6307;&#x4EE4;&#x4E0A;&#xFF0C;SIMD prefix &#x4E0E; escape opcode &#x8054;&#x5408;&#x8D77;&#x6765;&#x6700;&#x7EC8;&#x51B3;&#x5B9A;&#x6307;&#x4EE4;&#x7684; opcode</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E9B; SIMD prefix &#x5305;&#x62EC;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>66</p>
+</li>
+<li>
+<p>F2</p>
+</li>
+<li>
+<p>F3</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Opcode &#x7801;&#x5C06;&#x8FBE;&#x5230; 4 &#x4E2A; bytes&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A; 4 bytes Opcode &#x7801;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>66 0F 3A 0C</p>
+<div class="paragraph">
+<p>&#x5B83;&#x662F; SSE4.1 &#x7684;&#x4E00;&#x6761; BLENDPS &#x6307;&#x4EE4;&#xFF0C;SIMD prefix &#x4E0E; escape opcode &#x7ED3;&#x5408;&#x4E3A; 4 &#x4E2A; bytes Opcode &#x7801;</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escape_opcode_simd_prefix">escape opcode &#x4E0E; SIMD prefix &#x603B;&#x7ED3;</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">---</th>
+<th class="tableblock halign-left valign-top">&#x503C;</th>
+<th class="tableblock halign-left valign-top">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">escape opcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0f</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">&#x5F15;&#x5BFC; opcode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0f 38</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0f 3A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">SIMD prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">SIMD &#x6307;&#x4EE4;&#x4FEE;&#x9970;&#x6027; prefix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F2</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">movntdq xmmword ptr [rax], xmm0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x662F;&#x4E00;&#x6761; SSE2 &#x6307;&#x4EE4;&#xFF0C;&#x5B83; encodes &#x662F;&#xFF1A;</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">66 0f e7 00</dt>
+<dd>
+<p>&#x5B83;&#x7684; Opcode &#x662F; 66 0f e7 &#xFF08;3 bytes opcode&#xFF09;&#xFF0C;&#x8FD9;&#x91CC; 66 &#x662F; SIMD prefix&#xFF0C;0f &#x662F; escape prefix</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__opcode_2">&#x5B66;&#x4F1A;&#x770B; Opcode &#x8868;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x600E;&#x4E48;&#x53BB;&#x770B;&#x6307;&#x4EE4;&#x7684; opcode&#xFF0C;&#x83B7;&#x5F97;&#x6307;&#x4EE4; opcode &#x7F16;&#x7801;&#xFF0C;&#x8FD8;&#x662F;&#x5F88;&#x6709;&#x5B66;&#x95EE;&#x7684;</p>
+</div>
+<div class="sect2">
+<h3 id="__opcode_3">&#x4ECE;&#x6307;&#x4EE4;&#x53C2;&#x8003;&#x9875;&#x91CC;&#x770B; opcode &#x7801;</h3>
+<div class="paragraph">
+<p>&#x4E0B;&#x9762;&#x7684;&#x56FE;&#x662F; AMD &#x6587;&#x6863;&#x4E2D;&#x5BF9;&#x4E8E;&#x6307;&#x4EE4;&#x53C2;&#x8003;&#x9875;&#x7684;&#x63CF;&#x8FF0;&#xFF1A;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/opcode-1.jpg" alt="opcode 1.jpg"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x4ECE;&#x6307;&#x4EE4;&#x53C2;&#x8003;&#x9875;&#x91CC;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x6307;&#x4EE4;&#x52A9;&#x8BB0;&#x7B26; mnemonic</p>
+</li>
+<li>
+<p>&#x6307;&#x4EE4;&#x7684; Operand &#x5C5E;&#x6027;</p>
+</li>
+<li>
+<p>&#x6307;&#x4EE4;&#x7684; Opcode &#x7801;</p>
+</li>
+<li>
+<p>&#x6307;&#x4EE4;&#x7684;&#x63CF;&#x8FF0;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x786E;&#x5B9E;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x60F3;&#x8981;&#x7684; Opcode &#x7801;&#xFF0C;&#x8FD8;&#x6709; Operand &#x6570;&#x4EE5;&#x5176;&#x5C5E;&#x6027;&#x3002;&#x4E0B;&#x9762;&#x6458;&#x5F55;&#x4E86; mov &#x6307;&#x4EE4;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x53C2;&#x8003;&#x9875;&#xFF1A;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/opcode-2.jpg" alt="opcode 2.jpg"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x4ECE;&#x8FD9;&#x91CC;&#x770B;&#x51FA;&#xFF0C;&#x8FD9;&#x4E2A; Opcode 8B &#x6709;&#x51E0;&#x79CD;&#x64CD;&#x4F5C;&#x6570;&#x5F62;&#x5F0F;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>register, register</p>
+</li>
+<li>
+<p>register, memory</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>operand size &#x53EF;&#x4EE5;&#x4E3A;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>16</p>
+</li>
+<li>
+<p>32</p>
+</li>
+<li>
+<p>64</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x4E0D;&#x8FC7;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x4E86;&#x89E3; Opcode &#x7801;&#x7684;&#x597D;&#x5730;&#x65B9;&#xFF0C;&#x6307;&#x4EE4;&#x53C2;&#x8003;&#x9875;&#x4E3B;&#x8981;&#x662F;&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x63CF;&#x8FF0;&#x3002;&#x5BF9;&#x638C;&#x63E1; Opcode &#x7801;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x76F4;&#x89C2;&#x548C;&#x900F;&#x5F7B;&#x3002;&#x4E0B;&#x9762;&#x8981;&#x770B;&#x5168;&#x5C40;&#x7684; Opcode &#x8868;&#x683C;&#x3002;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__opcode_4">&#x600E;&#x4E48;&#x770B; Opcode &#x8868;</h3>
+<div class="paragraph">
+<p>&#x5B66;&#x4F1A;&#x770B; Opcode &#x8868;&#x624D;&#x80FD;&#x6E05;&#x6670;&#x5730;&#x8FDB;&#x884C;&#x5206;&#x6790;&#xFF0C;Opcode &#x8868;&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x9762;&#x7684;&#x900F;&#x5F7B;&#x7684;&#x603B;&#x7ED3;&#x8868;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x8BF4;&#x5341;&#x5206;&#x7EC6;&#x81F4;&#x3002;
+Intel &#x548C; AMD &#x7684;&#x6587;&#x6863;&#x4E2D;&#x5747;&#x63D0;&#x4F9B;&#x4E86; Opcode &#x8868;&#xFF0C;Opcode &#x8868;&#x6709; One-byte Opcode &#x8868;&#x3001;Two-byte Opcode &#x8868;&#x548C; X87 Opcode &#x8868;&#x7B49;&#x3002;</p>
+</div>
+<div class="sect3">
+<h4 id="_opcode">Opcode &#x8868;&#x4E0A;&#x7684;&#x57FA;&#x672C;&#x5143;&#x7D20;</h4>
+<div class="paragraph">
+<p>&#x4E0B;&#x56FE;&#x662F;&#x4E00;&#x90E8;&#x5206; Opcode &#x8868;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/movopcode.jpg" alt="movopcode.jpg"></span></p>
+</div>
+<div class="paragraph">
+<p>Opcode &#x8868;&#x4E0A;&#x63CF;&#x8FF0;&#x7684;&#x8303;&#x56F4;&#x662F; 00 ~ FF&#xFF0C;&#x5373; 1 &#x4E2A;&#x5B57;&#x8282;&#x5171; 256 &#x4E2A;&#x503C;&#xFF0C;&#x6BCF; 1 &#x4E2A;&#x503C;&#x63CF;&#x8FF0;&#x4E0D;&#x540C;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1 &#x4E2A; byte &#x7684; opcode &#x7801;</p>
+</li>
+<li>
+<p>prefix</p>
+</li>
+<li>
+<p>0F&#xFF08;escape prefix&#xFF09;</p>
+</li>
+<li>
+<p>Group &#x5C5E;&#x6027;&#x7684; opcode &#x7801;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x6BCF;&#x4E2A; Opcode &#x7801;&#x8FD8;&#x9644;&#x6709;&#x76F8;&#x5E94;&#x7684; Operands &#x5C5E;&#x6027;&#xFF0C;Operands &#x5C5E;&#x6027;&#x662F;&#x7528;&#x6765;&#x63CF;&#x8FF0; Operands &#x7684;&#xFF0C;&#x5305;&#x62EC; Operands &#x4E2A;&#x6570;&#x3001;&#x5BFB;&#x5740;&#x7C7B;&#x578B;&#x53CA; Size</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="&#x63D0;&#x793A;"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>&#x3000;&#x3000;&#x6240;&#x8C13; Group&#xFF08;&#x7EC4;&#xFF09;&#x5C5E;&#x6027; Opcode &#x662F;&#x6307;&#xFF1A;Intel &#x5C06;&#x4E00;&#x4E9B; operands &#x5BFB;&#x5740;&#x76F8;&#x540C; Opcode &#x7801;&#x62BD;&#x51FA;&#x6765;&#x7EC4;&#x6210;&#x4E00;&#x7EC4;&#x3002;&#x5177;&#x4F53;&#x7684;&#x529F;&#x80FD;&#x662F;&#x7531; ModRM &#x7684; reg &#x6765;&#x51B3;&#x5B9A;&#x3002;ModRM.reg  &#x5C31;&#x8D77;&#x51B3;&#x5B9A;&#x6027;&#x4F5C;&#x7528;&#xFF0C;&#x5B83;&#x53CD;&#x8FC7;&#x5F71;&#x54CD; Opcode &#x7801;&#x3002;ModRM.reg &#x6B64;&#x65F6;&#x76F8;&#x5F53;&#x662F;&#x4E00;&#x4E2A; index &#x503C;&#x3002;&#x7528;&#x6765;&#x9009;&#x62E9; Opcode &#x7801;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x3000;&#x3000;&#x8FD9;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x662F;&#x539F;&#x56E0;&#xFF1A;&#x8FD9;&#x79CD; Opcode &#x7684;&#x64CD;&#x4F5C;&#x6570;&#x65E0;&#x6CD5;&#x4E0E; ModRM &#x5F97;&#x5230;&#x826F;&#x597D;&#x7684;&#x914D;&#x5408;&#x3002;&#x4ECE;&#x800C;&#x51B3;&#x5B9A;&#x4E86; Opcode &#x53D7;&#x5236;&#x4E8E; ModRM.reg&#x3002;
+&#x5F88;&#x5178;&#x578B;&#x7684; FFh&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x4E2A; Group &#x5C5E;&#x6027;&#x7684; Opcode &#x7801;&#x3002; FFh &#x662F;&#x4E00;&#x7EC4;&#x6307;&#x4EE4;&#x7684;&#x4EE3;&#x8868;&#xFF0C;FFh &#x8981;&#x7531; ModRM.reg &#x624D;&#x80FD;&#x51B3;&#x5B9A;&#x5B83;&#x7684;&#x6307;&#x4EE4;&#x529F;&#x80FD;&#x3002;&#x5F53; ModRM.reg = 010 &#x65F6;&#xFF0C;FFh &#x662F; CALL &#x6307;&#x4EE4;&#x7684; Opcode &#x7801;&#x3002; &#x5F53; ModRM.reg = 000 &#x65F6;&#xFF0C;&#x5B83;&#x662F; INC &#x6307;&#x4EE4;&#x7684; Opcode &#x7801;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;Opcode &#x7684;&#x7EC4;&#x662F;&#x6309;&#x7167; Operands &#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x7684;&#x3002;</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>&#x770B;&#x770B; mov &#x6307;&#x4EE4; 8B Opcode &#x8868;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1A;</p>
+</div>
+<div class="paragraph">
+<p>&#x4E0A;&#x9762;&#x56FE;&#x4E2D;&#x7684; opcode &#x8868;&#x4E2D;&#x5706;&#x5708;&#x6240;&#x793A;&#x662F; Opcode 8B&#xFF0C;&#x5B83;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x6307;&#x4EE4; mov&#xFF0C;&#x8868;&#x683C;&#x4E2D;&#x7684; Gv, Ev &#x662F;&#x63CF;&#x8FF0;&#x8FD9;&#x4E2A; Opcode &#x7801;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x6307;&#x4EE4;&#x7684; Operand &#x5C5E;&#x6027;</p>
+</div>
+<div class="paragraph">
+<p>Gv, Ev &#x8868;&#x793A;&#xFF1A;</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x4E24;&#x4E2A; Operands &#x5206;&#x522B;&#x662F;&#xFF1A;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x6570; Gv&#xFF0C;&#x6E90;&#x64CD;&#x4F5C;&#x6570; Ev &#x6216;&#x8BF4;&#xFF1A;frist operand &#x662F; Gv, second operand &#x662F; Ev</p>
+</li>
+<li>
+<p>Gv &#x8868;&#x793A;&#xFF1A;G &#x662F;&#x5BC4;&#x5B58;&#x5668;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;v &#x662F;&#x8868;&#x793A;&#x64CD;&#x4F5C;&#x6570;&#x5927;&#x5C0F;&#x4F9D;&#x8D56;&#x4E8E;&#x6307;&#x4EE4;&#x7684; Effective Operand-Size&#xFF0C;&#x53EF;&#x4EE5;&#x662F; 16 &#x4F4D;&#xFF0C;32 &#x4F4D;&#x4EE5;&#x53CA; 64 &#x4F4D;&#x3002;</p>
+</li>
+<li>
+<p>Ev &#x8868;&#x793A;&#xFF1A;E &#x662F;&#x5BC4;&#x5B58;&#x5668;&#x6216;&#x8005;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x5177;&#x4F53;&#x8981;&#x4F9D;&#x8D56;&#x4E8E; ModRM.r/m&#xFF0C;&#x64CD;&#x4F5C;&#x6570;&#x5927;&#x5C0F;&#x548C; G &#x4E00;&#x81F4;&#x3002;</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>4 &#x4E2A;&#x5B57;&#x7B26;&#x4FBF;&#x53EF;&#x4EE5;&#x5F88;&#x76F4;&#x89C2;&#x7684;&#x8868;&#x793A;&#x51FA;&#xFF1A;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x4E2A;&#x6570;&#x4EE5;&#x53CA;&#x5BFB;&#x5740;&#x65B9;&#x5F0F;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x8FD9;&#x4E2A; Opcode &#x7684;&#x64CD;&#x4F5C;&#x6570;&#x9700;&#x8981; ModRM &#x8FDB;&#x884C;&#x5BFB;&#x5740;&#x3002;</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_operand">operand &#x63CF;&#x8FF0;&#x8868;</h4>
+<div class="paragraph">
+<p>&#x8981;&#x770B;&#x61C2; Opcode &#x8868;&#x5FC5;&#x987B;&#x5B66;&#x4F1A;&#x5206;&#x6790;&#x548C;&#x7406;&#x89E3; Operand &#x5C5E;&#x6027;&#x5B57;&#x7B26;&#xFF0C;Intel &#x548C; AMD &#x7684; Opcode &#x8868;&#x524D;&#x9762;&#x90FD;&#x6709;&#x5BF9; Operands &#x5C5E;&#x6027;&#x5B57;&#x7B26;&#x5F88;&#x4ED4;&#x7EC6;&#x6E05;&#x6670;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x8BF4;&#x660E;&#x3002;</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. operand type &#x8868;</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">&#x7C7B;&#x578B;</th>
+<th class="tableblock halign-left valign-top">&#x63CF;&#x8FF0;</th>
+<th class="tableblock halign-left valign-top">&#x5BFB;&#x5740;&#x65B9;&#x5F0F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x4E00;&#x4E2A; far pointer&#xFF08;selector:offset &#x5F62;&#x5F0F;&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4EE5; immediate &#x5F62;&#x5F0F;&#x76F4;&#x63A5;&#x5728; encode &#x91CC;&#x7ED9;&#x51FA;&#x3002;&#xFF08;offset &#x5728;&#x4F4E;&#xFF0C;seletor &#x5728;&#x9AD8;&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x4E00;&#x4E2A; control register&#xFF08;CR0 ~ CR15&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.reg &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x4E00;&#x4E2A; debug register&#xFF08;DR0 ~ DR15&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.reg &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x4E00;&#x4E2A; register &#x6216;&#x8005; memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.r/m &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; rflags &#x5BC4;&#x5B58;&#x5668;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x76F4;&#x63A5;&#x5D4C;&#x5728; opcode &#x91CC;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668; &#xFF08;rax ~ r15&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.reg &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x7ACB;&#x5373;&#x6570; immediate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">encode &#x4E2D;&#x7684; immediate &#x5F62;&#x5F0F;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x57FA;&#x4E8E; rip &#x7684; offset&#xFF08;&#x504F;&#x79FB;&#x91CF;&#xFF09;&#xFF0C;&#x662F; signed&#xFF08;&#x7B26;&#x53F7;&#x6570;&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">encode &#x4E2D;&#x7684; immediate &#x5F62;&#x5F0F;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; memory &#x64CD;&#x4F5C;&#x6570;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.r/m &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#xFF0C;&#x5176;&#x4E2D; modrm.mod &#x2260; 11&#xFF08;&#x5B83;&#x662F; memory&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; memory offset&#xFF0C;&#x76F4;&#x63A5;&#x63D0;&#x4F9B;&#x7EDD;&#x5BF9;&#x5730;&#x5740;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">encode &#x4E2D;&#x7684; immediate &#x5F62;&#x5F0F;&#xFF0C;&#x65E0;&#x9700; modrm &#x548C; SIB &#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; MMX &#x5BC4;&#x5B58;&#x5668;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.reg &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; MMX &#x5BC4;&#x5B58;&#x5668;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.r/m &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#xFF0C;&#x5176;&#x4E2D; modrm.mod = 11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; MMX &#x5BC4;&#x5B58;&#x5668;&#x6216;&#x8005; memory &#x64CD;&#x4F5C;&#x6570;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.r/m &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opernad &#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF08;rax ~ r15&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.r/m &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#xFF0C;&#x5176;&#x4E2D; modrm.mod = 11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opernad &#x662F; segment &#x5BC4;&#x5B58;&#x5668;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.reg &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; XMM &#x5BC4;&#x5B58;&#x5668;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.reg &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F; XMM &#x5BC4;&#x5B58;&#x5668;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.r/m &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#xFF0C;&#x5176;&#x4E2D; modrm.mod = 11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opernad &#x662F; XMM &#x5BC4;&#x5B58;&#x5668;&#x6216;&#x8005; memory &#x64CD;&#x4F5C;&#x6570;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; modrm.r/m &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x4E32;&#x6307;&#x4EE4;&#x7684;&#x6E90;&#x4E32; default operand &#x5BFB;&#x5740;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; ds:rsi &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#xFF0C;&#x5728; encode &#x4E2D;&#x65E0;&#x9700;&#x7ED9;&#x51FA;&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand &#x662F;&#x4E32;&#x6307;&#x4EE4;&#x76EE;&#x7684;&#x4E32; default operand &#x5BFB;&#x5740;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; es:rdi &#x63D0;&#x4F9B;&#x5BFB;&#x5740;&#xFF0C;&#x5728; encode &#x4E2D;&#x65E0;&#x9700;&#x7ED9;&#x51FA;</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. operand size &#x8868;</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">&#x7C7B;&#x578B;</th>
+<th class="tableblock halign-left valign-top" colspan="2">&#x63CF;&#x8FF0;</th>
+<th class="tableblock halign-left valign-top">operand size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">&#x4EC5;&#x7528;&#x4E8E; bound &#x6307;&#x4EE4;&#xFF0C;operand &#x662F;&#x4E00;&#x4E2A; memory&#xFF0C;&#x5B83;&#x63D0;&#x4F9B; array &#x7684; limit&#xFF08;&#x4E0B;&#x9650;&#x5730;&#x5740;&#x548C;&#x4E0A;&#x9650;&#x5730;&#x5740;&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">word &#x6216;&#x8005; doubleword&#xFF0C;&#x4F9D;&#x8D56;&#x4E8E; effective operand size&#xFF08;&#x53EF;&#x4EE5;&#x8FDB;&#x884C; operand size override&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">operand size &#x56FA;&#x5B9A;&#x4E3A; byte&#xFF0C;&#x4E0D;&#x53EF;&#x8FDB;&#x884C; operand size override</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">byte &#xFF08;8 &#x4F4D;&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">operand size &#x56FA;&#x5B9A;&#x4E3A; doubleword&#xFF0C;&#x4E0D;&#x53EF;&#x8FDB;&#x884C; operand size override</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doubleword &#xFF08;32 &#x4F4D;&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dq</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">operand size &#x56FA;&#x5B9A;&#x4E3A; double-quadword&#xFF0C;&#x4E0D;&#x53EF;&#x8FDB;&#x884C; operand size override</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double-quadword &#xFF08;128 &#x4F4D;&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">operand &#x662F; far pointer&#xFF1A;32 &#x4F4D;&#x6216; 48 &#x4F4D;&#xFF08;16:16 &#x6216; 16:32&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16:16 &#x6216; 16:32 &#x4F9D;&#x8D56;&#x4E8E; effective operand size&#xFF08;&#x53EF;&#x8FDB;&#x884C; operand size override&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pd</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">packed double&#xFF08;128 &#x4F4D;&#x53CC;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x538B;&#x7F29;&#x6570;&#xFF09;&#xFF0C;&#x5373;&#xFF1A;64:64&#xFF08;128 &#x4F4D; packed double&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">128 &#x4F4D; packed-double&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pi</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">MMX - packed integer&#xFF08;64 &#x4F4D;&#x538B;&#x7F29;&#x6574;&#x6570;&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64 &#x4F4D; packed-integer&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ps</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">packed signed&#xFF08;128 &#x4F4D;&#x5355;&#x7CBE;&#x5EA6;&#x538B;&#x7F29;&#x6570;&#xFF09;&#xFF0C;&#x5373;&#xFF1A;32:32:32:32&#xFF08;128 &#x4F4D; packed signed&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">128 &#x4F4D; packed-signed&#x3002;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">q</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">operand size &#x56FA;&#x5B9A;&#x4E3A; quadword&#xFF0C;&#x4E0D;&#x53EF;&#x8FDB;&#x884C; operand size override</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">quadword&#xFF08;64 &#x4F4D;&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">6 bytes &#x6216; 10 bytes &#x7684;&#x63CF;&#x8FF0;&#x7B26;&#x8868;&#x7C7B;&#x578B;&#xFF08;limit + base&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16:32&#xFF08;16/32 &#x4F4D; opernad siz&#xFF09;&#x6216; 16:64&#xFF08;64 &#x4F4D; operand size&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sd</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">scalar double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scalar double</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">scalar integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scalar integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ss</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">scalar signed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scalar signed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">word&#xFF0C;doubleword &#x6216; quadword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">word&#xFF0C;doubleword &#x6216; quadword &#x53D6;&#x51B3;&#x4E8E; effective operand size&#xFF0C;&#x53EF;&#x8FDB;&#x884C; operand size override&#xFF0C;REX prefix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">opernad size &#x56FA;&#x5B9A;&#x4E3A; word&#xFF0C;&#x4E0D;&#x53EF;&#x8FDB;&#x884C; operand size override</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">word&#xFF08;16 &#x4F4D;&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">word =</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effective operand size &#x662F; 16 &#x4F4D;&#x65F6;</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">word &#x6216; doubleword &#x4F9D;&#x8D56;&#x4E8E; effective operand size</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dword =</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effective operand size &#x662F; 32 &#x4F4D;&#x6216; 64 &#x4F4D;&#x65F6;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/n</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">n &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x6570;&#x503C;&#xFF08;0 ~ 7&#xFF09;&#xFF0C;&#x5728; ModRM.reg &#x4E2D;&#x63D0;&#x4F9B;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7531; ModRM.reg &#x63D0;&#x4F9B; (000 ~ 111&#xFF09;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x6BCF;&#x4E2A;&#x6307;&#x4EE4;&#x7684; operand &#x5C5E;&#x6027;&#x90FD;&#x7531;&#x4E0A;&#x9762;&#x7684;&#x8868;1&#x548C;&#x8868;2&#x4E24;&#x8005;&#x63CF;&#x8FF0;&#xFF0C; Operands &#x5C5E;&#x6027;&#x90FD;&#x6709;&#x4E24;&#x7EC4;&#x5B57;&#x7B26;&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x524D;&#x9762;&#x7684;&#x4E00;&#x7EC4;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x662F; Operand &#x7C7B;&#x578B;&#xFF0C;&#x540E;&#x9762;&#x4E00;&#x7EC4;&#x5C0F;&#x5B9A;&#x5B57;&#x6BCD;&#x662F; Operand Size&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5982;&#xFF1A;Gv &#x8868;&#x793A;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>G &#x662F; Operand &#x7C7B;&#x578B;&#xFF0C;&#x8868;&#x793A; General-Purpose Register&#xFF08;GPR&#xFF09;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; rax ~ r15 &#x5171; 16 &#x4E2A;&#x3002;&#x8FD9;&#x662F;&#x6709;&#x522B;&#x4E0E; Segment Register&#x3001;XMM &#x5BC4;&#x5B58;&#x5668;&#x7B49;&#x3002;</p>
+</li>
+<li>
+<p>v &#x662F; Operand &#x5927;&#x5C0F;&#xFF0C;&#x4F9D;&#x8D56;&#x4E8E;&#x5F53;&#x524D;&#x7684; Effective Operand-Size&#xFF0C;&#x8FD9;&#x4E2A; operand size &#x53EF;&#x4EE5;&#x4F7F;&#x7528; 66H prefix &#x548C; REX prefix &#x8FDB;&#x884C; operand size override</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__1">&#x4F8B; 1</h4>
+<div class="paragraph">
+<p>&#x4EE5;&#x5178;&#x578B;&#x7684; Jmp Jz &#x4E3A;&#x4F8B;&#x3002;&#x5B83;&#x7684; Opcode &#x662F; E9&#xFF0C;Operand &#x5C5E;&#x6027;&#x662F; Jz</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>J &#x662F;&#x4EE3;&#x8868;&#x57FA;&#x4E8E; RIP &#x7684;&#x76F8;&#x5BF9;&#x5BFB;&#x5740;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x64CD;&#x4F5C;&#x6570;&#x5BFB;&#x5740;&#x662F;&#x504F;&#x79FB;&#x91CF;&#xFF08;Offset&#xFF09;&#x52A0;&#x4E0A; RIP &#x5F97;&#x51FA;&#x3002;</p>
+</li>
+<li>
+<p>z &#x5219;&#x8868;&#x793A; Operand-Size &#x662F; 16 &#x6216; 32&#xFF08;effective operand size = 16 &#x65F6;&#x662F; 16&#xFF0C;effective operand size = 32/64 &#x65F6;&#x662F; 32&#xFF09;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E0E; v &#x4E0D;&#x540C;&#xFF0C;z &#x5C5E;&#x6027;&#x4E0B;&#x4E0D;&#x5B58;&#x5728; 64 &#x4F4D; operand size</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__2">&#x4F8B; 2</h4>
+<div class="paragraph">
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#x662F; call Ev</p>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x7684; Opcode &#x662F; FF&#xFF0C;&#x8FD9;&#x4E2A; Opcode &#x662F;&#x4E2A;&#x5178;&#x578B;&#x7684; Group Opcode&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x5B9A;&#x4E49;&#x4E3A; Group&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x5C06;&#x4F1A;&#x6709;&#x9610;&#x8FF0;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x5BFB;&#x5740;&#x662F;&#x5178;&#x578B;&#x7684; ModRM &#x5BFB;&#x5740;&#xFF0C;&#x7531; ModRM.r/m &#x5BFB;&#x5740;&#x3002;</p>
+</li>
+<li>
+<p>E &#x65E2;&#x53EF;&#x662F; GPRs &#x4E5F;&#x53EF;&#x4EE5;&#x662F; Mem&#x3002; &#x5B83;&#x540C;&#x6837;&#x662F; v &#x5C5E;&#x6027;&#x7684; Operand-Size&#x3002;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x5173;&#x4E8E; default &#x4E0E; effective &#x9610;&#x8FF0;, &#x8BE6;&#x89C1;&#xFF1A; default&#xFF08;&#x7F3A;&#x7701;&#xFF09; &#x4E0E; effective&#xFF08;&#x6709;&#x6548;&#xFF09;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__opcode_5">&#x900F;&#x6790; Opcode &#x7684;&#x7F16;&#x7801;&#x89C4;&#x5219;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5982;&#x4E0A;&#x6240;&#x8FF0;&#xFF1A;prefix &#x4E0E; Opcode &#x5171;&#x4EAB; 00~FF &#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x7531;&#x4E8E; Prefix &#x90E8;&#x5206;&#x662F; &#x53EF;&#x9009;&#x7684;&#xFF0C;&#x5F53; CPU &#x53D6;&#x6307;&#x5355;&#x5143;&#x4ECE; ITLB &#x52A0;&#x8F7D;&#x6307;&#x4EE4; L1-Icache &#x548C; prefetch buffer&#xFF0C;&#x9884;&#x89E3;&#x7801;&#x5355;&#x5143;&#x901A;&#x8FC7; prefix &#x81EA;&#x5DF2;&#x7684; ID &#x503C;&#x6765;&#x89E3;&#x6790; prefix&#x3002;&#x5982;&#x8BFB;&#x5165; 66h &#x65F6;&#x662F;&#x89E3;&#x6790;&#x4E3A; prefix &#x800C;&#x4E0D;&#x662F; Opcode&#x3002;&#x540C;&#x6837;&#xFF0C;&#x8BFB;&#x5165; 0Fh &#x65F6;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#x662F; 2 &#x4E2A; &#x5B57;&#x8282;&#x7684; Opcode &#x4E2D;&#x7684;&#x7B2C; 1 &#x4E2A;&#x5B57;&#x8282;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>Opcode &#x7684; operands &#x5BFB;&#x5740;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x5728; Opcode &#x7801;&#x76F4;&#x63A5;&#x4E2D;&#x6307;&#x5B9A;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x4F9D;&#x8D56; ModRM &#x7ED9;&#x5B9A;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x90E8;&#x5206;&#x4E0D;&#x4F9D;&#x8D56; ModRM &#x7ED9;&#x5B9A;&#x3002;&#x76F4;&#x63A5;&#x4E2D; Opcode &#x6307;&#x5B9A;&#x7684; operand &#x5BFB;&#x5740;&#x7684;&#x662F; GPRs &#x5BFB;&#x5740;&#xFF0C;&#x5982;&#xFF1A;inc eax &#x6307;&#x4EE4;&#xFF08;Opcode &#x662F; 40h&#xFF09;&#xFF0C;&#x8FD8;&#x6709;&#x4E32;&#x6307;&#x4EE4;&#xFF0C;&#x5982; loads &#x7B49;&#x3002;</p>
+</div>
+<div class="sect2">
+<h3 id="_1_operand_opcode">1&#x4E2A; Operand &#x7684; Opcode &#x7801;&#x7F16;&#x7801;&#x89C4;&#x5219;</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">&#x76F4;&#x63A5;&#x5D4C;&#x5165; Opcode &#x4E2D;</dt>
+<dd>
+<p>&#x4E00;&#x90E8;&#x5206; Opcode &#x7684; operand &#x662F;&#x76F4;&#x63A5;&#x5D4C;&#x5165; Opcode &#x4E2D;&#x7684;&#xFF0C;&#x5982;&#xFF1A;inc eax&#x3001;push eax&#x3001;pop eax &#x7B49;&#x3002; &#x8FD9;&#x4E9B;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x662F; 1 &#x4E2A;&#x5B57;&#x8282;&#x3002;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#x3002;</p>
+</dd>
+<dt class="hdlist1">&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#xFF0C;&#x8FD9;&#x90E8;&#x5206; Opcode &#x7801;&#x9700;&#x8981; ModRM.reg &#x8FDB;&#x884C;&#x8865;&#x5145;&#x4FEE;&#x9970;&#xFF0C;&#x662F; Group &#x5C5E;&#x6027; Opcode</dt>
+<dd>
+<p>&#x5BF9;&#x4E8E;&#x5355; Operand &#x7684;&#x6307;&#x4EE4;&#x800C;&#x53C8;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#x3002;&#x8FD9;&#x79CD;&#x6307;&#x4EE4;&#x5FC5;&#x5B9A;&#x662F; Group &#x5C5E;&#x6027;&#x7684;&#x6307;&#x4EE4;&#x3002;&#x5B83;&#x7684; operand &#x5C5E;&#x6027;&#x662F; Ev &#x5B57;&#x7B26;&#x3002;ModRM.reg &#x51B3;&#x5B9A;&#x6700;&#x7EC8;&#x7684; Opcode &#x64CD;&#x4F5C;&#x7801;&#xFF0C;ModRM.mod &#x548C; ModRM.r/m &#x51B3;&#x5B9A;&#x5BFB;&#x5740;&#x6A21;&#x5F0F;&#x3002;</p>
+<div class="paragraph">
+<p>&#x5982;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#x5178;&#x578B; Call Ev &#x8FD9;&#x79CD;&#x6307;&#x4EE4;&#xFF0C;operand &#x53EF;&#x4EE5;&#x662F; register&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F; memory&#xFF0C;&#x7531; ModRM.mod &#x6765;&#x51B3;&#x5B9A;&#x5230;&#x5E95;&#x662F; registers &#x8FD8;&#x662F; memory&#xFF0C;ModRM.r/m &#x51B3;&#x5B9A;&#x5177;&#x4F53;&#x7684; operand&#x3002;</p>
+</div>
+</dd>
+<dt class="hdlist1">&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#xFF0C;&#x4E0D;&#x662F; Group &#x5C5E;&#x6027; Opcode</dt>
+<dd>
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x7684; Operand &#x65E2;&#x4E0D;&#x5D4C;&#x5165; Opcode &#x4E2D;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F7F;&#x7528; ModRM &#x8FDB;&#x884C;&#x5BFB;&#x5740;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5FC5;&#x5B9A;&#x662F; immediate &#x503C;&#x3002;&#x5B83;&#x7684; Operand &#x5C5E;&#x6027;&#x5B57;&#x7B26;&#x662F; Iz&#x3001;Ib &#x6216;&#x8005; Jz&#x3002;</p>
+<div class="paragraph">
+<p>&#x8FD9;&#x79CD;&#x6307;&#x4EE4;&#x5F88;&#x5E38;&#x89C1;&#xFF0C;&#x5982;&#xFF1A;push Iz&#x3001;push Ib&#x3001;Jmp Jz&#x3001;Jmp Jb &#x7B49;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>push 0x12345678 &#x8FD9;&#x5C31;&#x662F;&#x5E38;&#x89C1;&#x7684;&#x8FD9;&#x79CD;&#x6307;&#x4EE4;&#xFF0C;&#x8FD8;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#x7684;&#x77ED;&#x8DF3;&#x8F6C; jmp $+0x0c&#x3002;</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_operands_opcode">2 &#x4E2A; Operands &#x7684; Opcode &#x7801;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x3002;</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">1 &#x4E2A; Operand &#x5D4C;&#x5165; Opcode&#xFF0C;&#x53E6;&#x4E00;&#x4E2A; Operand &#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM&#xFF08;&#x975E; Group &#x5C5E;&#x6027;&#xFF09;</dt>
+<dd>
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A; Operand &#x5FC5;&#x5B9A;&#x662F; GPRs&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x4E0D;&#x4F7F;&#x7528; ModRM &#x5BFB;&#x5740;&#x7684; Operand &#x5FC5;&#x5B9A;&#x662F; Immediate&#x3002;&#x6240;&#x4EE5;&#x5B83;&#x4E0D;&#x662F; Group &#x5C5E;&#x6027;&#x7684;&#x3002;</p>
+<div class="paragraph">
+<p>&#x770B;&#x770B;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A; Opcode&#xFF1A;</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x6307;&#x4EE4; mov rax</p>
+<div class="paragraph">
+<p>Iv &#x5B83;&#x7684; Opcode &#x662F; B8&#xFF0C;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x7531; Opcode &#x4E2D;&#x6307;&#x5B9A;&#x7684; GPRs&#xFF08;rax&#xFF09;&#xFF0C;&#x6E90;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x4E0D;&#x4F7F;&#x7528; ModRM &#x5BFB;&#x5740;&#x7684; Immediate&#x3002;&#x662F;&#x4E00;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x4E0E;&#x7ACB;&#x5373;&#x6570;&#x7684;&#x5BFB;&#x5740;&#x6307;&#x4EE4;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x7531;&#x4E8E; mov rax, Iv &#x5B83;&#x7684; immediate operand size &#x662F; v &#x5C5E;&#x6027;&#xFF0C;&#x56E0;&#x6B64;&#xFF1A;&#x8FD9;&#x4E2A; immediate &#x53EF;&#x4EE5;&#x4F7F;&#x7528; REX prefix &#x8FDB;&#x884C; override &#x5230; 64 &#x4F4D;</p>
+</div>
+</li>
+<li>
+<p>&#x6307;&#x4EE4; mov rax, 0x1122334455667788</p>
+<div class="paragraph">
+<p>&#x5B83;&#x7684; encode &#x662F;&#xFF1A;b8 88 77 66 55 44 33 22 11 &#xFF08;&#x4F7F;&#x7528;&#x4E86; 64 &#x4F4D;&#x7684; immediate &#x503C;&#xFF09;</p>
+</div>
+<div class="paragraph">
+<p>&#x601D;&#x8003;&#x53E6;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+</div>
+<div class="paragraph">
+<p>&#x5728; 64 &#x4F4D;&#x4E0B;&#xFF1A;mov qword ptr [rax]&#xFF0C;0x1122334455667788&#xFF0C;&#x8FD9;&#x6307;&#x4EE4;&#x662F;&#x7684;&#x9519;&#x8BEF;&#x7684;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x539F;&#x56E0;&#xFF1A;&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x662F; MOV Ev, Iz&#xFF0C;&#x5B83;&#x662F; z &#x5C5E;&#x6027;&#x7684; operand size, &#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x4E0D;&#x53EF;&#x80FD;&#x6709; 64 &#x4F4D;&#x7684; immediate &#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x672C;&#x8D28;&#x4E0A;&#xFF1A;</p>
+</div>
+<div class="paragraph">
+<p>&#x662F;&#x5B83;&#x7684;&#x5BFB;&#x5740;&#x662F;&#x4F7F;&#x7528;&#x4E86; ModRM &#x7684;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x5B83;&#x8981;&#x53D7;&#x9650;&#x4E8E; Immediate &#x6700;&#x5927;&#x4E3A; 4 &#x4E2A;&#x5B57;&#x8282;&#x7684;&#x9650;&#x5236;&#x3002;&#x6240;&#x4EE5;&#x4E0D;&#x4F1A;&#x6709; Iv &#x7684;&#x5C5E;&#x6027;</p>
+</div>
+<div class="paragraph">
+<p>mov rax, qword ptr [0x1122334455667788]&#xFF0C;&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x662F;&#x5B8C;&#x5168;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x6307;&#x4EE4;&#x662F; MOV rAX, Ov, &#x5177;&#x6709; v &#x5C5E;&#x6027;&#x7684; size</p>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x5B83;&#x7684; memory &#x662F;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#xFF0C;&#x5B83;&#x5C06;&#x4EE5; immediate &#x503C;&#x5F62;&#x5F0F;&#x76F4;&#x63A5;&#x5D4C;&#x5165;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x4E2D;&#x3002;</p>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1">&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#xFF0C;&#x975E; Group &#x5C5E;&#x6027;</dt>
+<dd>
+<p>&#x8FD9;&#x79CD;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#x800C;&#x53C8;&#x975E; Group &#x5C5E;&#x6027;&#x7684; 2 &#x4E2A; Operands&#xFF0C;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x662F;&#xFF1A;&#x5BC4;&#x5B58;&#x5668;&#x4E0E;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x6570;&#x4E4B;&#x95F4;&#x6216; 2 &#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x4E4B;&#x95F4;&#x3002;</p>
+<div class="paragraph">
+<p>&#x5B83;&#x7684; Operands &#x5C5E;&#x6027;&#x5B57;&#x7B26;&#x662F; Gv, Ev &#x6216; Ev, Gv&#x3002; &#x5178;&#x578B;&#x7684;&#x5982;&#xFF1A; mov eax, ebx</p>
+</div>
+</dd>
+<dt class="hdlist1">&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#xFF0C;&#x662F; Group &#x5C5E;&#x6027;</dt>
+<dd>
+<p>&#x5728;&#x8FD9;&#x79CD; Opcode &#x7F16;&#x7801;&#x4E0B;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x5FC5;&#x5B9A;&#x662F; Immediate&#xFF0C;&#x5178;&#x578B;&#x7684;&#x5982;&#xFF1A;mov ecx, 0x10&#xFF0C;&#x5B83;&#x7684; Operands &#x5C5E;&#x6027;&#x5B57;&#x7B26;&#x662F; Ev, Iv &#x7B49;&#x3002;</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_operands_opcode">3 &#x4E2A; Operands &#x7684; Opcode &#x7F16;&#x7801;</h3>
+<div class="paragraph">
+<p>&#x5728; AMD &#x7684; SSE5 &#x6307;&#x4EE4;&#x96C6;&#x63A8;&#x51FA;&#x4E4B;&#x524D;&#xFF0C;&#x662F;&#x6CA1;&#x6709;&#x7B2C; 3 &#x4E2A; Operand &#x662F;&#x975E;&#x5BC4;&#x5B58;&#x5668;&#x6216;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x60C5;&#x5F62;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x7B2C; 3 &#x4E2A;&#x64CD;&#x4F5C;&#x5FC5;&#x5B9A;&#x662F; Immediate &#x503C;&#x3002;&#x8FD9;&#x79CD;&#x6307;&#x4EE4;&#x5F88;&#x5C11;&#x3002;imul eax, ebx, 3&#x3000;&#x8FD9;&#x662F;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;&#x3002;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opcode_2">Opcode &#x6DF7;&#x4E71;&#x7684;&#x672C;&#x8D28;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x9020;&#x6210; x86/x64 &#x5E73;&#x53F0;&#x7684; Opcode &#x6DF7;&#x4E71;&#xFF0C;&#x8D77;&#x56E0;&#x4E8E;&#x4F17;&#x591A;&#x5BFB;&#x5740;&#x6A21;&#x5F0F;&#xFF0C;&#x800C; operand &#x5206;&#x4E3A;&#xFF1A;0 operand&#x3001;1 operand&#x3001;2 operands&#x3001;3 operands &#x4EE5;&#x53CA; 4 operands</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_group_opcode">Group &#x5C5E;&#x6027;&#x7684; Opcode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x7531;&#x4E8E;&#x8FD9;&#x90E8;&#x5206; Opcode &#x9700;&#x8981; ModRM.reg &#x8FDB;&#x884C;&#x8865;&#x5145;&#xFF0C;&#x90A3;&#x4E48; ModRM.r/m &#x5C31;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B; 1 &#x4E2A; operand &#x7684;&#x5BFB;&#x5740;&#x4E86;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5F53; ModRM.mod = 11&#xFF0C;&#x5B83;&#x5C31;&#x63D0;&#x4F9B; registers &#x5BFB;&#x5740;&#xFF0C;&#x5F53; ModRM.mod &lt;&gt; 11&#xFF0C;&#x5B83;&#x5C31;&#x63D0;&#x4F9B; memory &#x5BFB;&#x5740;&#xFF0C;</p>
+</div>
+<div class="paragraph">
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x7684; operand &#x8981;&#x4E48;&#x662F; Ev &#x8981;&#x4E48;&#x662F; Iv&#x3001;Iz &#x6216; Ib</p>
+</div>
+<div class="paragraph">
+<p>&#x5F53; operand &#x662F; Iv&#x3001;Iz &#x6216; Ib &#x65F6;&#xFF0C;&#x8868;&#x793A; Opcode &#x5C06;&#x5FFD;&#x7565; ModRM.r/m &#x5BFB;&#x5740;&#x3002;</p>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="inst-4.html" class="navigation navigation-prev " aria-label="Previous page: REX prefix">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="inst-6.html" class="navigation navigation-next " aria-label="Next page: ModRM寻址模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"指令opcod码","keywords":"instruction, x86_64","toc_max":4,"level":"1.3.3.5","depth":3,"next":{"title":"ModRM寻址模式","level":"1.3.3.6","depth":3,"path":"hardware/inst/inst-6.adoc","ref":"hardware/inst/inst-6.adoc","articles":[]},"previous":{"title":"REX prefix","level":"1.3.3.4","depth":3,"path":"hardware/inst/inst-4.adoc","ref":"hardware/inst/inst-4.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hardware/inst/inst-5.adoc","mtime":"2021-05-28T05:36:07.023Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1340 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>UEFI/GPT · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="uefi-example.html" />
+    
+    
+    <link rel="prev" href="disk-bios.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../elf/">
+            
+                <a href="../../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../elf/elf-1.html">
+            
+                <a href="../../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../elf/elf-2.html">
+            
+                <a href="../../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../elf/elf-3.html">
+            
+                <a href="../../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../address/">
+            
+                <a href="../address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../address/summary.html">
+            
+                <a href="../address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../address/real_address.html">
+            
+                <a href="../address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../address/segmented_address.html">
+            
+                <a href="../address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../address/page_address.html">
+            
+                <a href="../address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../address/example.html">
+            
+                <a href="../address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="summary.html">
+            
+                <a href="summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="disk-chs-lba.html">
+            
+                <a href="disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="disk-bios.html">
+            
+                <a href="disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.4" data-path="uefi.html">
+            
+                <a href="uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="uefi-example.html">
+            
+                <a href="uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="end.html">
+            
+                <a href="end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../inst/">
+            
+                <a href="../inst/">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../inst/inst-1.html">
+            
+                <a href="../inst/inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../inst/inst-2.html">
+            
+                <a href="../inst/inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../inst/inst-3.html">
+            
+                <a href="../inst/inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../inst/inst-4.html">
+            
+                <a href="../inst/inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../inst/inst-5.html">
+            
+                <a href="../inst/inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../inst/inst-6.html">
+            
+                <a href="../inst/inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../inst/inst-7.html">
+            
+                <a href="../inst/inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../inst/inst-8.html">
+            
+                <a href="../inst/inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../inst/inst-9.html">
+            
+                <a href="../inst/inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../inst/inst-10.html">
+            
+                <a href="../inst/inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="../inst/inst-addon-1.html">
+            
+                <a href="../inst/inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="../inst/inst-addon-2.html">
+            
+                <a href="../inst/inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="../inst/inst-addon-3.html">
+            
+                <a href="../inst/inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="../inst/inst-addon-4.html">
+            
+                <a href="../inst/inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../grub/">
+            
+                <a href="../../grub/">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../grub/summary.html">
+            
+                <a href="../../grub/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../grub/bios-make.html">
+            
+                <a href="../../grub/bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../grub/uefi-make.html">
+            
+                <a href="../../grub/uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../grub/secure-uefi-bios.html">
+            
+                <a href="../../grub/secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../grub/debug.html">
+            
+                <a href="../../grub/debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../grub/grub-mod.html">
+            
+                <a href="../../grub/grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../grub/bios-detail.html">
+            
+                <a href="../../grub/bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../grub/uefi-detail.html">
+            
+                <a href="../../grub/uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../grub/memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../other/">
+            
+                <a href="../../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >UEFI/GPT</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="paragraph">
+<p>&#x8FD9;&#x4E00;&#x7AE0;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;UEFI&#x56FA;&#x4EF6;&#x548C;GPT&#x5206;&#x533A;&#x683C;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x6587;&#x7AE0;&#x6211;&#x4EEC;&#x4E5F;&#x77E5;&#x9053;BIOS&#x6240;&#x5B58;&#x5728;&#x7684;&#x7F3A;&#x70B9;&#xFF0C;&#x800C;UEFI&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x3002;UEFI&#x9664;&#x4E86;&#x63D0;&#x4F9B;BIOS&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x5916;&#xFF0C;&#x5B83;&#x540C;&#x65F6;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x52A0;&#x4E30;&#x5BCC;&#x7684;&#x56FE;&#x5F62;&#x754C;&#x9762;&#xFF0C;&#x5BF9;&#x7528;&#x6237;&#x66F4;&#x52A0;&#x7684;&#x53CB;&#x597D;&#xFF0C;&#x800C;&#x4E14;EFI&#x7A0B;&#x5E8F;&#x652F;&#x6301;C&#x8BED;&#x8A00;&#x7F16;&#x5199;&#xFF0C;&#x63D0;&#x5347;&#x4E86;&#x5DE5;&#x4F5C;&#x6548;&#x7387;&#x3002;&#x4F46;&#x76F8;&#x5BF9;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5DE5;&#x4F5C;&#x90FD;&#x662F;&#x5728;&#x91CD;&#x590D;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#xFF0C;&#x5C31;&#x662F;&#x7B80;&#x5355;&#xFF0C;&#x53D1;&#x73B0;&#x7B80;&#x5355;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#x66F4;&#x591A;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x5F15;&#x5165;&#x4E86;&#x590D;&#x6742;&#x5316;&#xFF0C;&#x800C;UEFI&#x5C31;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;UEFI&#x7684;&#x5F15;&#x5165;&#x4F7F;&#x5F97;&#x8BBE;&#x8BA1;&#x66F4;&#x52A0;&#x7684;&#x590D;&#x6742;&#x3002;&#x4E5F;&#x8BB8;&#xFF0C;&#x4EE5;&#x540E;&#x4E3A;&#x4E86;&#x7B80;&#x5355;&#x6027;&#xFF0C;&#x7531;&#x51FA;&#x73B0;&#x4E86;&#x65B0;&#x7684;&#x56FA;&#x4EF6;&#x6280;&#x672F;&#x4E5F;&#x8BF4;&#x4E0D;&#x5B9A;&#x3002;</p>
+</div>
+<div class="sect1">
+<h2 id="_ufei_gpt">UFEI&#x4E0E;GPT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x4ECB;&#x7ECD;UEFI&#x7684;&#x5386;&#x53F2;&#xFF0C;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x5173;&#x6CE8;UEFI&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x5982;&#x4F55;&#x7F16;&#x5199;UEFI&#x7A0B;&#x5E8F;&#x4EE5;&#x53CA;&#x652F;&#x6301;UEFI&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x5982;&#x4F55;&#x542F;&#x52A8;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x5173;&#x4E8E;UEFI&#x7684;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x56F4;&#x7ED5;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x5C55;&#x5F00;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E86;&#x89E3;UEFI&#xFF0C;UEFI&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;BIOS&#x6240;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#x800C;&#x4ECE;&#x65B0;&#x8BBE;&#x8BA1;&#x7684;&#x4E00;&#x5957;&#x56FA;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x4E0D;&#x662F;BIOS&#xFF0C;&#x867D;&#x7136;UEFI&#x4E5F;&#x5F15;&#x5165;&#x4E86;&#x517C;&#x5BB9;&#x6A21;&#x5F0F;&#xFF0C;&#x517C;&#x5BB9;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x50CF;BIOS&#x90A3;&#x6837;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F46;&#x8BB0;&#x4F4F; <strong>UEFI&#x4E0D;&#x662F;BIOS</strong>&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x6982;&#x8FF0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x652F;&#x6301;UEFI&#x5F15;&#x5BFC;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x542F;&#x52A8;&#x540E;&#x4EA4;&#x7ED9;UEFI&#x56FA;&#x4EF6;&#xFF0C;&#x540E;&#x7EED;&#x7531;UEFI&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x5173;&#x6CE8;UEFI&#x7684;&#x5F15;&#x5BFC;&#x529F;&#x80FD;&#xFF0C;&#x540C;&#x65F6;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;MBR&#x5206;&#x533A;&#x683C;&#x5F0F;&#x65E0;&#x6CD5;&#x652F;&#x6301;&#x66F4;&#x5927;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5F15;&#x5165;&#x4E86;GPT&#x5206;&#x533A;&#xFF0C;GPT&#x5206;&#x533A;&#x4E5F;&#x662F;UEFI&#x89C4;&#x8303;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x3002;<em>UEFI</em> &#x4F1A;&#x6839;&#x636E;&#x8BBE;&#x7F6E;&#x7684;&#x542F;&#x52A8;&#x987A;&#x5E8F;&#xFF0C;&#x67E5;&#x627E;GPT&#x5206;&#x533A;&#x8868;&#x4E2D; GUID &#x4E3A; <em>C12A7328-F81F-11D2-BA4B-00A0C93EC93B</em> &#x7684;EFI&#x5206;&#x533A;&#x8868;&#x3002;&#x627E;&#x5230;EFI&#x5206;&#x533A;&#x8868;&#x540E;&#xFF0C;<em>UEFI</em> &#x5C06;&#x4F1A;&#x628A;&#x7CFB;&#x7EDF;&#x6743;&#x9650;&#x4EA4;&#x7ED9;&#x5BF9;&#x5E94;&#x7684;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#xFF0C;&#x540E;&#x7EED;&#x7684;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#x8D1F;&#x8D23;&#x5F15;&#x5BFC;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x3002;&#x8FD9;&#x91CC;GPT&#x5206;&#x533A;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;<em>C12A7328-F81F-11D2-BA4B-00A0C93EC93B</em> &#x8FD9;&#x4E32;&#x83AB;&#x540D;&#x5176;&#x5999;&#x7684;&#x6570;&#x636E;&#x53C8;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;EFI&#x5206;&#x533A;&#x8868;&#x53C8;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x63ED;&#x5F00;&#x8FD9;&#x4E9B;&#x9762;&#x7EB1;&#x5427;&#xFF01;</p>
+</div>
+<div class="sect2">
+<h3 id="_gpt">GPT</h3>
+<div class="paragraph">
+<p>GPT&#x5168;&#x79F0;GUID Partition Table&#xFF0C;&#x5B83;&#x662F;&#x4E3A;&#x4E86;&#x66FF;&#x4EE3;MBR&#x5206;&#x533A;&#x8868;&#xFF0C;&#x4F7F;&#x5F97;&#x80FD;&#x591F;&#x652F;&#x6301;&#x66F4;&#x5927;&#x7A7A;&#x95F4;&#x7684;&#x78C1;&#x76D8;&#x800C;&#x8BBE;&#x8BA1;&#x7684;&#x5206;&#x533A;&#x65B9;&#x6848;&#x3002;&#x73B0;&#x4EE3;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x652F;&#x6301;GPT&#x5206;&#x533A;&#x8868;&#x3002;UEFI&#x89C4;&#x8303;&#x660E;&#x786E;&#x4F7F;&#x7528;GPT&#x5206;&#x533A;&#x8868;&#x7684;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x8FDB;&#x884C;&#x7CFB;&#x7EDF;&#x5F15;&#x5BFC;&#x5DE5;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E0B;GPT&#x7684;&#x5168;&#x666F;&#x56FE;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/gpt.png" alt="GPT">
+</div>
+</div>
+<div class="paragraph">
+<p>GPT&#x5206;&#x533A;&#x540C;&#x6837;&#x4F7F;&#x7528;LBA&#x5BFB;&#x5740;&#xFF0C;&#x6B63;&#x5982;&#x5728;&#x56FE;&#x4E0A;&#x663E;&#x793A;&#x7684;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;LBA0&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x4FDD;&#x62A4;&#x6027;MBR&#xFF08;protective MBR &#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x6247;&#x533A;&#x662F;&#x78C1;&#x76D8;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#xFF0C;&#x65E9;&#x671F;&#x4E3A;&#x4E86;&#x5411;&#x524D;&#x517C;&#x5BB9;&#xFF0C;&#x901A;&#x5E38;&#x4FDD;&#x7559;&#x4E0D;&#x7528;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x4E5F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x57FA;&#x4E8E;MBR&#x7684;&#x5DE5;&#x5177;&#x9519;&#x8BEF;&#x8BC6;&#x522B;&#x4ECE;&#x800C;&#x5BFC;&#x81F4;&#x7834;&#x574F;GPT&#x5206;&#x533A;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x4E2A;&#x6247;&#x533A;&#x7684;&#x7C7B;&#x578B;&#x8BBE;&#x7F6E;&#x4E3A; <em>0xEE</em> &#x6765;&#x8868;&#x793A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4FDD;&#x62A4;&#x6027;&#x7684;MBR&#x3002;LBA1&#xFF08;&#x7B2C;&#x4E8C;&#x4E2A;&#x6247;&#x533A;&#xFF09;&#x4FDD;&#x5B58;&#x7684;&#x662F;GPT&#x5206;&#x533A;&#x5934;&#xFF0C;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x6709;&#x5173;GPT&#x5206;&#x533A;&#x8BE6;&#x7EC6;&#x7684;&#x7279;&#x5F81;&#x6570;&#x636E;&#x3002;&#x5BF9;&#x4E8E;&#x6247;&#x533A;&#x5927;&#x5C0F;&#x4E3A;512&#x5B57;&#x8282;&#x7684;&#x786C;&#x76D8;&#xFF0C;&#x4ECE;LBA2-LBA33&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x5206;&#x533A;&#x8868;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x9879;&#x5360;&#x7528;128&#x4E2A;&#x5B57;&#x8282;&#x3002;&#x800C;&#x5BF9;&#x4E8E;4096&#x5B57;&#x8282;&#x5927;&#x5C0F;&#x7684;&#x6247;&#x533A;&#x53EA;&#x9700;&#x8981;4&#x4E2A;&#x6247;&#x533A;&#x4FDD;&#x7559;&#x5206;&#x533A;&#x8868;&#x5C31;&#x53EF;&#x4EE5;&#x3002;&#x78C1;&#x76D8;&#x7684;&#x6700;&#x540E;&#x4FDD;&#x5B58;&#x4E86;&#x5206;&#x533A;&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x5907;&#x4EFD;&#xFF0C;&#x8FD9;&#x4E2A;&#x5907;&#x4EFD;&#x5305;&#x542B;&#x4E86;&#x5168;&#x90E8;&#x7684;&#x5206;&#x533A;&#x8868;&#x548C;&#x5206;&#x533A;&#x5934;&#x4FE1;&#x606F;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5BF9;&#x4E8E;LBA1&#x7684;GPT&#x5934;&#x7684;&#x8BE6;&#x7EC6;&#x6570;&#x636E;&#x5982;&#x4E0B;</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x504F;&#x79FB;&#x91CF;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x957F;&#x5EA6;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x63CF;&#x8FF0;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 (0x00)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7B7E;&#x540D; (&quot;EFI PART&quot;, 45h 46h 49h 20h 50h 41h 52h 54h / 0x5452415020494645ULL[a] &#x5C0F;&#x7AEF;&#x5E8F;)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 (0x08)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7248;&#x672C; 1.0 (00h 00h 01h 00h) for UEFI 2.8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12 (0x0C)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4EE5;&#x5C0F;&#x7AEF;&#x5E8F;&#x7684;&#x5934;&#x5927;&#x5C0F; (&#x4E8C;&#x8FDB;&#x5236;5Ch 00h 00h 00h&#x6216;&#x8005;92&#x5B57;&#x8282;)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 (0x10)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4EE5;&#x5C0F;&#x7AEF;&#x5E8F;&#x5934;&#x7684;CRC32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 (0x14)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4FDD;&#x7559;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24 (0x18)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5934;&#x7684;&#x4F4D;&#x7F6E;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 (0x20)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5934;&#x7684;&#x5907;&#x4EFD;&#x4F4D;&#x7F6E;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 (0x28)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7B2C;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;LBA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">48 (0x30)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;LBA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">56 (0x38)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6DF7;&#x5408;&#x5B57;&#x8282;&#x5E8F;&#x7684;GUID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">72 (0x48)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5206;&#x533A;&#x8868;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80 (0x50)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x5206;&#x533A;&#x9879;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">84 (0x54)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x9879;&#x7684;&#x5927;&#x5C0F;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">88 (0x58)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5206;&#x533A;&#x9879;&#x7684;CRC32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">92 (0x5C)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4FDD;&#x7559;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x4E3A;0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x5206;&#x533A;&#x8868;&#x9879;&#x4E2D;&#x7684;&#x8BE6;&#x7EC6;&#x6570;&#x636E;</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x504F;&#x79FB;&#x91CF;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x957F;&#x5EA6;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x63CF;&#x8FF0;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 (0x00)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5177;&#x6709;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x7684;&#x6DF7;&#x5408;&#x5B57;&#x8282;&#x5E8F;GUID&#xFF0C;&#x8868;&#x660E;&#x5206;&#x533A;&#x7C7B;&#x578B;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 (0x10)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6DF7;&#x5408;&#x5B57;&#x8282;&#x5E8F;&#x7684;GUID&#xFF0C;&#x6807;&#x5FD7;&#x8FD9;&#x4E2A;&#x5206;&#x533A;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 (0x20)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6B64;&#x5206;&#x533A;&#x7B2C;&#x4E00;&#x4E2A;LBA&#xFF0C;&#x5C0F;&#x6BB5;&#x5E8F;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 (0x28)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6B64;&#x5206;&#x533A;&#x6700;&#x540E;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">48 (0x30)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5C5E;&#x6027;&#x5B57;&#x6BB5;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">56 (0x38)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">72 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5206;&#x533A;&#x540D;&#x79F0;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x8868;&#x4E3B;&#x8981;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x9879;&#x548C;&#x7B2C;&#x4E8C;&#x9879;&#xFF0C;&#x7B2C;&#x4E00;&#x9879;&#x7531;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x8868;&#x660E;&#x4E0D;&#x540C;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x6BD4;&#x5982; <em>C12A7328-F81F-11D2-BA4B-00A0C93EC93B</em> &#x5C31;&#x8868;&#x793A;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#xFF0C;&#x662F;EFI&#x4E13;&#x7528;&#x7684;&#x5206;&#x533A;&#x3002;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x53EF;&#x4EE5;&#x968F;&#x673A;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x6807;&#x5FD7;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x3002;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__gpt">&#x4E00;&#x4E2A;GPT&#x7684;&#x4F8B;&#x5B50;</h3>
+<div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x7CFB;&#x7EDF;&#x662F;&#x4F7F;&#x7528;efi&#x65B9;&#x5F0F;&#x5B89;&#x88C5;&#x7684;ubuntu&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x4F7F;&#x7528;fdisk&#x5DE5;&#x5177;&#x6253;&#x5370;&#x78C1;&#x76D8;&#x7684;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">$ sudo fdisk -l /dev/sda
+Disk /dev/sda: 50 GiB, 53687091200 bytes, 104857600 sectors
+Disk model: VBOX HARDDISK
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 2A7B0333-1C74-443D-8BA2-162A6F4733F7
+
+Device       Start       End   Sectors  Size Type
+/dev/sda1     2048   1050623   1048576  512M EFI System
+/dev/sda2  1050624 104855551 103804928 49.5G Linux filesystem</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x4ECE;&#x8FD9;&#x4E2A;&#x4FE1;&#x606F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x865A;&#x62DF;&#x673A;&#x4F7F;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x5206;&#x533A;&#xFF0C;sda1&#x662F;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x7684;&#x7C7B;&#x578B;&#xFF0C;sda2&#x662F;Linux&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5206;&#x533A;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;gpt&#x5206;&#x6790;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x771F;&#x5B9E;&#x6570;&#x636E;&#x662F;&#x5426;&#x5982;fdisk&#x4E2D;&#x663E;&#x793A;&#x7684;&#x4E00;&#x81F4;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x548C;&#x5728;MBR&#x4E2D;&#x4E00;&#x6837;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x8FD8;&#x662F;gpt&#x5DE5;&#x5177;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5148;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;lba&#xFF0C;&#x5373;lba0</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ pip install gpt <span class="hljs-comment"># pip &#x6211;&#x4E00;&#x822C;&#x901A;&#x8FC7;virtualenv&#x4F7F;&#x7528;</span>
+$ sudo dd <span class="hljs-keyword">if</span>=/dev/sba bs=512 count=1 skip=0 &gt; lba.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x5C06;&#x4F1A;&#x5C06;sda&#x8BBE;&#x5907;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6247;&#x533A;&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#x5E76;&#x4E14;&#x4FDD;&#x5B58;&#x5230;lba.0&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x4F7F;&#x7528;gpt&#x5DE5;&#x5177;&#x8FDB;&#x884C;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ cat lba.0 | <span class="hljs-built_in">print</span>_mbr
+&lt;&lt;&lt; MBR &gt;&gt;&gt;
+BootCode: 0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+UniqueMBRDiskSignature:                                         0x00000000
+Unknown:                                                            0x0000
+PartitionRecord: 0x00000200eeffffff01000000ffff3f06000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Signature:                                                          0xAA55
+&lt;&lt;&lt; MBR Partition <span class="hljs-comment">#0 &gt;&gt;&gt;</span>
+<span class="hljs-comment">#0.BootIndicator:                                                      0x0</span>
+<span class="hljs-comment">#0.Is Bootable? (syn):                                                  No</span>
+<span class="hljs-comment">#0.StartingCHS:                                                    0, 0, 2</span>
+<span class="hljs-comment">#0.OSType:                                                            0xEE</span>
+<span class="hljs-comment">#0.OSType (syn):                                            GPT Protective</span>
+<span class="hljs-comment">#0.EndingCHS:                                                255, 255, 255</span>
+<span class="hljs-comment">#0.StartingLBA:                                                          1</span>
+<span class="hljs-comment">#0.SizeInLBA:                                                    104857599</span>
+&lt;&lt;&lt; MBR Partition <span class="hljs-comment">#1 &gt;&gt;&gt;</span>
+<span class="hljs-comment">#1.BootIndicator:                                                      0x0</span>
+<span class="hljs-comment">#1.Is Bootable? (syn):                                                  No</span>
+<span class="hljs-comment">#1.StartingCHS:                                                    0, 0, 0</span>
+<span class="hljs-comment">#1.OSType:                                                             0x0</span>
+<span class="hljs-comment">#1.OSType (syn):                                                     Empty</span>
+<span class="hljs-comment">#1.EndingCHS:                                                      0, 0, 0</span>
+<span class="hljs-comment">#1.StartingLBA:                                                          0</span>
+<span class="hljs-comment">#1.SizeInLBA:                                                            0</span>
+&lt;&lt;&lt; MBR Partition <span class="hljs-comment">#2 &gt;&gt;&gt;</span>
+<span class="hljs-comment">#2.BootIndicator:                                                      0x0</span>
+<span class="hljs-comment">#2.Is Bootable? (syn):                                                  No</span>
+<span class="hljs-comment">#2.StartingCHS:                                                    0, 0, 0</span>
+<span class="hljs-comment">#2.OSType:                                                             0x0</span>
+<span class="hljs-comment">#2.OSType (syn):                                                     Empty</span>
+<span class="hljs-comment">#2.EndingCHS:                                                      0, 0, 0</span>
+<span class="hljs-comment">#2.StartingLBA:                                                          0</span>
+<span class="hljs-comment">#2.SizeInLBA:                                                            0</span>
+&lt;&lt;&lt; MBR Partition <span class="hljs-comment">#3 &gt;&gt;&gt;</span>
+<span class="hljs-comment">#3.BootIndicator:                                                      0x0</span>
+<span class="hljs-comment">#3.Is Bootable? (syn):                                                  No</span>
+<span class="hljs-comment">#3.StartingCHS:                                                    0, 0, 0</span>
+<span class="hljs-comment">#3.OSType:                                                             0x0</span>
+<span class="hljs-comment">#3.OSType (syn):                                                     Empty</span>
+<span class="hljs-comment">#3.EndingCHS:                                                      0, 0, 0</span>
+<span class="hljs-comment">#3.StartingLBA:                                                          0</span>
+<span class="hljs-comment">#3.SizeInLBA:                                                            0</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>0xAA55</em> &#x7684;&#x7B7E;&#x540D;&#x663E;&#x793A;&#x8FD9;&#x4E2A;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;MBR&#xFF0C;&#x5B83;&#x7684;446&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x5F15;&#x5BFC;&#x4EE3;&#x7801;&#x90FD;&#x662F;0&#xFF0C;&#x5E76;&#x4E14;&#x7C7B;&#x578B;&#x663E;&#x793A;&#x662F; <em>0xEE</em> &#x8BF4;&#x660E;&#x5B83;&#x662F;GPT&#x7684;&#x4FDD;&#x62A4;&#x6027;MBR&#xFF0C;GPT&#x7684;&#x5B9E;&#x9645;&#x5206;&#x533A;&#x4EE5;LBA1&#x5F00;&#x59CB;&#xFF0C;&#x4E0B;&#x9762;&#x6253;&#x5370;lba1&#x7684;&#x6570;&#x636E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ sudo dd <span class="hljs-keyword">if</span>=/dev/sdb bs=512 count=1 skip=1 &gt; lba.1
+$ cat lba.1 | <span class="hljs-built_in">print</span>_gpt_header
+Warning: Using only the first 92 bytes of input
+&lt;&lt;&lt; GPT Header &gt;&gt;&gt;
+Signature:                                              0x4546492050415254
+Revision:                                                       0x00000100
+HeaderSize:                                                             92
+HeaderCRC32:                                                    0xad41c4b0
+HeaderCRC32 (calculated):                                       0xad41c4b0
+Reserved:                                                       0x00000000
+MyLBA:                                                                   1
+AlternateLBA:                                                    104857599
+FirstUsableLBA:                                                         34
+LastUsableLBA:                                                   104857566
+PartitionEntryLBA:                                                       2
+NumberOfPartitionEntries:                                              128
+SizeOfPartitionEntry:                                                  128
+PartitionEntryArrayCRC32:                                       0x1bc39ab0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>LBA1&#x662F;GPT&#x7684;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5934;&#x663E;&#x793A;&#x4E86;&#x4E00;&#x4E9B;&#x8BE6;&#x7EC6;&#x7684;&#x4FE1;&#x606F;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x9996;&#x5148;&#x5934;&#x4F4D;&#x4E8E;LBA1</p>
+</li>
+<li>
+<p>&#x5907;&#x4EFD;&#x4FE1;&#x606F;&#x4F4D;&#x4E8E;104857599&#xFF08;AlternateLBA&#xFF09;</p>
+</li>
+<li>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;&#x6247;&#x533A;&#x4F4D;&#x4E8E;LBA-34&#xFF08;FirstUsableLBA&#xFF09;&#xFF0C;&#x548C;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x8BF4;&#x7684;&#x4E00;&#x81F4;&#xFF0C;512&#x5B57;&#x8282;&#x6247;&#x533A;&#x9700;&#x8981;33&#x4E2A;&#x6247;&#x533A;&#x5305;&#x542B;&#x5206;&#x533A;&#x4FE1;&#x606F;&#xFF0C;&#x5B9E;&#x9645;&#x6570;&#x636E;&#x4ECE;34&#x5F00;&#x59CB;</p>
+</li>
+<li>
+<p>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;&#x6247;&#x533A;&#x4F4D;&#x4E8E;LBA-104857566&#xFF08;LastUsableLBA&#xFF09;</p>
+</li>
+<li>
+<p>&#x5206;&#x533A;&#x8868;&#x4FE1;&#x606F;&#x4ECE;LBA-2&#x5F00;&#x59CB;&#xFF08;PartitionEntryLBA&#xFF09;</p>
+</li>
+<li>
+<p>&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x8868;&#x6709;128&#x9879;&#xFF08;NumberOfPartitionEntries&#xFF09;&#xFF0C;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x6709;128&#x4E2A;&#x5B57;&#x8282;&#xFF08;SizeOfPartitionEntry&#xFF09;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6309;&#x7167;AlternateLBA&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5907;&#x4EFD;&#x6570;&#x636E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ cat lba.104857599 | <span class="hljs-built_in">print</span>_gpt_header
+Warning: Using only the first 92 bytes of input
+&lt;&lt;&lt; GPT Header &gt;&gt;&gt;
+Signature:                                              0x4546492050415254
+Revision:                                                       0x00000100
+HeaderSize:                                                             92
+HeaderCRC32:                                                    0x4d7ce45a
+HeaderCRC32 (calculated):                                       0x4d7ce45a
+Reserved:                                                       0x00000000
+MyLBA:                                                           104857599
+AlternateLBA:                                                            1
+FirstUsableLBA:                                                         34
+LastUsableLBA:                                                   104857566
+PartitionEntryLBA:                                               104857567
+NumberOfPartitionEntries:                                              128
+SizeOfPartitionEntry:                                                  128
+PartitionEntryArrayCRC32:                                       0x1bc39ab0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8FD9;&#x91CC;&#x7684;AlternateLBA&#x548C;MyLBA&#x548C;&#x4E3B;gpt&#x5934;&#x6B63;&#x597D;&#x76F8;&#x53CD;&#x3002;GPT&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x6821;&#x9A8C;&#x6570;&#x636E;HeaderCRC32&#x548C;PartitionEntryArrayCRC32&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x5206;&#x533A;&#x8868;&#x6570;&#x636E;&#x662F;&#x5426;&#x6709;&#x9519;&#x8BEF;&#x3002;&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#x5728;MBR&#x4E2D;&#x662F;&#x6CA1;&#x6709;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x56FE;&#x6765;&#x81EA;UEFI&#x89C4;&#x8303;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/gpt-example-from-spec.png" alt="GPT&#x5206;&#x533A;&#x8868;&#x4F8B;&#x5B50;">
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x56FE;&#x975E;&#x5E38;&#x8BE6;&#x7EC6;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x7684;&#x7A7A;&#x95F4;&#x5E03;&#x5C40;&#xFF0C;&#x5F00;&#x59CB;&#x662F;&#x4E00;&#x4E2A;&#x4FDD;&#x62A4;MBR&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x7740;&#x7684;&#x662F;&#x4E3B;&#x5206;&#x533A;&#x8868;&#x7136;&#x540E;&#x5C31;&#x662F;&#x5404;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x6700;&#x540E;&#x4FDD;&#x5B58;&#x4E86;&#x5206;&#x533A;&#x8868;&#x7684;&#x4E00;&#x4E2A;&#x5907;&#x4EFD;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x5206;&#x533A;&#x8868;&#x4E2D;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5462;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x4F7F;&#x7528;GPT&#xFF0C;GPT&#x7684;&#x5206;&#x533A;&#x8868;&#x5728;512&#x5B57;&#x8282;&#x7684;&#x6247;&#x533A;&#x4FDD;&#x5B58;&#x5728;LBA2&#x5230;LBA33&#x4E2D;&#x3002;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5206;&#x533A;&#x8868;&#x6570;&#x636E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ sudo dd <span class="hljs-keyword">if</span>=/dev/sda bs=512 count=32 skip=2 &gt; lba.2-34
+$ cat lba.2-34 | <span class="hljs-built_in">print</span>_gpt_partition_entry_array
+&lt;&lt;&lt; GPT Partition Entry <span class="hljs-comment">#0 &gt;&gt;&gt;</span>
+<span class="hljs-comment">#0.PartitionTypeGUID:                   0x28732ac11ff8d211ba4b00a0c93ec93b</span>
+<span class="hljs-comment">#0.PartitionTypeGUID (syn):           c12a7328-f81f-11d2-ba4b-00a0c93ec93b</span>
+<span class="hljs-comment">#0.PartitionType (syn):                               EFI System Partition</span>
+<span class="hljs-comment">#0.UniquePartitionGUID:                 0xa724ee6de04f6f46b6f8546e2048aceb</span>
+<span class="hljs-comment">#0.UniquePartitionGUID (syn):         6dee24a7-4fe0-466f-b6f8-546e2048aceb</span>
+<span class="hljs-comment">#0.StartingLBA:                                                       2048</span>
+<span class="hljs-comment">#0.EndingLBA:                                                      1050623</span>
+<span class="hljs-comment">#0.Attributes:                                                         0x0</span>
+<span class="hljs-comment">#0.Attributes (syn):                                                    []</span>
+<span class="hljs-comment">#0.PartitionName: 0x4500460049002000530079007300740065006d00200050006100720074006900740069006f006e000000000000000000000000000000000000000000000000000000000000000000</span>
+<span class="hljs-comment">#0.PartitionName (syn):                               EFI System Partition</span>
+&lt;&lt;&lt; GPT Partition Entry <span class="hljs-comment">#1 &gt;&gt;&gt;</span>
+<span class="hljs-comment">#1.PartitionTypeGUID:                   0xaf3dc60f838472478e793d69d8477de4</span>
+<span class="hljs-comment">#1.PartitionTypeGUID (syn):           0fc63daf-8483-4772-8e79-3d69d8477de4</span>
+<span class="hljs-comment">#1.PartitionType (syn):                              Linux filesystem data</span>
+<span class="hljs-comment">#1.UniquePartitionGUID:                 0xc070b4b9e4c6b94ba06df0ed5791f322</span>
+<span class="hljs-comment">#1.UniquePartitionGUID (syn):         b9b470c0-c6e4-4bb9-a06d-f0ed5791f322</span>
+<span class="hljs-comment">#1.StartingLBA:                                                    1050624</span>
+<span class="hljs-comment">#1.EndingLBA:                                                    104855551</span>
+<span class="hljs-comment">#1.Attributes:                                                         0x0</span>
+<span class="hljs-comment">#1.Attributes (syn):                                                    []</span>
+<span class="hljs-comment">#1.PartitionName: 0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span>
+<span class="hljs-comment">#1.PartitionName (syn):</span>
+&lt;&lt;&lt; Calculated &gt;&gt;&gt;
+PartitionEntryArrayCRC32 (calculated):                          0x1bc39ab0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x663E;&#x793A;&#x4E86;2&#x4E2A;&#x6709;&#x6548;&#x7684;&#x5206;&#x533A;&#x6570;&#x636E;&#xFF0C;&#x5176;&#x4E2D;&#x7B2C;&#x4E00;&#x5206;&#x533A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x5F00;&#x59CB;&#x4E8E;LBA2048&#xFF0C;&#x7ED3;&#x675F;&#x4E8E;1050623&#x6247;&#x533A;</p>
+</li>
+<li>
+<p>&#x7531;&#x4E8E;PartitionTypeGUID&#x7684;&#x503C;&#x4E3A; <em>c12a7328-f81f-11d2-ba4b-00a0c93ec93b</em> &#x5B83;&#x662F;&#x4E00;&#x4E2A;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x5206;&#x533A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x5F00;&#x59CB;&#x4E8E;LBA1050624&#xFF0C;&#x7ED3;&#x675F;&#x4E8E;104855551</p>
+</li>
+<li>
+<p>&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x6570;&#x636E;&#x5206;&#x533A;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x5206;&#x533A;&#x663E;&#x793A;&#x7684;&#x548C;fdisk&#x663E;&#x793A;&#x7684;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x6570;&#x636E;&#x5206;&#x533A;&#x5F00;&#x59CB;&#x4E8E;2048&#xFF0C;&#x800C;&#x4E0D;&#x662F;34&#xFF0C;&#x8FD9;&#x8BF4;&#x660E;&#x4E2D;&#x95F4;&#x8FD8;&#x6709;&#x4E00;&#x5757;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x95F4;&#x9699;&#x3002;&#x5728;GPT&#x89C4;&#x8303;&#x4E2D;&#x6709;&#x4E00;&#x6BB5;&#x63CF;&#x8FF0;&#x8BF4;&#x660E;&#x4E86;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#xFF1A;&quot;avoid the need to determine the physical block size and the optimal transfer length granularity, software may align GPT partitions at significantly larger boundaries. For example, assuming logical block 0 is aligned, it may use LBAs that are multiples of 2,048 to align to 1,048,576 byte (1 MiB) boundaries, which supports most common physical block sizes and RAID stripe sizes.&quot;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_uefi">UEFI</h3>
+<div class="paragraph">
+<p>UEFI&#x901A;&#x5E38;&#x6709;&#x4E00;&#x4E2A;&#x56FA;&#x4EF6;&#x7B56;&#x7565;&#x5F15;&#x64CE;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;efibootmgr&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x800C;&#x4E14;UEFI&#x8FD8;&#x652F;&#x6301;&#x5B89;&#x5168;&#x542F;&#x52A8;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x4F1A;&#x4ECB;&#x7ECD;&#x5173;&#x4E8E;&#x5B89;&#x5168;&#x7684;&#x3002;&#x4F7F;&#x7528;efibootmgr&#x6765;&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x9879;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;UEFI&#x7684;GUI&#x4E2D;&#x914D;&#x7F6E;&#xFF0C;&#x6BCF;&#x4E2A;&#x5382;&#x5546;&#x8FDB;&#x5165;UEFI&#x914D;&#x7F6E;&#x754C;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#x4E5F;&#x4E0D;&#x4E00;&#x6837;&#x3002;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_efibootmgr">efibootmgr</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <em>efibootmgr -v</em> &#x67E5;&#x770B;&#x5F15;&#x5BFC;&#x987A;&#x5E8F;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ sudo efibootmgr -v
+BootCurrent: 0005
+Timeout: 0 seconds
+BootOrder: 0005,0000,0001,0002,0003,0004
+Boot0000* UiApp FvVol(7cb8bdc9<span class="hljs-_">-f</span>8eb-4f34-aaea-3ee4af6516a1)/FvFile(462caa21-7614-4503-836e-8ab6f4662331)
+Boot0001* UEFI VBOX CD-ROM VB0-01f003f6         PciRoot(0x0)/Pci(0x1,0x1)/Ata(0,0,0)N.....YM....R,Y.
+Boot0002* UEFI VBOX CD-ROM VB2-01700376         PciRoot(0x0)/Pci(0x1,0x1)/Ata(1,0,0)N.....YM....R,Y.
+Boot0003* UEFI VBOX HARDDISK VBf5cb0757-31383519        PciRoot(0x0)/Pci(0xd,0x0)/Sata(0,65535,0)N.....YM....R,Y.
+Boot0004* EFI Internal Shell    FvVol(7cb8bdc9<span class="hljs-_">-f</span>8eb-4f34-aaea-3ee4af6516a1)/FvFile(7c04a583-9e3e-4f1c-ad65<span class="hljs-_">-e</span>05268d0b4d1)
+Boot0005* ubuntu        HD(1,GPT,6dee24a7-4fe0-466f-b6f8-546e2048aceb,0x800,0x100000)/File(\EFI\ubuntu\shimx64.efi)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x663E;&#x793A;&#x9ED8;&#x8BA4;&#x4ECE;&#x7F16;&#x53F7;0005&#x8FDB;&#x884C;&#x5F15;&#x5BFC;&#xFF08;BootCurrent: 0005&#xFF09;&#xFF0C;&#x800C;Boot0005&#x5BF9;&#x5E94;&#x7684;&#x662F; <em>Boot0005* ubuntu        HD(1,GPT,6dee24a7-4fe0-466f-b6f8-546e2048aceb,0x800,0x100000)/File(\EFI\ubuntu\shimx64.efi)</em></p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;EFI&#x5BF9;Linux&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5F15;&#x5BFC;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;UEFI&#x5728;linux&#x5F15;&#x5BFC;&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">&#x603B;&#x7ED3;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x6211;&#x4EEC;&#x4E86;&#x89E3;EFI&#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x56FA;&#x4EF6;&#x7B56;&#x7565;&#x5F15;&#x64CE;&#x6765;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x6765;&#x521D;&#x59CB;&#x5316;&#x8BA1;&#x7B97;&#x673A;&#xFF0C;&#x5F15;&#x5BFC;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#xFF0C;&#x5B83;&#x901A;&#x5E38;&#x548C;GPT&#x5206;&#x533A;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x867D;&#x7136;BIOS&#x4E5F;&#x652F;&#x6301;GPT&#x4E2D;&#x542F;&#x52A8;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x4E0D;&#x5173;&#x5FC3;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x3002;&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x4E5F;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;GPT&#x7684;&#x5206;&#x533A;&#x683C;&#x5F0F;&#x3002;</p>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="disk-bios.html" class="navigation navigation-prev " aria-label="Previous page: BIOS/MBR">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="uefi-example.html" class="navigation navigation-next " aria-label="Next page: 一个UEFI例子">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"UEFI/GPT","publish":true,"level":"1.3.2.4","depth":3,"next":{"title":"一个UEFI例子","level":"1.3.2.5","depth":3,"path":"hardware/disk/uefi-example.adoc","ref":"hardware/disk/uefi-example.adoc","articles":[]},"previous":{"title":"BIOS/MBR","level":"1.3.2.3","depth":3,"path":"hardware/disk/disk-bios.adoc","ref":"hardware/disk/disk-bios.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hardware/disk/uefi.adoc","mtime":"2021-05-07T07:52:34.333Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

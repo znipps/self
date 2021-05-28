@@ -1,0 +1,1 @@
+IMPORTANT: 版权归原作者更多，有关更多信息参考 link:../book/Understanding_ELF.pdf[32位ELF规范]，这里我借鉴了他写的32版本的内容，增加了64位的ELF。

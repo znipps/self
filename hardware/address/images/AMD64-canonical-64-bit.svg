@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="200"
+   height="350"
+   id="svg2">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4019">
+      <stop
+         id="stop4021"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop4023"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3283">
+      <stop
+         id="stop3285"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3287"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <filter
+       id="filter3403"
+       x="-0.10173317"
+       width="1.2034663"
+       y="-0.22894321"
+       height="1.4578865">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="8.4769059"
+         id="feGaussianBlur3405" />
+    </filter>
+    <linearGradient
+       x1="0.52030516"
+       y1="46.449162"
+       x2="124.73862"
+       y2="174.73854"
+       id="linearGradient3409"
+       xlink:href="#linearGradient3283"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(3.6055104e-8,98.994948)" />
+    <filter
+       id="filter3421">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.37399902"
+         id="feGaussianBlur3423" />
+    </filter>
+    <filter
+       id="filter3655">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.75071429"
+         id="feGaussianBlur3657" />
+    </filter>
+    <linearGradient
+       x1="16.428572"
+       y1="28.571428"
+       x2="139.28571"
+       y2="132.85715"
+       id="linearGradient4025"
+       xlink:href="#linearGradient4019"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       id="filter4131"
+       x="-0.061074167"
+       width="1.1221483"
+       y="-0.13184264"
+       height="1.2636853">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.9440995"
+         id="feGaussianBlur4133" />
+    </filter>
+    <linearGradient
+       x1="16.428572"
+       y1="28.571428"
+       x2="139.28571"
+       y2="132.85715"
+       id="linearGradient4137"
+       xlink:href="#linearGradient4019"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,214.95671)" />
+    <linearGradient
+       x1="16.428572"
+       y1="28.571428"
+       x2="139.28571"
+       y2="132.85715"
+       id="linearGradient4698"
+       xlink:href="#linearGradient4019"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,214.95671)" />
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       width="198.62437"
+       height="95.76722"
+       x="0.68781626"
+       y="233.22595"
+       transform="matrix(1,0,0,1.6396371,0,-210.43621)"
+       id="rect3659"
+       style="opacity:1;fill:#00d100;fill-opacity:1;stroke:none;stroke-width:2.9470613;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter3655)" />
+    <rect
+       width="198.62437"
+       height="95.76722"
+       x="0.68781638"
+       y="12.83068"
+       transform="matrix(1.0071923,0,0,1.6199595,-4.9470003e-3,-3.9545023)"
+       id="rect3163"
+       style="opacity:1;fill:#ffd100;fill-opacity:1;stroke:none;stroke-width:2.9470613;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter3655)" />
+    <rect
+       width="194.28572"
+       height="90"
+       x="2.8571429"
+       y="19.285713"
+       transform="matrix(1,0,0,1.6964887,0,-13.432282)"
+       id="rect3937"
+       style="opacity:0.76548671;fill:url(#linearGradient4025);fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4131)" />
+    <rect
+       width="194.28572"
+       height="90"
+       x="2.8571429"
+       y="234.24243"
+       transform="matrix(1,0,0,1.590909,0,-193.65839)"
+       id="rect4135"
+       style="opacity:0.76548671;fill:url(#linearGradient4698);fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4131)" />
+    <text
+       x="99.015251"
+       y="236.44162"
+       id="text3425"
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3421);font-family:Bitstream Vera Sans"><tspan
+         x="99.015251"
+         y="261.44162"
+         id="tspan3429"
+         style="font-size:24px">Lower half</tspan></text>
+    <text
+       x="10.121831"
+       y="345.45099"
+       id="text3929"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#505050;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Courier New;-inkscape-font-specification:Courier New Bold"><tspan
+         x="10.121831"
+         y="345.45099"
+         id="tspan3931"
+         style="fill:#505050;fill-opacity:1">00000000 00000000</tspan></text>
+    <text
+       x="10.121831"
+       y="14.02243"
+       id="text3933"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#505050;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Courier New;-inkscape-font-specification:Courier New Bold"><tspan
+         x="10.121831"
+         y="14.02243"
+         id="tspan3935">FFFFFFFF FFFFFFFF</tspan></text>
+    <text
+       x="99.015251"
+       y="75.07798"
+       id="text4700"
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3421);font-family:Bitstream Vera Sans"><tspan
+         x="99.015251"
+         y="100.07798"
+         id="tspan4702"
+         style="font-size:24px">Higher half</tspan></text>
+  </g>
+</svg>

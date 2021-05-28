@@ -1,0 +1,1560 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>如何调试 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="grub-mod.html" />
+    
+    
+    <link rel="prev" href="secure-uefi-bios.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../elf/">
+            
+                <a href="../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elf/elf-1.html">
+            
+                <a href="../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../elf/elf-2.html">
+            
+                <a href="../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../elf/elf-3.html">
+            
+                <a href="../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hardware/">
+            
+                <a href="../hardware/">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hardware/address/">
+            
+                <a href="../hardware/address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hardware/address/summary.html">
+            
+                <a href="../hardware/address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hardware/address/real_address.html">
+            
+                <a href="../hardware/address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hardware/address/segmented_address.html">
+            
+                <a href="../hardware/address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../hardware/address/page_address.html">
+            
+                <a href="../hardware/address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../hardware/address/example.html">
+            
+                <a href="../hardware/address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hardware/disk/">
+            
+                <a href="../hardware/disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hardware/disk/summary.html">
+            
+                <a href="../hardware/disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hardware/disk/disk-chs-lba.html">
+            
+                <a href="../hardware/disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hardware/disk/disk-bios.html">
+            
+                <a href="../hardware/disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hardware/disk/uefi.html">
+            
+                <a href="../hardware/disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hardware/disk/uefi-example.html">
+            
+                <a href="../hardware/disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../hardware/disk/end.html">
+            
+                <a href="../hardware/disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hardware/inst/">
+            
+                <a href="../hardware/inst/">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hardware/inst/inst-1.html">
+            
+                <a href="../hardware/inst/inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hardware/inst/inst-2.html">
+            
+                <a href="../hardware/inst/inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hardware/inst/inst-3.html">
+            
+                <a href="../hardware/inst/inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hardware/inst/inst-4.html">
+            
+                <a href="../hardware/inst/inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hardware/inst/inst-5.html">
+            
+                <a href="../hardware/inst/inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../hardware/inst/inst-6.html">
+            
+                <a href="../hardware/inst/inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../hardware/inst/inst-7.html">
+            
+                <a href="../hardware/inst/inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../hardware/inst/inst-8.html">
+            
+                <a href="../hardware/inst/inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../hardware/inst/inst-9.html">
+            
+                <a href="../hardware/inst/inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../hardware/inst/inst-10.html">
+            
+                <a href="../hardware/inst/inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="../hardware/inst/inst-addon-1.html">
+            
+                <a href="../hardware/inst/inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="../hardware/inst/inst-addon-2.html">
+            
+                <a href="../hardware/inst/inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="../hardware/inst/inst-addon-3.html">
+            
+                <a href="../hardware/inst/inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="../hardware/inst/inst-addon-4.html">
+            
+                <a href="../hardware/inst/inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="summary.html">
+            
+                <a href="summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bios-make.html">
+            
+                <a href="bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="uefi-make.html">
+            
+                <a href="uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="secure-uefi-bios.html">
+            
+                <a href="secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="debug.html">
+            
+                <a href="debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="grub-mod.html">
+            
+                <a href="grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="bios-detail.html">
+            
+                <a href="bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="uefi-detail.html">
+            
+                <a href="uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../other/">
+            
+                <a href="../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >如何调试</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4F7F;&#x7528;gdb&#x548C;qemu&#x8C03;&#x8BD5;grub&#x7684;&#x8C03;&#x8BD5;&#x6280;&#x672F;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5728;BIOS&#x56FA;&#x4EF6;&#x4E0B;&#x7684;&#x8C03;&#x8BD5;&#xFF0C;&#x5B83;&#x5305;&#x62EC;&#x5728;&#x6267;&#x884C;grub&#x5185;&#x6838;&#x4E4B;&#x524D;&#x7684;&#x8C03;&#x8BD5;&#x548C;rub&#x5185;&#x6838;&#x7684;&#x8C03;&#x8BD5;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;UEFI&#x7248;&#x672C;&#x7684;&#x8C03;&#x8BD5;</p>
+</div>
+<div class="sect1">
+<h2 id="_bios">BIOS&#x7248;&#x672C;&#x7684;&#x8C03;&#x8BD5;</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bios_grub">BIOS&#x8C03;&#x8BD5;GRUB&#x7684;&#x521D;&#x59CB;&#x5316;</h3>
+<div class="paragraph">
+<p>GRUB&#x7684;&#x5F15;&#x5BFC;&#x5305;&#x62EC;&#x51E0;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#x7528;&#x4E8E;&#x52A0;&#x8F7D;&#x7B2C;&#x4E8C;&#x4E2A;&#x9636;&#x6BB5;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x4EE3;&#x7801;&#x7528;&#x4E8E;&#x52A0;&#x8F7D;&#x7B2C;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#x5207;&#x6362;&#x5B9E;&#x6A21;&#x5F0F;&#x5230;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;grub&#x5185;&#x6838;&#x89E3;&#x538B;&#x3002;&#x6240;&#x4EE5;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;gdb&#x8BBE;&#x7F6E;&#x4E3A;&#x5B9E;&#x6A21;&#x5F0F;</p>
+</div>
+<div class="paragraph">
+<p>&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x51C6;&#x5907;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ echo &apos;&lt;?xml version=&quot;1.0&quot;?&gt;&lt;!DOCTYPE target SYSTEM &quot;gdb-target.dtd&quot;&gt;&lt;target&gt;&lt;architecture&gt;i8086&lt;/architecture&gt;&lt;xi:include href=&quot;i386-32bit.xml&quot;/&gt;&lt;/target&gt;&apos; &gt; target.xml
+$ wget https://raw.githubusercontent.com/qemu/qemu/master/gdb-xml/i386-32bit.xml
+$ wget https://raw.githubusercontent.com/mhugo/gdb_init_real_mode/master/gdbinit_real_mode.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5728; <em>gdbinit_real_mode.txt</em> &#x6587;&#x4EF6; Real mode &#x90E8;&#x5206;&#x4FEE;&#x6539;&#x4E3A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Real mode
+set architecture i8086
+set tdesc filename target.xml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x9700;&#x8981;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;qemu-system-i386&#xFF0C;&#x5728;qemu-system-x86_64&#x4E2D;&#x8FD0;&#x884C;&#x56DE;&#x5BFC;&#x81F4;&#x4EE5;&#x4E0B;&#x9519;&#x8BEF;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Remote &apos;g&apos; packet reply is too long (expected 348 bytes, got 608 bytes): 0000000000000000000000000000000000000000000000006306000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f0ff0000000000000200000000f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007f0300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000801f0000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4F7F;&#x7528;qemu-system-i386&#x8FD0;&#x884C;&#xFF0C;&#x8FD9;&#x91CC;&#x751F;&#x6210;bios-disk.img&#x53C2;&#x8003;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - &#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;BIOS&#x7684;&#x7CFB;&#x7EDF;&#x300B;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>qemu-system-i386 -m 512 -drive file=bios-disk.img,format=raw  -s -S -nographic</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C06;&#x8C03;&#x8BD5;&#x73AF;&#x5883;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#x4E86;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ gdb --nx -ix gdbinit_real_mode.txt  -ex &apos;target remote localhost:1234&apos;
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type &quot;show copying&quot; and &quot;show warranty&quot; for details.
+This GDB was configured as &quot;x86_64-linux-gnu&quot;.
+Type &quot;show configuration&quot; for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+
+For help, type &quot;help&quot;.
+Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;.
+
+warning: A handler for the OS ABI &quot;GNU/Linux&quot; is not built into this configuration
+of GDB.  Attempting to continue with the default i8086 settings.
+
+The target architecture is assumed to be i8086
+
+warning: A handler for the OS ABI &quot;GNU/Linux&quot; is not built into this configuration
+of GDB.  Attempting to continue with the default i8086 settings.
+
+Remote debugging using localhost:1234
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the &quot;file&quot; command.
+---------------------------[ STACK ]---
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0000
+---------------------------[ DS:SI ]---
+00000000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+00000010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+00000020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+00000030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+---------------------------[ ES:DI ]---
+00000000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+00000010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+00000020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+00000030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+----------------------------[ CPU ]----
+AX: 0000 BX: 0000 CX: 0000 DX: 0663
+SI: 0000 DI: 0000 SP: 0000 BP: 0000
+CS: F000 DS: 0000 ES: 0000 SS: 0000
+
+IP: FFF0 EIP:0000FFF0
+CS:IP: F000:FFF0 (0xFFFF0)
+SS:SP: 0000:0000 (0x00000)
+SS:BP: 0000:0000 (0x00000)
+OF &lt;0&gt;  DF &lt;0&gt;  IF &lt;0&gt;  TF &lt;0&gt;  SF &lt;0&gt;  ZF &lt;0&gt;  AF &lt;0&gt;  PF &lt;0&gt;  CF <b class="conum">(0)</b>
+ID &lt;0&gt;  VIP &lt;0&gt; VIF &lt;0&gt; AC &lt;0&gt;  VM &lt;0&gt;  RF &lt;0&gt;  NT &lt;0&gt;  IOPL <b class="conum">(0)</b>
+---------------------------[ CODE ]----
+   0xffff0:     jmp    0xf000:0xe05b
+   0xffff5:     xor    BYTE PTR ds:0x322f,dh
+   0xffff9:     xor    bp,WORD PTR [bx]
+   0xffffb:     cmp    WORD PTR [bx+di],di
+   0xffffd:     add    ah,bh
+   0xfffff:     add    BYTE PTR [bx+si],al
+   0x100001:    add    BYTE PTR [bx+si],al
+   0x100003:    add    BYTE PTR [bx+si],al
+   0x100005:    add    BYTE PTR [bx+si],al
+   0x100007:    add    BYTE PTR [bx+si],al
+0x0000fff0 in ?? ()</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x4E86;grub&#x7684;&#x8C03;&#x8BD5;&#x73AF;&#x5883;&#xFF0C;&#x5B83;&#x9ED8;&#x8BA4;&#x6253;&#x5370;&#x4E86;&#x76F8;&#x5173;&#x5904;&#x7406;&#x5668;&#x7684;&#x5730;&#x5740;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>real-mode-gdb$ b *0x7c00
+Breakpoint 1 at 0x7c00
+real-mode-gdb$ c
+Continuing.
+---------------------------[ STACK ]---
+D002 F000 0000 0000 6F5E 0000 8016 0000
+8057 0000 0000 0000 0000 0000 8016 0000
+---------------------------[ DS:SI ]---
+00000000: 53 FF 00 F0 53 FF 00 F0 C3 E2 00 F0 53 FF 00 F0  S...S.......S...
+00000010: 53 FF 00 F0 54 FF 00 F0 53 FF 00 F0 53 FF 00 F0  S...T...S...S...
+00000020: A5 FE 00 F0 87 E9 00 F0 42 D4 00 F0 42 D4 00 F0  ........B...B...
+00000030: 42 D4 00 F0 42 D4 00 F0 57 EF 00 F0 42 D4 00 F0  B...B...W...B...
+---------------------------[ ES:DI ]---
+00000000: 53 FF 00 F0 53 FF 00 F0 C3 E2 00 F0 53 FF 00 F0  S...S.......S...
+00000010: 53 FF 00 F0 54 FF 00 F0 53 FF 00 F0 53 FF 00 F0  S...T...S...S...
+00000020: A5 FE 00 F0 87 E9 00 F0 42 D4 00 F0 42 D4 00 F0  ........B...B...
+00000030: 42 D4 00 F0 42 D4 00 F0 57 EF 00 F0 42 D4 00 F0  B...B...W...B...
+----------------------------[ CPU ]----
+AX: AA55 BX: 0000 CX: 0000 DX: 0080
+SI: 0000 DI: 0000 SP: 6F00 BP: 0000
+CS: 0000 DS: 0000 ES: 0000 SS: 0000
+
+IP: 7C00 EIP:00007C00
+CS:IP: 0000:7C00 (0x07C00)
+SS:SP: 0000:6F00 (0x06F00)
+SS:BP: 0000:0000 (0x00000)
+OF &lt;0&gt;  DF &lt;0&gt;  IF &lt;1&gt;  TF &lt;0&gt;  SF &lt;0&gt;  ZF &lt;0&gt;  AF &lt;0&gt;  PF &lt;0&gt;  CF <b class="conum">(0)</b>
+ID &lt;0&gt;  VIP &lt;0&gt; VIF &lt;0&gt; AC &lt;0&gt;  VM &lt;0&gt;  RF &lt;0&gt;  NT &lt;0&gt;  IOPL <b class="conum">(0)</b>
+---------------------------[ CODE ]----
+=&gt; 0x7c00:      jmp    0x7c65
+   0x7c02:      nop
+   0x7c03:      add    BYTE PTR [bx+si],al
+   0x7c05:      add    BYTE PTR [bx+si],al
+   0x7c07:      add    BYTE PTR [bx+si],al
+   0x7c09:      add    BYTE PTR [bx+si],al
+   0x7c0b:      add    BYTE PTR [bx+si],al
+   0x7c0d:      add    BYTE PTR [bx+si],al
+   0x7c0f:      add    BYTE PTR [bx+si],al
+   0x7c11:      add    BYTE PTR [bx+si],al
+
+Breakpoint 1, 0x00007c00 in ?? ()</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E86;&#x65AD;&#x70B9;&#x5728;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;0x7c00&#xFF0C;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x662F;grub&#x7B2C;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5F53;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x53CD;&#x7F16;&#x8BD1;&#x4E00;&#x4E0B;&#x770B;&#x770B;&#x548C;&#x771F;&#x5B9E;&#x7684;&#x6E90;&#x7801;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x4E00;&#x81F4;&#xFF0C;&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x770B;&#x5230;0x7c00&#x4F4D;&#x7F6E;&#x4E2D;&#x662F;&#x4E00;&#x4E2A;jmp&#x6267;&#x884C;&#xFF0C;&#x6211;&#x4EEC;&#x53CD;&#x7F16;&#x8BD1;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x4EE3;&#x7801;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>real-mode-gdb$ x/10i 0x7c65
+   0x7c65:      cli
+   0x7c66:      nop
+   0x7c67:      nop
+   0x7c68:      test   dl,0x80
+   0x7c6b:      je     0x7c72
+   0x7c6d:      test   dl,0x70
+   0x7c70:      je     0x7c74
+   0x7c72:      mov    dl,0x80
+   0x7c74:      jmp    0x0:0x7c79
+   0x7c79:      xor    ax,ax</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x548C; <em>grub-core/boot/i386/pc/boot.S</em> &#x6E90;&#x6587;&#x4EF6;&#x5BF9;&#x6BD4;&#x4E00;&#x4E0B;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x548C;&#x6807;&#x53F7;after_BPB&#x7684;&#x4EE3;&#x7801;&#x4E00;&#x81F4;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x53E6;&#x5916;&#x6211;&#x4EEC;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x52A0;&#x8F7D;&#x5305;&#x542B;debug&#x4FE1;&#x606F;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x65B9;&#x9762;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5728;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - &#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;BIOS&#x7684;&#x7CFB;&#x7EDF;&#x300B;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;grub&#x6587;&#x4EF6;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd $WORKSPACE/grub2/grub-core
+$ ls -rhlt *.img
+-rwxrwxr-x 1 lvjie lvjie  31K 5&#x6708;  13 14:52 kernel.img
+-rwxrwxr-x 1 lvjie lvjie  512 5&#x6708;  13 14:52 boot.img
+-rwxrwxr-x 1 lvjie lvjie  512 5&#x6708;  13 14:52 boot_hybrid.img
+-rwxrwxr-x 1 lvjie lvjie 2.0K 5&#x6708;  13 14:52 cdboot.img
+-rwxrwxr-x 1 lvjie lvjie 1.0K 5&#x6708;  13 14:52 pxeboot.img
+-rwxrwxr-x 1 lvjie lvjie  512 5&#x6708;  13 14:52 diskboot.img
+-rwxrwxr-x 1 lvjie lvjie 1.0K 5&#x6708;  13 14:52 lnxboot.img
+-rwxrwxr-x 1 lvjie lvjie 2.8K 5&#x6708;  13 14:52 lzma_decompress.img</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x548C;&#x6211;&#x4EEC;&#x5728;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - GRUB&#x7684;&#x673A;&#x5236;&#x300B;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x4E00;&#x81F4;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x62FF; <em>boot.img</em> &#x6587;&#x4EF6;&#x8BB2;&#x8FF0;&#x5982;&#x4F55;&#x5C06;&#x5305;&#x542B;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x7684;&#x6587;&#x4EF6;&#x4EE5;&#x65B9;&#x9762;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#xFF0C;&#x5148;&#x627E;&#x5230;&#x5305;&#x542B;boot.img&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x7684;&#x6587;&#x4EF6;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;GRUB&#x6E90;&#x7801; <em>grub-core/boot/i386/pc</em> &#x4E2D;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ objdump -h $WORKSPACE/grub2/grub-core/boot/i386/pc/image-boot.o
+
+/opt/workspace/grub2/grub-core/boot/i386/pc/image-boot.o:     file format elf32-i386
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000200  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000234  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000234  2**0
+                  ALLOC
+  3 .debug_line   000000ce  00000000  00000000  00000234  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING, OCTETS
+  4 .debug_info   00000026  00000000  00000000  00000302  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING, OCTETS
+  5 .debug_abbrev 00000014  00000000  00000000  00000328  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  6 .debug_aranges 00000020  00000000  00000000  00000340  2**3
+                  CONTENTS, RELOC, READONLY, DEBUGGING, OCTETS
+  7 .debug_str    0000003f  00000000  00000000  00000360  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x540C;&#x65F6;&#x627E;&#x5230;&#x52A0;&#x8F7D;&#x7684;&#x5730;&#x5740;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ objdump -h $WORKSPACE/grub2/grub-core/boot.image
+
+boot.image:     file format elf32-i386
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000200  00007c00  00007c00  00000054  2**0
+                  CONTENTS, ALLOC, LOAD, CODE</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;VMA&#x7684;&#x503C;&#x5C31;&#x662F;&#x52A0;&#x8F7D;&#x7684;&#x5730;&#x5740;&#x3002;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x540E;&#x6211;&#x4EEC;&#x751F;&#x6210;&#x5305;&#x542B;&#x8C03;&#x8BD5;&#x6587;&#x4EF6;&#x7684;boot.image</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ ld -Ttext=0x7c00 -m elf_i386  image-boot.o -o boot.image</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x67E5;&#x770B;&#x4E00;&#x4E0B;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ objdump -h boot.image
+
+boot.image:     file format elf32-i386
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000200  00007c00  00007c00  00000c00  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000020  00000000  00000000  00000e00  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  2 .debug_info   00000026  00000000  00000000  00000e20  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  3 .debug_abbrev 00000014  00000000  00000000  00000e46  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  4 .debug_line   000000ce  00000000  00000000  00000e5a  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  5 .debug_str    0000003f  00000000  00000000  00000f28  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x4EA7;&#x751F;&#x4E86;&#x5305;&#x542B;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x7684;boot.image&#x6587;&#x4EF6;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E0D;&#x80FD;&#x7528;&#x4E8E;&#x5B89;&#x88C5;&#xFF0C;&#x53EA;&#x662F;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x76EE;&#x7684;&#x3002;&#x7136;&#x540E;&#x56DE;&#x5230;gdb&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ l _start
+126             /*
+127              * Beginning of the sector is compatible with the FAT/HPFS BIOS
+128              * parameter block.
+129              */
+130
+131             jmp     LOCAL(after_BPB)
+132             nop     /* do I care about this ??? */
+133
+134     #ifdef HYBRID_BOOT
+135             nop
+real-mode-gdb$ b _start
+Breakpoint 1 at 0x7c00: file boot/i386/pc/boot.S, line 131.
+real-mode-gdb$ c
+Continuing.
+---------------------------[ STACK ]---
+D002 F000 0000 0000 6F5E 0000 8016 0000
+8057 0000 0000 0000 0000 0000 8016 0000
+---------------------------[ DS:SI ]---
+00000000: 53 FF 00 F0 53 FF 00 F0 C3 E2 00 F0 53 FF 00 F0  S...S.......S...
+00000010: 53 FF 00 F0 54 FF 00 F0 53 FF 00 F0 53 FF 00 F0  S...T...S...S...
+00000020: A5 FE 00 F0 87 E9 00 F0 42 D4 00 F0 42 D4 00 F0  ........B...B...
+00000030: 42 D4 00 F0 42 D4 00 F0 57 EF 00 F0 42 D4 00 F0  B...B...W...B...
+---------------------------[ ES:DI ]---
+00000000: 53 FF 00 F0 53 FF 00 F0 C3 E2 00 F0 53 FF 00 F0  S...S.......S...
+00000010: 53 FF 00 F0 54 FF 00 F0 53 FF 00 F0 53 FF 00 F0  S...T...S...S...
+00000020: A5 FE 00 F0 87 E9 00 F0 42 D4 00 F0 42 D4 00 F0  ........B...B...
+00000030: 42 D4 00 F0 42 D4 00 F0 57 EF 00 F0 42 D4 00 F0  B...B...W...B...
+----------------------------[ CPU ]----
+AX: AA55 BX: 0000 CX: 0000 DX: 0080
+SI: 0000 DI: 0000 SP: 6F00 BP: 0000
+CS: 0000 DS: 0000 ES: 0000 SS: 0000
+
+IP: 7C00 EIP:00007C00
+CS:IP: 0000:7C00 (0x07C00)
+SS:SP: 0000:6F00 (0x06F00)
+SS:BP: 0000:0000 (0x00000)
+OF &lt;0&gt;  DF &lt;0&gt;  IF &lt;1&gt;  TF &lt;0&gt;  SF &lt;0&gt;  ZF &lt;0&gt;  AF &lt;0&gt;  PF &lt;0&gt;  CF <b class="conum">(0)</b>
+ID &lt;0&gt;  VIP &lt;0&gt; VIF &lt;0&gt; AC &lt;0&gt;  VM &lt;0&gt;  RF &lt;0&gt;  NT &lt;0&gt;  IOPL <b class="conum">(0)</b>
+---------------------------[ CODE ]----
+=&gt; 0x7c00 &lt;start&gt;:      jmp    0x7c65 &lt;L_after_BPB&gt;
+   0x7c02 &lt;start+2&gt;:    nop
+   0x7c03 &lt;start+3&gt;:    add    BYTE PTR [bx+si],al
+   0x7c05 &lt;sectors&gt;:    add    BYTE PTR [bx+si],al
+   0x7c07 &lt;sectors+2&gt;:  add    BYTE PTR [bx+si],al
+   0x7c09 &lt;heads&gt;:      add    BYTE PTR [bx+si],al
+   0x7c0b &lt;heads+2&gt;:    add    BYTE PTR [bx+si],al
+   0x7c0d &lt;cylinders&gt;:  add    BYTE PTR [bx+si],al
+   0x7c0f &lt;sector_start&gt;:       add    BYTE PTR [bx+si],al
+   0x7c11 &lt;cylinder_start&gt;:     add    BYTE PTR [bx+si],al
+
+Breakpoint 1, start () at boot/i386/pc/boot.S:131
+131             jmp     LOCAL(after_BPB)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5305;&#x542B;&#x6E90;&#x7801;&#x7684;&#x8C03;&#x8BD5;&#x8FC7;&#x7A0B;&#x4E86;&#x3002;&#x5176;&#x4ED6;&#x7684;&#x6587;&#x4EF6;&#x8C03;&#x8BD5;&#x65B9;&#x5F0F;&#x4E5F;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#x3002;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bios_grub_2">BIOS&#x8C03;&#x8BD5;GRUB&#x5185;&#x6838;</h3>
+<div class="paragraph">
+<p>&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x662F;&#x8C03;&#x8BD5;GRUB&#x5728;&#x8FD0;&#x884C;GRUB&#x5185;&#x6838;&#x524D;&#x7684;&#x8C03;&#x8BD5;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;GRUB&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;GRUB&#x63D0;&#x4F9B;&#x4E86;&#x5B8C;&#x6574;&#x4E86;&#x8C03;&#x8BD5;&#x811A;&#x672C;&#x3002;&#x5728;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x811A;&#x672C;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x4E9B;&#x4FEE;&#x6539;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x65F6;&#x5019;&#x53D1;&#x73B0;gdb&#x83B7;&#x5F97;&#x662F;i386&#x67B6;&#x6784;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;gdb&#x9ED8;&#x8BA4;&#x8BA4;&#x4E3A;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x7684;&#x662F;i386&#x67B6;&#x6784;&#x4F46;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x8FD0;&#x884C;&#x7684;&#x662F;x86_64&#x67B6;&#x6784;&#xFF0C;&#x5BFC;&#x81F4;&#x51FA;&#x9519;&#x8BEF;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Remote &apos;g&apos; packet reply is too long (expected 312 bytes, got 608 bytes)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x5148;&#x5C06; <em>grub_core</em> &#x76EE;&#x5F55;&#x4E0B;&#x7684;gdb_grub&#x6587;&#x4EF6;&#x4EE5;&#x4E0B;&#x90E8;&#x5206;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>set confirm off
+file kernel.exec
+target remote :1234</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x4FEE;&#x6539;&#x4E3A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>set confirm off
+file kernel.exec
+set arch i386:x86-64
+target remote :1234</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x76EE;&#x6807;&#x67B6;&#x6784;&#xFF0C;&#x7136;&#x540E;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;x86_64</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ qemu-system-x86_64 -m 512 -drive file=bios-disk.img,format=raw  -s -S -nographic</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7136;&#x540E;&#x4F7F;&#x7528;grub&#x63D0;&#x4F9B;&#x7684;&#x8F85;&#x52A9;&#x811A;&#x672C;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd $WORKSPACR/grub2/grub-core
+$ gdb -x gdb_grub
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type &quot;show copying&quot; and &quot;show warranty&quot; for details.
+This GDB was configured as &quot;x86_64-linux-gnu&quot;.
+Type &quot;show configuration&quot; for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+
+For help, type &quot;help&quot;.
+Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;.
+The target architecture is assumed to be i386:x86-64
+0x000000000000fff0 in ?? ()
+Breakpoint 1 at 0xb54c: grub_dl_add. (2 locations)
+(gdb) b grub_main
+Breakpoint 2 at 0xcb19: file kern/main.c, line 267.
+(gdb) list grub_main
+262     }
+263
+264     /* The main routine.  */
+265     void __attribute__ ((noreturn))
+266     grub_main (void)
+267     {
+268       /* First of all, initialize the machine.  */
+269       grub_machine_init ();
+270
+271       grub_boot_time (&quot;After machine init.&quot;);
+(gdb) c
+Continuing.
+
+Breakpoint 2, grub_main () at kern/main.c:267
+267     {
+(gdb)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;gdb&#x7684;&#x529F;&#x80FD;&#x8FDB;&#x884C;grub&#x8C03;&#x8BD5;&#x4E86;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">&#x5982;&#x4F55;&#x8C03;&#x8BD5;&#x6A21;&#x5757;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x6A21;&#x5757;&#x4F5C;&#x4E3A;grub&#x91CD;&#x8981;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF0C;&#x8C03;&#x8BD5;&#x6A21;&#x5757;&#x4E5F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E86;&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x7684;gdb_grub&#x811A;&#x672C;&#xFF0C;&#x8BA9;&#x5176;&#x53EF;&#x4EE5;&#x5728;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8C03;&#x8BD5;&#x7684;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x65AD;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5C06; <em>gdb_grub</em> &#x6587;&#x4EF6;&#x7684;&#x6700;&#x540E;&#x51E0;&#x884C;&#x4FEE;&#x6539;&#x4E3A;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># inform when module is loaded
+break grub_dl_add
+commands
+        silent
+        load_module mod
+        if $_streq(mod-&gt;name, &quot;$name&quot;)
+                break $func
+        end
+        cont
+end</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5176;&#x4E2D;$name&#x8868;&#x793A;&#x7684;&#x662F;&#x6A21;&#x5757;&#x7684;&#x540D;&#x79F0;&#xFF0C;$func&#x662F;&#x9700;&#x8981;&#x8C03;&#x8BD5;&#x7684;&#x51FD;&#x6570;&#xFF0C;gdb_grub&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x8FD0;&#x884C;&#x65F6;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5224;&#x65AD;&#x52A0;&#x8F7D;&#x7684;&#x6A21;&#x5757;&#x662F;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8C03;&#x8BD5;&#x7684;&#x6A21;&#x5757;&#x540D;&#x79F0;&#xFF0C;&#x7136;&#x540E;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x65AD;&#x70B9;&#xFF0C;&#x5728;gdb&#x6A21;&#x5757;&#x7684;&#x8FDB;&#x5165;&#x70B9;&#x6253;&#x4E0A;&#x65AD;&#x70B9;&#x3002;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;linux&#x6A21;&#x5757;&#xFF0C;&#x4FEE;&#x6539;&#x5185;&#x5BB9;&#x4E3A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># inform when module is loaded
+break grub_dl_add
+commands
+        silent
+        load_module mod
+        if $_streq(mod-&gt;name, &quot;linux&quot;)
+                break grub_cmd_linux
+        end
+        cont
+end</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7136;&#x540E;&#x8FD0;&#x884C; <em>gdb -x gdb_grub</em> &#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;linux&#x6A21;&#x5757;&#x7684;&#x8C03;&#x8BD5;&#x5DE5;&#x4F5C;&#x4E86;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_uefi">UEFI&#x7684;&#x8C03;&#x8BD5;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>UEFI&#x7684;&#x8C03;&#x8BD5;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - &#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;UEFI&#x7684;&#x7CFB;&#x7EDF;&#x300B;&#x4E2D;&#x7F16;&#x8BD1;&#x6240;&#x751F;&#x6210;&#x7684;GRUB&#xFF0C;OVMF&#x4EE5;&#x53CA;uefi-disk.img&#x78C1;&#x76D8;&#x955C;&#x50CF;&#xFF0C;OVMF&#x4E2D;&#x6211;&#x4EEC;&#x6253;&#x5F00;&#x7684;&#x4E86;&#x8C03;&#x8BD5;&#x9009;&#x9879;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x542F;&#x52A8;qemu&#x662F;&#x5426;&#x9700;&#x8981;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x9009;&#x9879;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ qemu-system-x86_64 -m 512 -bios OVMF.fd -drive file=uefi-disk.img,format=raw -net none -serial file:serial.log -s -S</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E00;&#x4E2A;serial.log&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x4E86;OVMF&#x542F;&#x52A8;&#x662F;&#x5426;&#x7684;&#x8BE6;&#x7EC6;&#x65E5;&#x5FD7;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x627E;&#x5230;&#x4EE5;&#x4E0B;&#x4E00;&#x884C;&#xFF0C;&#x77E5;&#x9053;UEFI&#x5C06;grub.efi&#x7A0B;&#x5E8F;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x4EC0;&#x4E48;&#x4F4D;&#x7F6E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Loading driver at 0x0001E1C8000 EntryPoint=0x0001E1C9000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x4FE1;&#x606F;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;efi&#x5E94;&#x7528;&#x52A0;&#x8F7D;&#x5230;&#x4E86;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4E3A;0x0001E1C9000&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x7136;&#x540E;&#x5C06;gdb_grub&#x6587;&#x4EF6;&#x4E2D;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>file kernel.exec</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x4FEE;&#x6539;&#x4E3A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>add-symbol-file kernel.exec 0x0001E1C9000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5F00;&#x59CB;&#x4EAB;&#x53D7;&#x6211;&#x4EEC;&#x7684;&#x8C03;&#x8BD5;&#x5DE5;&#x4F5C;&#x5427;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ gdb -x gdb_grub
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type &quot;show copying&quot; and &quot;show warranty&quot; for details.
+This GDB was configured as &quot;x86_64-linux-gnu&quot;.
+Type &quot;show configuration&quot; for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+
+For help, type &quot;help&quot;.
+Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;.
+add symbol table from file &quot;kernel.exec&quot; at
+        .text_addr = 0x1e1c9000
+The target architecture is assumed to be i386:x86-64
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the &quot;file&quot; command.
+0x000000000000fff0 in ?? ()
+Breakpoint 1 at 0x1e1cf6e2: grub_dl_add. (2 locations)
+(gdb) b grub_main
+Breakpoint 2 at 0x1e1d134b: file kern/main.c, line 267.
+(gdb) list grub_main
+262     }
+263
+264     /* The main routine.  */
+265     void __attribute__ ((noreturn))
+266     grub_main (void)
+267     {
+268       /* First of all, initialize the machine.  */
+269       grub_machine_init ();
+270
+271       grub_boot_time (&quot;After machine init.&quot;);
+(gdb) c
+Continuing.
+
+Breakpoint 2, grub_main () at kern/main.c:267
+267     {
+(gdb) list
+262     }
+263
+264     /* The main routine.  */
+265     void __attribute__ ((noreturn))
+266     grub_main (void)
+267     {
+268       /* First of all, initialize the machine.  */
+269       grub_machine_init ();
+270
+271       grub_boot_time (&quot;After machine init.&quot;);
+(gdb)</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_shim">SHIM&#x7684;&#x8C03;&#x8BD5;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shim &#x7684;&#x8C03;&#x8BD5;&#x548C;&#x76F4;&#x63A5;&#x8C03;&#x8BD5;grub.efi&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x57FA;&#x4E8E;efi&#x7684;&#x8C03;&#x8BD5;&#x65B9;&#x5F0F;&#x90FD;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - &#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x53EF;&#x540C;&#x65F6;&#x652F;&#x6301;BIOS&#x548C;UEFI&#x5B89;&#x5168;&#x542F;&#x52A8;&#x7684;&#x7CFB;&#x7EDF;&#x300B;&#x6765;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo qemu-system-x86_64    \
+ -drive if=pflash,format=raw,readonly,file=./OVMF_CODE.fd   \
+   -drive if=pflash,format=raw,file=./OVMF_VARS.fd \
+   -drive file=./bios-uefi.img,format=raw -m 512 \
+   -net none -serial file:serial.log -s -S</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5728;shim&#x7F16;&#x8BD1;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x542F;&#x52A8;GDB</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ gdb
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type &quot;show copying&quot; and &quot;show warranty&quot; for details.
+This GDB was configured as &quot;x86_64-linux-gnu&quot;.
+Type &quot;show configuration&quot; for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+
+For help, type &quot;help&quot;.
+Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;.
+(gdb) add-symbol-file shimx64.efi.debug 0x0001E231000
+add symbol table from file &quot;shimx64.efi.debug&quot; at
+        .text_addr = 0x1e231000
+(y or n) y
+Reading symbols from shimx64.efi.debug...
+(gdb) list efi_main
+1871    #endif
+1872    }
+1873
+1874    EFI_STATUS
+1875    efi_main (EFI_HANDLE passed_image_handle, EFI_SYSTEM_TABLE *passed_systab)
+1876    {
+1877            EFI_STATUS efi_status;
+1878            EFI_HANDLE image_handle;
+1879
+1880            verification_method = VERIFIED_BY_NOTHING;
+(gdb) b efi_main
+Breakpoint 1 at 0x1e231136: file shim.c, line 1876.
+(gdb) x/10i 0x0001E231000
+   0x1e231000 &lt;_text&gt;:  Cannot access memory at address 0x1e231000
+(gdb) target remote :1234
+Remote debugging using :1234
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the &quot;file&quot; command.
+
+Program received signal SIGTRAP, Trace/breakpoint trap.
+0x000000000000fff0 in ?? ()
+(gdb) c
+Continuing.
+
+Breakpoint 1, efi_main (passed_image_handle=&lt;optimized out&gt;, passed_systab=&lt;optimized out&gt;) at shim.c:1876
+1876    {</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>0x0001E231000&#x5730;&#x5740;&#x662F;&#x4ECE;serial.log&#x6587;&#x4EF6;&#x4E2D;&#x83B7;&#x5F97;&#xFF0C;&#x4F8B;&#x5982;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>FSOpen: Open &apos;\EFI\test\shimx64.efi&apos; Success
+[Bds] Expand HD(2,GPT,EC7E9668-D038-4F43-ABA5-D0159A595396,0x1000,0x32000)/\EFI\test\shimx64.efi -&gt; PciRoot(0x0)/Pci(0x1,0x1)/Ata(Primary,Master,0x0)/HD(2,GPT,EC7E9668-D038-4F43-ABA5-D0159A595396,0x1000,0x32000)/\EFI\test\shimx64.efi
+BdsDxe: loading Boot0004 &quot;test&quot; from HD(2,GPT,EC7E9668-D038-4F43-ABA5-D0159A595396,0x1000,0x32000)/\EFI\test\shimx64.efi
+[Security] 3rd party image[0] can be loaded after EndOfDxe: PciRoot(0x0)/Pci(0x1,0x1)/Ata(Primary,Master,0x0)/HD(2,GPT,EC7E9668-D038-4F43-ABA5-D0159A595396,0x1000,0x32000)/\EFI\test\shimx64.efi.
+DxeImageVerification: MeasureVariable (Pcr - 7, EventType - 800000E0, VariableName - db, VendorGuid - D719B2CB-3D3A-4596-A3BC-DAD00E67656F)
+MeasureBootPolicyVariable - Success
+InstallProtocolInterface: 5B1B31A1-9562-11D2-8E3F-00A0C969723B 1E9B2940
+Loading driver at 0x0001E20F000 EntryPoint=0x0001E231000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x4ECE;EntryPoint&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x77E5;&#x9053;efi&#x542F;&#x52A8;&#x7684;&#x5730;&#x5740;&#x4E3A;0x0001E231000&#xFF0C;&#x5C06;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x8BBE;&#x7F6E;&#x4E3A;&#x52A0;&#x8F7D;debug&#x6587;&#x4EF6;&#x7684;&#x5730;&#x5740;&#x5373;&#x53EF;&#x3002;</p>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="secure-uefi-bios.html" class="navigation navigation-prev " aria-label="Previous page: 制作一个可同时支持BIOS和UEFI安全启动的系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="grub-mod.html" class="navigation navigation-next " aria-label="Next page: 如何编写一个Grub2的模块">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"如何调试","publish":false,"level":"1.4.5","depth":2,"next":{"title":"如何编写一个Grub2的模块","level":"1.4.6","depth":2,"path":"grub/grub-mod.adoc","ref":"grub/grub-mod.adoc","articles":[]},"previous":{"title":"制作一个可同时支持BIOS和UEFI安全启动的系统","level":"1.4.4","depth":2,"path":"grub/secure-uefi-bios.adoc","ref":"grub/secure-uefi-bios.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grub/debug.adoc","mtime":"2021-05-21T03:36:31.877Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

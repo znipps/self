@@ -1,0 +1,1040 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>如何编写一个Grub2的模块 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bios-detail.html" />
+    
+    
+    <link rel="prev" href="debug.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../elf/">
+            
+                <a href="../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elf/elf-1.html">
+            
+                <a href="../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../elf/elf-2.html">
+            
+                <a href="../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../elf/elf-3.html">
+            
+                <a href="../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hardware/">
+            
+                <a href="../hardware/">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hardware/address/">
+            
+                <a href="../hardware/address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hardware/address/summary.html">
+            
+                <a href="../hardware/address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hardware/address/real_address.html">
+            
+                <a href="../hardware/address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hardware/address/segmented_address.html">
+            
+                <a href="../hardware/address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../hardware/address/page_address.html">
+            
+                <a href="../hardware/address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../hardware/address/example.html">
+            
+                <a href="../hardware/address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hardware/disk/">
+            
+                <a href="../hardware/disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hardware/disk/summary.html">
+            
+                <a href="../hardware/disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hardware/disk/disk-chs-lba.html">
+            
+                <a href="../hardware/disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hardware/disk/disk-bios.html">
+            
+                <a href="../hardware/disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hardware/disk/uefi.html">
+            
+                <a href="../hardware/disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hardware/disk/uefi-example.html">
+            
+                <a href="../hardware/disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../hardware/disk/end.html">
+            
+                <a href="../hardware/disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hardware/inst/">
+            
+                <a href="../hardware/inst/">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hardware/inst/inst-1.html">
+            
+                <a href="../hardware/inst/inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hardware/inst/inst-2.html">
+            
+                <a href="../hardware/inst/inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hardware/inst/inst-3.html">
+            
+                <a href="../hardware/inst/inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hardware/inst/inst-4.html">
+            
+                <a href="../hardware/inst/inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hardware/inst/inst-5.html">
+            
+                <a href="../hardware/inst/inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../hardware/inst/inst-6.html">
+            
+                <a href="../hardware/inst/inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../hardware/inst/inst-7.html">
+            
+                <a href="../hardware/inst/inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../hardware/inst/inst-8.html">
+            
+                <a href="../hardware/inst/inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../hardware/inst/inst-9.html">
+            
+                <a href="../hardware/inst/inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../hardware/inst/inst-10.html">
+            
+                <a href="../hardware/inst/inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="../hardware/inst/inst-addon-1.html">
+            
+                <a href="../hardware/inst/inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="../hardware/inst/inst-addon-2.html">
+            
+                <a href="../hardware/inst/inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="../hardware/inst/inst-addon-3.html">
+            
+                <a href="../hardware/inst/inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="../hardware/inst/inst-addon-4.html">
+            
+                <a href="../hardware/inst/inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="summary.html">
+            
+                <a href="summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bios-make.html">
+            
+                <a href="bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="uefi-make.html">
+            
+                <a href="uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="secure-uefi-bios.html">
+            
+                <a href="secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="debug.html">
+            
+                <a href="debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="grub-mod.html">
+            
+                <a href="grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="bios-detail.html">
+            
+                <a href="bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="uefi-detail.html">
+            
+                <a href="uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../other/">
+            
+                <a href="../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >如何编写一个Grub2的模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x5C06;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x4E00;&#x4E2A;grub&#x6A21;&#x5757;&#xFF0C;Grub&#x63D0;&#x4F9B;&#x4E86;&#x5F3A;&#x5927;&#x7684;&#x6269;&#x5C55;&#x529F;&#x80FD;&#xFF0C;&#x5728;Grub&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5C31;&#x662F;&#x901A;&#x8FC7;GRUB&#x7684;&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x5B57;&#x8282;&#x7684;Grub&#x6A21;&#x5757;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x4E0D;&#x4F1A;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;Grub&#x6A21;&#x5757;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x5757;&#x6765;&#x4E86;&#x89E3;Grub&#x6A21;&#x5757;&#xFF0C;&#x5728;Grub&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;Hello World&#x6A21;&#x5757;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53C2;&#x8003;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x6253;&#x5370;&#x4E00;&#x4E2A; <em>Hello Grub</em> &#x7684;&#x6A21;&#x5757;&#x3002;</p>
+</div>
+<div class="sect1">
+<h2 id="__grub">&#x7F16;&#x5199;GRUB&#x6A21;&#x5757;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E00;&#x4E2A;grub&#x7684;&#x4EE3;&#x7801;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C" data-lang="C">/* hello1.c - test module for dynamic loading */
+/*
+ *  GRUB  --  GRand Unified Bootloader
+ *  Copyright (C) 2003,2007  Free Software Foundation, Inc.
+ *  Copyright (C) 2003  NIIBE Yutaka &lt;gniibe@m17n.org&gt;
+ *
+ *  GRUB is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  GRUB is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with GRUB.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+
+#include &lt;grub/types.h&gt;
+#include &lt;grub/misc.h&gt;
+#include &lt;grub/mm.h&gt;
+#include &lt;grub/err.h&gt;
+#include &lt;grub/dl.h&gt;
+#include &lt;grub/extcmd.h&gt;
+#include &lt;grub/i18n.h&gt;
+
+GRUB_MOD_LICENSE (&quot;GPLv3+&quot;);
+
+static grub_err_t
+grub_cmd_hello (grub_extcmd_context_t ctxt __attribute__ ((unused)),
+		int argc __attribute__ ((unused)),
+		char **args __attribute__ ((unused)))
+{
+  grub_printf (&quot;%s\n&quot;, _(&quot;Hello Grub&quot;));
+  return 0;
+}
+
+static grub_extcmd_t cmd;
+
+GRUB_MOD_INIT(hello1)
+{
+  cmd = grub_register_extcmd (&quot;hello1&quot;, grub_cmd_hello, 0, 0,
+			      N_(&quot;Say `Hello Grub&apos;.&quot;), 0);
+}
+
+GRUB_MOD_FINI(hello1)
+{
+  grub_unregister_extcmd (cmd);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x57FA;&#x672C;&#x76F4;&#x63A5;&#x62F7;&#x8D1D;&#x4E86;Hello&#x547D;&#x4EE4;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x5728;Grub&#x6E90;&#x4EE3;&#x7801; <em>grub-core/hello1/</em> &#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x547D;&#x540D;&#x4E3A; <em>hello1.c</em> &#x3002;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4F7F;&#x7528;Grub&#x63D0;&#x4F9B;&#x7684;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6CE8;&#x518C;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C" data-lang="C">GRUB_MOD_INIT(name)
+GRUB_MOD_FINI(name)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>GRUB_MOD_INIT(name)</em> &#x662F;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#xFF0C;Grub&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x800C;&#x771F;&#x6B63;&#x6CE8;&#x518C;&#x547D;&#x4EE4;&#x7684;&#x662F; <em>grub_register_extcmd</em> &#x51FD;&#x6570;&#x3002; <em>GRUB_MOD_FINI(name)</em> &#x662F;&#x9500;&#x6BC1;&#x51FD;&#x6570;&#xFF0C;Grub&#x6E05;&#x7406;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x6765;&#x770B;&#x770B; <em>grub_register_extcmd</em> &#x51FD;&#x6570;&#x7684;&#x539F;&#x578B;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C" data-lang="C"><span class="hljs-keyword">grub_extcmd_t</span>
+grub_register_extcmd (<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">grub_extcmd_func_t</span> func,
+		      <span class="hljs-keyword">grub_command_flags_t</span> flags, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *summary,
+		      <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *description,
+		      <span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> grub_arg_option *parser)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x4E0D;&#x4F1A;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x6570;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>name&#xFF1A;&#x51FD;&#x6570;&#x7684;&#x540D;&#x79F0;</p>
+</li>
+<li>
+<p>func&#xFF1A;&#x771F;&#x6B63;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;</p>
+</li>
+<li>
+<p>description&#xFF1A;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E2A;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <em>hello1</em> &#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5BF9;&#x5E94;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x4E3A; <em>grub_cmd_hello</em> &#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5C31;&#x5927;&#x81F4;&#x548C;&#x7F16;&#x5199;C&#x8BED;&#x8A00;&#x51FD;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;Grub&#x63D0;&#x4F9B;&#x7684;&#x6807;&#x5FD7;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x80FD;&#x8C03;&#x7528;libc&#x63D0;&#x4F9B;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;Grub&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;libc&#x8FD8;&#x6CA1;&#x6709;&#x52A0;&#x8F7D;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5B9A;&#x4E49;&#x597D;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x4E0B;&#x9762;&#x5C31;&#x5F00;&#x59CB;&#x7F16;&#x8BD1;&#xFF0C;Grub&#x63D0;&#x4F9B;&#x4E86;&#x7B80;&#x5316;&#x7684;&#x7F16;&#x8BD1;&#x65B9;&#x6848;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86; <em>hello1.module</em> &#x6A21;&#x5757;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4FEE;&#x6539; <em>grub-core/Makefile.core.def</em> &#x6587;&#x4EF6;&#x5373;&#x53EF;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>module = {
+  name = hello1;
+  common = hello1/hello1.c;
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x914D;&#x7F6E;&#x7684;&#x542B;&#x4E49;&#x663E;&#x800C;&#x6613;&#x89C1;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$grub_source</span>
+$ ./bootstrap
+$ ./autogen.sh
+$ ./configure --prefix=<span class="hljs-variable">$WORKSPACE</span>/grub HOST_CFLAGS=<span class="hljs-string">&apos;-g&apos;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7F16;&#x8BD1;&#x597D;&#x540E;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - &#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;BIOS&#x7684;&#x7CFB;&#x7EDF;&#x300B;&#x4E2D;&#x7684;&#x78C1;&#x76D8;&#xFF0C;&#x5C06;Grub&#x5B89;&#x88C5;&#x5230;&#x78C1;&#x76D8;&#x4E2D;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ sudo <span class="hljs-variable">$WORKSPACE</span>/grubsbin/grub-install --boot-directory=<span class="hljs-variable">$MOUNT</span>/boot --modules=<span class="hljs-string">&quot;part_msdos hello1&quot;</span> <span class="hljs-variable">$LOOPDEV</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7136;&#x540E;&#x8FD0;&#x884C;qemu&#xFF0C;&#x8FDB;&#x5165;Grub shell&#xFF0C;&#x6267;&#x884C;hello1&#xFF0C;&#x5C06;&#x770B;&#x5230;&#x6253;&#x5370;&#x7684; <em>Hello Grub</em></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/print-grub.jpg" alt="&#x6253;&#x5370;Hello Grub"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x4F7F;&#x7528;Grub&#x6A21;&#x5757;&#x673A;&#x5236;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x66F4;&#x52A0;&#x5F3A;&#x5927;&#x7684;&#x5F15;&#x5BFC;&#x529F;&#x80FD;&#xFF0C;Grub&#x672C;&#x8EAB;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x4E30;&#x5BCC;&#x7684;&#x5404;&#x79CD;&#x6A21;&#x5757;&#x3002;Grub&#x4E5F;&#x50CF;Linux&#x63D0;&#x4F9B;&#x4E86;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x7684; <em>insmod</em> &#x547D;&#x4EE4;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x901A;&#x8FC7;&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x7684;&#x3002;Grub&#x7684;&#x6750;&#x6599;&#x4E5F;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x4E5F;&#x65E0;&#x6CD5;&#x628A;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;&#x90FD;&#x4ECB;&#x7ECD;&#x4E00;&#x904D;&#xFF0C;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x800C;&#x8A00;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6A21;&#x5757;&#x4EE5;&#x53CA;&#x5728;Linux&#x7CFB;&#x7EDF;&#x5F15;&#x5BFC;&#x65F6;&#x5019;Grub&#x5982;&#x4F55;&#x5F15;&#x5BFC;&#x7684;&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#x7528;&#x4E8E;&#x5F15;&#x5BFC;Linux&#x547D;&#x4EE4;&#x7684; <em>linux</em> &#x6A21;&#x5757;&#x3002;</p>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="debug.html" class="navigation navigation-prev " aria-label="Previous page: 如何调试">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bios-detail.html" class="navigation navigation-next " aria-label="Next page: BIOS版本实现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"如何编写一个Grub2的模块","publish":false,"level":"1.4.6","depth":2,"next":{"title":"BIOS版本实现","level":"1.4.7","depth":2,"path":"grub/bios-detail.adoc","ref":"grub/bios-detail.adoc","articles":[]},"previous":{"title":"如何调试","level":"1.4.5","depth":2,"path":"grub/debug.adoc","ref":"grub/debug.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grub/grub-mod.adoc","mtime":"2021-05-24T07:11:54.667Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1599 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>default（缺省） 与 effective（有效） · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="inst-addon-3.html" />
+    
+    
+    <link rel="prev" href="inst-addon-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../elf/">
+            
+                <a href="../../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../elf/elf-1.html">
+            
+                <a href="../../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../elf/elf-2.html">
+            
+                <a href="../../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../elf/elf-3.html">
+            
+                <a href="../../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../address/">
+            
+                <a href="../address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../address/summary.html">
+            
+                <a href="../address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../address/real_address.html">
+            
+                <a href="../address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../address/segmented_address.html">
+            
+                <a href="../address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../address/page_address.html">
+            
+                <a href="../address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../address/example.html">
+            
+                <a href="../address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../disk/">
+            
+                <a href="../disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../disk/summary.html">
+            
+                <a href="../disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../disk/disk-chs-lba.html">
+            
+                <a href="../disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../disk/disk-bios.html">
+            
+                <a href="../disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../disk/uefi.html">
+            
+                <a href="../disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../disk/uefi-example.html">
+            
+                <a href="../disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../disk/end.html">
+            
+                <a href="../disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="inst-1.html">
+            
+                <a href="inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="inst-2.html">
+            
+                <a href="inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="inst-3.html">
+            
+                <a href="inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="inst-4.html">
+            
+                <a href="inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="inst-5.html">
+            
+                <a href="inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="inst-6.html">
+            
+                <a href="inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="inst-7.html">
+            
+                <a href="inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="inst-8.html">
+            
+                <a href="inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="inst-9.html">
+            
+                <a href="inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="inst-10.html">
+            
+                <a href="inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="inst-addon-1.html">
+            
+                <a href="inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.12" data-path="inst-addon-2.html">
+            
+                <a href="inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="inst-addon-3.html">
+            
+                <a href="inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="inst-addon-4.html">
+            
+                <a href="inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../grub/">
+            
+                <a href="../../grub/">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../grub/summary.html">
+            
+                <a href="../../grub/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../grub/bios-make.html">
+            
+                <a href="../../grub/bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../grub/uefi-make.html">
+            
+                <a href="../../grub/uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../grub/secure-uefi-bios.html">
+            
+                <a href="../../grub/secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../grub/debug.html">
+            
+                <a href="../../grub/debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../grub/grub-mod.html">
+            
+                <a href="../../grub/grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../grub/bios-detail.html">
+            
+                <a href="../../grub/bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../grub/uefi-detail.html">
+            
+                <a href="../../grub/uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../grub/memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../other/">
+            
+                <a href="../../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >default（缺省） 与 effective（有效）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="&#x91CD;&#x8981;"></i>
+</td>
+<td class="content">
+&#x7531;&#x4E8E;mouseOs&#x7684;&#x7F51;&#x7AD9;&#x4E0D;&#x7EF4;&#x62A4;&#x4E86;&#xFF0C;&#x6211;&#x5728;&#x672C;&#x5730;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4EFD;&#x4E4B;&#x524D;&#x9093;&#x5FD7;&#x5173;&#x4E8E;intel&#x6307;&#x4EE4;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x8FD9;&#x4E2A;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x7AE0;&#x7248;&#x672C;&#x5F52;&#x5C5E;&#x9093;&#x5FD7;&#x6240;&#x6709;&#xFF0C;&#x4EC5;&#x4F9B;&#x501F;&#x9274;&#x3002;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x6211;&#x5C3D;&#x91CF;&#x4E0D;&#x52A8;&#xFF0C;&#x6709;&#x4E9B;&#x4FEE;&#x6539;&#x4E3B;&#x8981;&#x4E3A;&#x4E86;&#x6392;&#x7248;&#x3002;
+</td>
+</tr>
+</table>
+</div>
+<div class="sect1">
+<h2 id="_default">default&#xFF08;&#x7F3A;&#x7701;&#xFF09;&#x6982;&#x5FF5;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>default size &#x5305;&#x62EC;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>default operand size</p>
+</li>
+<li>
+<p>default address size</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x4EEC;&#x662F;&#x6307;&#x4EE4;&#x5728;&#x7F3A;&#x7701;&#x60C5;&#x51B5;&#x4E0B;&#x7684; size&#xFF0C;&#x8FD9;&#x4E2A;&#x7F3A;&#x7701;&#x60C5;&#x51B5;&#x662F;&#x5728;&#x672A; override&#xFF08;&#x6539;&#x5199;&#xFF09;&#x7684;&#x60C5;&#x5F62;&#x4E0B;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A; default size &#x662F;&#x6765;&#x81EA; CS.D &#x6807;&#x5FD7;&#x4F4D;&#xFF08;CS &#x5BC4;&#x5B58;&#x5668;&#x7684; D &#x6807;&#x5FD7;&#x4F4D;&#xFF09;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x5F53; CS.D = 0 &#x65F6;&#xFF0C;default size &#x662F; 16 &#x4F4D;</p>
+</li>
+<li>
+<p>&#x5F53; CS.D = 1 &#x65F6;&#xFF0C;default size &#x662F; 32 &#x4F4D;</p>
+</li>
+<li>
+<p>&#x5F53; CS.L = 1 &amp; CS.D = 0 &#x65F6;&#xFF0C;processor &#x5904;&#x4E8E; 64 &#x4F4D;&#x6A21;&#x5F0F;&#xFF0C;default address size &#x662F; 64 &#x4F4D;&#xFF0C;&#x591A;&#x6570;&#x6307;&#x4EE4;&#x7684; default operand size &#x662F; 32 &#x4F4D;&#xFF0C;&#x90E8;&#x5206;&#x6307;&#x4EE4;&#x7684; default operand size &#x662F; 64 &#x4F4D;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_effective">effective&#xFF08;&#x6709;&#x6548;&#xFF09;&#x6982;&#x5FF5;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>effective size &#x5305;&#x62EC;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>effective operand size</p>
+</li>
+<li>
+<p>effective address size
+&#x6307;&#x4EE4;&#x6700;&#x7EC8;&#x7684; operand size &#x548C; address size &#x53D6;&#x51B3;&#x4E8E;&#x4E24;&#x65B9;&#x9762;&#xFF1A;</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x6307;&#x4EE4;&#x7684; default operand/address size</p>
+</li>
+<li>
+<p>&#x6307;&#x4EE4;&#x7684; effective operand/address size</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x5F53;&#x6CA1;&#x6709;&#x8FDB;&#x884C; override &#x65F6;&#xFF0C;&#x6307;&#x4EE4;&#x6700;&#x7EC8;&#x7684; operand/address size &#x5C31;&#x662F; default operand/address size</p>
+</div>
+<div class="paragraph">
+<p>&#x4F46;&#x662F;&#xFF1A;&#x5F53;&#x8FDB;&#x884C; override &#x65F6;&#xFF0C;&#x6307;&#x4EE4;&#x6700;&#x7EC8;&#x7684; operand/address size &#x4F9D;&#x8D56;&#x4E8E; effective size&#xFF0C;effective size &#x662F;&#x6307;&#x4EE4;&#x6240;&#x80FD;&#x63A5;&#x53D7;&#x7684; size &#x8303;&#x56F4;&#xFF0C;&#x5E76;&#x4E14;&#x6839;&#x636E; override &#x60C5;&#x51B5;&#x5F97;&#x5230;&#x6307;&#x4EE4;&#x6700;&#x7EC8;&#x7684; size</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_default_operand_size_effective_operand_size">default operand size &#x4E0E; effective operand size</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. operand size &#x8868;</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">&#x6A21;&#x5F0F;</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">default operand size</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">effective operand size</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">operand size override</p></td>
+<td class="tableblock halign-left valign-top" colspan="2" rowspan="2"><p class="tableblock">&#x63CF;&#x8FF0;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66H</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">64 &#x4F4D;</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5FFD;&#x7565;</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">default = 64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64 &#xFF1A;&#x5FFD;&#x7565; REX prefix&#xFF0C;&#x4E0D;&#x80FD;&#x52A0; 66H prefix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5FFD;&#x7565; REX.W = 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 &#xFF1A;&#x5FC5;&#x987B;&#x52A0; 66H prefix&#xFF0C;&#x5FFD;&#x7565; REX.W = 0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5FFD;&#x7565;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">default = 32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64 &#xFF1A;&#x5FC5;&#x987B;&#x52A0; REX.W = 1&#xFF0C;&#x5FFD;&#x7565; 66H</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5FFD;&#x7565; REX.W = 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 &#xFF1A;&#x4E0D;&#x80FD;&#x52A0; 66H&#xFF0C;&#x5FFD;&#x7565; REX.W = 0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x5FFD;&#x7565; REX.W = 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 &#xFF1A;&#x5FC5;&#x987B;&#x52A0; 66H&#xFF0C;&#x5FFD;&#x7565; REX.W = 0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">compatibility &#x6A21;&#x5F0F;
+protected &#x6A21;&#x5F0F;
+V8086 &#x6A21;&#x5F0F;
+real mode</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">default = 32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 : &#x4E0D;&#x80FD;&#x52A0; 66H &#x548C; REX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 : &#x5FC5;&#x987B; 66H prefix&#xFF0C;&#x4E0D;&#x80FD;&#x52A0; REX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">default = 16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 : &#x5FC5;&#x987B; 66H prefix&#xFF0C;&#x4E0D;&#x80FD;&#x52A0; REX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 &#xFF1A;&#x4E0D;&#x80FD;&#x52A0; 66H &#x548C; REX</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x8868;&#x63CF;&#x8FF0;&#x7684;&#x60C5;&#x51B5;&#x662F;&#xFF1A;</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x5728; 64 &#x4F4D;&#x4E0B;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x6307;&#x4EE4;&#x7684; default operand size &#x662F; 64 &#x4F4D;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x6307;&#x4EE4;&#x7684; default operand size &#x662F; 32 &#x4F4D;&#x3002;</p>
+</li>
+<li>
+<p>&#x5F53; default operand size &#x662F; 64 &#x4F4D;&#x65F6;&#xFF0C;&#x5B83;&#x7684; effective operand size &#x53EA;&#x6709; 64 &#x4F4D;&#x548C; 16 &#x4F4D;&#xFF0C;&#x800C;&#x4E0D;&#x5B58;&#x5728; 32 &#x4F4D;&#x7684; effective operand size</p>
+</li>
+<li>
+<p>&#x8868;&#x4E2D;&#x7684; &#x201C;yes&#x201D;&#x8868;&#x793A;&#xFF1A;&#x5FC5;&#x987B;&#x8981;&#x52A0;&#x8BE5; prefix&#xFF1B; &#x201C;no&#x201D;&#x8868;&#x793A;&#xFF1A;&#x4E0D;&#x80FD;&#x52A0;&#x8BE5; prefix&#xFF1B; &#x201C;&#x5FFD;&#x7565;&#x201D;&#x8868;&#x793A;&#xFF1A;&#x8BE5; prefix &#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+</li>
+<li>
+<p>&#x201C;&#x5FFD;&#x7565; REX.W = 0&#x201D;&#x8868;&#x793A;&#xFF1A;&#x5F53; REX.W = 0 &#x65F6;&#xFF0C;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x800C;&#x5F53; REX.W = 1 &#x65F6;&#xFF0C;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x7684;&#x3002;</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. operand size override &#x793A;&#x4F8B;&#x8868;</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">default operand size</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">&#x539F;&#x6307;&#x4EE4;</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">&#x539F;&#x6307;&#x4EE4; encodes</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">effective operand size</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">&#x8C03;&#x6574;&#x540E;&#x7684;&#x6307;&#x4EE4;</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">operand size override</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66H prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REX prefix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">call rax</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">ff d0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 ff d0 &#xFF08;&#x5FFD;&#x7565; REX.W = 0&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">call ax</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66 ff d0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66 40 ff d0 &#xFF08;&#x5FFD;&#x7565; REX.W = 0&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">inc eax</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">ff c0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inc rax</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66 48 ff c0&#xFF08;66H &#x88AB;&#x5FFD;&#x7565;&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">48 ff c0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 ff c0&#xFF08;&#x5FFD;&#x7565; REX.W = 0&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inc ax</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66 ff c0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66 40 ff c0&#xFF08;&#x5FFD;&#x7565; REX.W = 0&#xFF09;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">inc eax</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inc ax</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66 40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">inc ax</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inc eax</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66 40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x4E0A;&#x8868;&#x63CF;&#x8FF0;&#x7684;&#x60C5;&#x51B5;&#x662F;&#xFF1A;</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x5F53; 66H prefix &#x548C; REX prefix &#x8D77;&#x51B2;&#x7A81;&#x65F6;&#xFF0C;&#x53D6; REX prefix &#x6709;&#x6548;&#xFF0C;&#x800C;&#x5FFD;&#x7565; 66H prefix</p>
+</li>
+<li>
+<p>&#x5F53;&#x4F7F;&#x7528; REX.W = 0&#xFF08;&#x4F7F;&#x7528; default operand size&#xFF09;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x65F6;&#xFF0C;&#x5C06;&#x88AB;&#x5FFD;&#x7565;</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_default_address_size_effective_address_size">default address size &#x4E0E; effective address size</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. address size &#x8868;</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6A21;&#x5F0F;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">default address size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effective address size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">67H prefix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">compatibility&#x3001;protected&#x3001;real</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x4E0A;&#x8868;&#x63CF;&#x8FF0;&#x7684;&#x60C5;&#x51B5;&#x662F;&#xFF1A;</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x5728; 64 &#x4F4D;&#x4E0B;&#xFF0C;default address size &#x662F; 64 &#x4F4D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; 67H prefix &#x8FDB;&#x884C; address size override &#x4E3A; 32 &#x4F4D;&#x3002;</p>
+</li>
+<li>
+<p>&#x5728; compaitibility/protected &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;default address size &#x662F; 32 &#x4F4D;&#xFF0C;&#x53EF;&#x4F7F;&#x7528; 67H prefix &#x8FDB;&#x884C; address size override &#x4E3A; 16 &#x4F4D;&#x3002;</p>
+</li>
+<li>
+<p>&#x5728; real &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;default address size &#x662F; 16 &#x4F4D;&#xFF0C;&#x53EF;&#x4F7F;&#x7528; 67H prefix &#x8FDB;&#x884C; address size override &#x4E3A; 32 &#x4F4D;&#x3002;</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. address size override &#x793A;&#x4F8B;&#x8868;</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6A21;&#x5F0F;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">default address size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x793A;&#x4F8B;&#x6307;&#x4EE4;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x793A;&#x4F8B;&#x7F16;&#x7801;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effective address size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">override&#xFF08;67H prefix&#xFF09;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x8C03;&#x6574;&#x540E;&#x7684;&#x6307;&#x4EE4;&#x5F62;&#x5F0F;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">mov rax, qword ptr [rax]</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">48 8b 00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">67 48 8b 00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mov rax, qword ptr [eax]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">compatibility&#x3001;protected&#x3001;real</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">mov eax, dword ptr [eax]</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">8b 00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">67 8b 00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mov eax, dword ptr [bx + si]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">mov ax, word ptr [bx + si]</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">8b 00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">67 8b 00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mov ax, word ptr [eax]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_default_effective">default&#xFF08;&#x7F3A;&#x7701;&#xFF09;&#x4E0E; effective&#xFF08;&#x6709;&#x6548;&#xFF09;&#x7684;&#x8FD0;&#x7528;</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>default operand/address size &#x8868;&#x793A;&#x6307;&#x4EE4;&#x539F;&#x672C;&#x7684; operand/address size&#xFF0C;&#x8FD9;&#x4E2A; default size &#x7531; CS.D &#x6307;&#x793A;&#xFF0C;</p>
+<div class="paragraph">
+<p>&#x800C; CS.D &#x662F;&#x7531; code segment descriptor &#x7684; D &#x5C5E;&#x6027;&#x4F4D;&#x52A0;&#x8F7D;&#x800C;&#x6765;&#x7684;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x5728; real mode &#x4E0B;&#xFF1A;CS.D = 0 &#x6307;&#x793A; default operand size &#x4E3A; 16 &#x4F4D;&#xFF0C;default address size &#x662F; 16 &#x4F4D;&#x3002;</p>
+</li>
+<li>
+<p>&#x5728; protected mode &#x4E0B;&#xFF1A; CS.D = 1 &#x6307;&#x793A; default operand size &#x4E3A; 32 &#x4F4D;&#xFF0C; default address size &#x662F; 32 &#x4F4D;&#x3002;</p>
+</li>
+<li>
+<p>&#x5728; 64 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF1A; CS.L = 1 &amp; CS.D = 0 &#x6307;&#x793A; default operand size &#x4E3A; 32 &#x4F4D;&#xFF0C;&#x800C; default address size &#x662F; 64 &#x4F4D;&#x3002;&#xFF08;&#x5728;&#x5927;&#x591A;&#x6570;&#x6307;&#x4EE4;&#x4E2D;&#xFF09;</p>
+<div class="paragraph">
+<p>&#x4F46;&#x662F;&#x5728;&#x4E00;&#x90E8;&#x5206;&#x6307;&#x4EE4;&#x4E2D;&#xFF0C;&#x5B83;&#x7684; default operand size &#x662F; 64 &#x4F4D;&#x7684;&#x3002;</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>effective operand/address size &#x8868;&#x793A;&#x6307;&#x4EE4;&#x53EF;&#x63A5;&#x53D7;&#x7684; operand/address size</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x901A;&#x8FC7; operand size override prefix - 66H &#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x6307;&#x4EE4;&#x7684; operand size</p>
+</li>
+<li>
+<p>&#x901A;&#x8FC7; address size override prefix - 67H &#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x6307;&#x4EE4;&#x7684; address size&#xFF08;&#x6216;&#x8BF4;&#x5BFB;&#x5740;&#x6A21;&#x5F0F;&#xFF09;</p>
+</li>
+<li>
+<p>&#x901A;&#x8FC7; REX prefix - 40H ~ 4FH &#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#x53EF;&#x5BFB;&#x5740; registers &#x6570;&#x4EE5;&#x53CA;&#x63D0;&#x4F9B; 64 &#x4F4D; operand size</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>&#x4E0A;&#x9762; 2 &#x4E2A;&#x8868;&#x8BE6;&#x7EC6;&#x5217;&#x660E;&#x4E86;&#x5404;&#x4E2A;&#x6A21;&#x5F0F;&#x4E0B; default &#x4E0E; effective &#x4E0B;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<div class="paragraph">
+<p>&#x5728;&#x6CA1;&#x6709;&#x51B2;&#x7A81;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;66H prefix &#x548C; REX prefix &#x53EF;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#xFF0C;&#x5F53;&#x8D77;&#x51B2;&#x7A81;&#x65F6;&#xFF0C;&#x4EE5; REX prefix &#x4E3A;&#x51C6;&#xFF0C;&#x5E76;&#x5FFD;&#x7565; 66H prefix</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x5F53; REX.W = 0 &#x4EE3;&#x8868;&#x4F7F;&#x7528; default operand size &#x8FD9;&#x65F6;&#x4E0E; 66H prefix &#x5E76;&#x6CA1;&#x51B2;&#x7A81;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x662F; operand size override &#x5373;&#xFF1A;&#x4EE5; 66H prefix &#x4E3A;&#x51C6;&#x3002;</p>
+</li>
+<li>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x82E5; REX.W = 1 &#x6307;&#x793A;&#x4F7F;&#x7528; 64 &#x4F4D; operand size&#xFF0C;&#x8FD9;&#x65F6;&#x4E0E; 66H prefix &#x8D77;&#x51B2;&#x7A81;&#x4E86;&#xFF0C;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x662F; extended operand size &#x5373;&#xFF1A;&#x4EE5; REX prefix &#x4E3A;&#x51C6;&#x3002;</p>
+</li>
+<li>
+<p>&#x6700;&#x540E;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#xFF1A;&#x6307;&#x4EE4;&#x7684; default operand size &#x662F; 64 &#x4F4D;&#xFF0C;&#x8FD9;&#x4E0D;&#x9700;&#x8981; REX prefix&#xFF0C;&#x800C;&#x51FA;&#x73B0;&#x4E86; REX prefix &#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>&#x540C;&#x6837;&#xFF0C;&#x82E5; REX.W = 1 &#x4E0E; 66H prefix &#x540C;&#x65F6;&#x51FA;&#x73B0;&#xFF0C;&#x5C06;&#x5FFD;&#x7565; 66H prefix&#x3002;&#x3000;REW.W = 0 &#x4E0E; 66H prefix &#x540C;&#x65F6;&#x51FA;&#x73B0;&#xFF0C;&#x5219;&#x5FFD;&#x7565; REX prefix&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_default_effective_2">default &#x4E0E; effective &#x5728;&#x6307;&#x4EE4;&#x5C42;&#x4E0A;&#x7684;&#x8868;&#x73B0;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5728;&#x6307;&#x4EE4;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x91CC;&#xFF0C;v &#x548C; z &#x90FD;&#x4F9D;&#x8D56;&#x4E8E; effective operand size</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operand size &#x5C5E;&#x6027;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x6307;&#x4EE4;&#x7684; operand size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effective operand size</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">v</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64 &#x6216; 32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA; v &#x4E0E; z &#x7684;&#x4E0D;&#x540C;&#x70B9;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>v &#x8868;&#x660E;&#xFF1A;&#x6307;&#x4EE4;&#x7684; operand size &#x662F;&#x7B49;&#x4E8E; effective operand size&#xFF08;default &#x548C; override &#x60C5;&#x51B5;&#x4E0B;&#xFF09;</p>
+</li>
+<li>
+<p>z &#x8868;&#x660E;&#xFF1A;&#x6307;&#x4EE4;&#x7684; operand size &#x53D7;&#x5236;&#x4E8E; effective operand size&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x5B8C;&#x5168;&#x7B49;&#x4E8E; effective operand size</p>
+<div class="paragraph">
+<p>&#x5F53; effective operand size &#x662F; 64 &#x4F4D;&#x4EE5;&#x53CA; 32 &#x4F4D;&#x65F6;&#xFF0C;operand size &#x662F; 32&#xFF0C;&#x5728; z &#x5C5E;&#x6027;&#x6307;&#x660E;&#x6CA1;&#x6709; 64 &#x4F4D;&#x7684; operand size</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x4E0E; z &#x7C7B;&#x4F3C;&#x7684; operand size &#x5C5E;&#x6027;&#x8FD8;&#x6709; s &#x4E0E; p&#xFF0C;&#x8BE6;&#x89C1;&#xFF1A;operand size &#x8868;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">&#x4F8B;&#x5B50;</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_push">PUSH&#x6307;&#x4EE4;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>PUSH Iz &#xFF08;Opcode - 68H&#xFF09;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5728; 64 &#x4F4D;&#x4E0B;&#xFF0C;&#x5B83;&#x7684; default operand size &#x662F; 64 &#x4F4D;&#x7684;&#xFF0C;&#x5B83;&#x7684; operand &#x7C7B;&#x578B;&#x662F; I&#xFF08;immediate&#xFF09;&#xFF0C;size &#x662F; z</p>
+</div>
+<div class="paragraph">
+<p>&#x56E0;&#x6B64;&#xFF0C;immediate &#x503C;&#x8981;&#x4E48;&#x662F; 16 &#x4F4D;&#xFF0C;&#x8981;&#x4E48;&#x662F; 32 &#x4F4D;&#x3002;&#x53D6;&#x6C7A;&#x4E8E; effective operand size</p>
+</div>
+<div class="paragraph">
+<p>&#x7531;&#x4E8E;&#xFF0C;&#x5B83;&#x662F; z &#x5C5E;&#x6027;&#xFF0C;&#x6700;&#x7EC8; immediate &#x4F1A; signed-extended &#x5230; 64 &#x4F4D;</p>
+</div>
+<div class="sect3">
+<h4 id="__1">&#x4F8B; 1</h4>
+<div class="paragraph">
+<p>&#x6307;&#x4EE4;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">push 0x11223344</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x7684; encodes &#x662F; 68 44 33 22 11</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A; immediate &#x7684; operand size &#x662F; 32 &#x4F4D;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5177;&#x6709; z &#x5C5E;&#x6027;&#x7684; immediate &#xFF0C;&#x5728;&#x6B64;&#x4F8B;&#x91CC;&#xFF1A;&#x6700;&#x7EC8;&#x5B83;&#x5C06;&#x8981; sign-extended &#x5230; 64 &#x4F4D;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5B83;&#x7684;&#x6307;&#x4EE4;&#x5F62;&#x5F0F;&#x662F; PUSH Iz&#x3000;&#x56E0;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; 66H prefix &#x8FDB;&#x884C; operand size override</p>
+</div>
+<div class="paragraph">
+<p>&#x7ECF;&#x8FC7; operand size override &#x540E;&#xFF0C;&#x5B83;&#x7684; encode &#x662F; 66 68 44 33</p>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x6C47;&#x7F16;&#x8BED;&#x53E5;&#x4E0A;&#xFF0C;&#x53D8;&#x6210;&#x4E86; push 0x3344</p>
+</div>
+<div class="paragraph">
+<p>&#x6709;&#x5173; sign-extended&#xFF08;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#xFF09;&#x8BE6;&#x89C1;&#xFF1A;immediate &#x7684;&#x7B26;&#x53F7;</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__2">&#x4F8B; 2</h4>
+<div class="paragraph">
+<p>&#x4E0A;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684; encode&#xFF1A;<span class="red">68 44 33 22 11</span></p>
+</div>
+<div class="paragraph">
+<p>&#x5982;&#x679C;&#x8FD9;&#x4E2A; encode &#x4F7F;&#x7528;&#x4E86; 66H prefix &#x8FDB;&#x884C; operand size override &#x5230; 16 &#x4F4D; operand size &#x7684;&#x8BDD;&#xFF1A;66 68 44 33 22 11</p>
+</div>
+<div class="paragraph">
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x5B83;&#x6307;&#x4EE4;&#x5F62;&#x5F0F;&#x5C06;&#x53D8;&#x6210; push 0x3344 &#x5B83;&#x88AB;&#x4F7F;&#x7528;&#x4E86; 66H prefix &#x8FDB;&#x884C; override&#xFF0C;&#x800C;&#x540E;&#x9762;&#x7684; 22 11 &#x6210;&#x4E3A;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4; encode</p>
+</div>
+<div class="paragraph">
+<p>&#x7531;&#x4E0A; 2 &#x4F8B;&#x53EF;&#x89C1;&#xFF0C;&#x5728; operand size &#x4E3A; 64 &#x548C; 16 &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x5C31;&#x662F; z &#x5C5E;&#x6027;&#x6307;&#x4EE4;&#x4E2D;&#x7684; immediate &#x503C;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>effective operand size = 16 ===&#x21D2; operand size = 16</p>
+</li>
+<li>
+<p>effective operand size = 64 ===&#x21D2; operand size = 32</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_jmp">JMP&#x6307;&#x4EE4;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>JMP Jb&#xFF08;Opcode - EBH&#xFF09;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x7684; size &#x5C5E;&#x6027;&#x662F; b&#xFF0C;&#x5B83;&#x8868;&#x660E; immediate &#x662F; byte&#x3000;&#x4E0D;&#x4F1A;&#x4F9D;&#x8D56;&#x4E8E; effective operand size</p>
+</div>
+<div class="paragraph">
+<p>&#x5728; 64 &#x4F4D;&#x4E0B;&#xFF0C;&#x5B83;&#x7684; immediate &#x503C;&#x4E5F;&#x662F; byte</p>
+</div>
+<div class="sect3">
+<h4 id="__1_2">&#x4F8B;1</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>jmp .+0xfe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x5F62;&#x5F0F;&#x7B49;&#x540C;&#x4E8E; jmp $&#xFF08;&#x6B7B;&#x5FAA;&#x73AF;&#xFF09;&#xFF0C;&#x5B83;&#x7684; encode &#x662F; eb fe</p>
+</div>
+<div class="paragraph">
+<p>&#x540C;&#x6837;&#xFF0C;&#x8FD9;&#x4E2A; immediate &#x4F1A;&#x88AB; sign-extended &#x5230; 64 &#x4F4D;&#x503C;&#xFF0C;&#x53D8;&#x6210; 0xfffffffffffffffe&#xFF0C;&#x7136;&#x540E;&#x52A0;&#x4E0A; rip&#xFF0C;&#x6210;&#x4E3A;&#x65B0;&#x7684; rip &#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5982;&#x679C;&#xFF0C;&#x8FD9;&#x4E2A; encode &#x52A0;&#x4E0A; REX prefix &#x8FDB;&#x884C; override &#x7684;&#x8BDD;&#xFF0C;&#x5373;&#xFF1A;48 eb fe</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x4F01;&#x56FE;&#x4F7F;&#x7528; REX prefix &#x8C03;&#x6574;&#x5230; 64 &#x4F4D; operand size&#xFF0C;&#x7531;&#x4E8E; b &#x5C5E;&#x6027;&#x662F;&#x56FA;&#x5B9A; byte&#xFF0C;&#x8FD9;&#x4E2A; 48 REX prefix &#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x4E0D;&#x8D77;&#x4EFB;&#x4F55;&#x4F5C;&#x7528;&#xFF0C;operand size &#x4F9D;&#x7136;&#x662F; byte</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_call">CALL&#x6307;&#x4EE4;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>CALL Ev&#xFF08;Opcode - FF /2&#xFF09;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x7684; operand size &#x5C5E;&#x6027;&#x662F; v&#xFF08;effective operand size&#xFF09;</p>
+</div>
+<div class="paragraph">
+<p>&#x5728; 64 &#x4F4D;&#x4E0B;&#xFF0C;&#x5B83;&#x7684; default operand size &#x662F; 64 &#x4F4D;&#xFF0C;&#x5B83;&#x7684; default address size &#x4E5F;&#x662F; 64 &#x4F4D;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x6307;&#x4EE4;&#xFF1A; call qword ptr [rax]</p>
+</div>
+<div class="paragraph">
+<p>&#x6307;&#x4EE4;&#x5F62;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x4E86; 64 &#x4F4D;&#x7684; operand &#x548C; 64 &#x4F4D;&#x7684; address&#x3002;&#x3000;&#x5B83;&#x7684; encode &#x662F; ff 10 00</p>
+</div>
+<div class="paragraph">
+<p>&#x7531;&#x4E8E;&#x6307;&#x4EE4;&#x672C;&#x8EAB;&#xFF08;default&#xFF09;&#x7684; operand size &#x548C; address size &#x90FD;&#x662F; 64 &#x4F4D;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528; REX prefix &#x8FDB;&#x884C; override</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;operand size &#x4F7F;&#x7528;&#x7684;&#x662F; default operand size</p>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="inst-addon-1.html" class="navigation navigation-prev " aria-label="Previous page: ModRM 与 SIB 设计上的 2 个原则">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="inst-addon-3.html" class="navigation navigation-next " aria-label="Next page: 指令的 operand size">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"default（缺省） 与 effective（有效）","keywords":"instruction, x86_64","toc_max":4,"level":"1.3.3.12","depth":3,"next":{"title":"指令的 operand size","level":"1.3.3.13","depth":3,"path":"hardware/inst/inst-addon-3.adoc","ref":"hardware/inst/inst-addon-3.adoc","articles":[]},"previous":{"title":"ModRM 与 SIB 设计上的 2 个原则","level":"1.3.3.11","depth":3,"path":"hardware/inst/inst-addon-1.adoc","ref":"hardware/inst/inst-addon-1.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hardware/inst/inst-addon-2.adoc","mtime":"2021-05-28T05:35:56.694Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,149 @@
+make shim 
+git submodule update --init --recursive
+
+
+
+
+make ovmf
+
+build -DDEBUG_ON_SERIAL_PORT=TRUE -DSECURE_BOOT_ENABLE=TRUE
+
+cat >grub.cfg <<__CFG__
+set debug=linuxefi
+search.fs_uuid 762cb1cf-379e-42de-bfbc-7bb28b8c92f3 root hd0,gpt3
+set prefix=($root)'/boot/grub'
+configfile $prefix/grub.cfg
+__CFG__
+: >modules
+echo acpi efi{fwsetup,_gop,net,_uga} >>modules
+echo all_video bitmap{,_scale} font gfx{menu,term{,_background}} jpeg png video{,_bochs,_cirrus,_colors,_fb} >>modules
+echo btrfs ext{2,cmd} fat hfsplus iso9660 lvm mdraid{09,1x} part_{apple,gpt,msdos} >>modules
+echo bufio disk{,filter} gzio lvm lzopio mdraid{09,1x} memdisk part_{apple,gpt,msdos} search{,_fs_{file,uuid},_label} >>modules
+echo crypto gcry_sha512 >>modules
+echo chain configfile datetime echo gettext halt keystatus ls{efi{,mmap,systab},sal} loadenv minicmd mmap net normal {password_,}pbkdf2 priority_queue reboot relocator sleep terminal test trig true >>modules
+echo linuxefi >>modules
+grub-mkimage --format x86_64-efi --output grubx64.efi --config grub.cfg --directory /usr/lib/grub/x86_64-efi --prefix /EFI/test $(<modules)
+
+
+: >modules
+echo acpi efi{fwsetup,_gop,net,_uga} >>modules
+echo all_video bitmap{,_scale} font gfx{menu,term{,_background}} jpeg png video{,_bochs,_cirrus,_colors,_fb} >>modules
+echo btrfs ext{2,cmd} fat hfsplus iso9660 lvm mdraid{09,1x} part_{apple,gpt,msdos} >>modules
+echo bufio disk{,filter} gzio lvm lzopio mdraid{09,1x} memdisk part_{apple,gpt,msdos} search{,_fs_{file,uuid},_label} >>modules
+echo crypto gcry_sha512 >>modules
+echo chain configfile datetime echo gettext halt keystatus ls{efi{,mmap,systab},sal} loadenv minicmd mmap net normal {password_,}pbkdf2 priority_queue reboot relocator sleep terminal test trig true >>modules
+echo linuxefi >>modules
+grub-mkimage --format x86_64-efi --output grubx64.efi --directory /usr/lib/grub/x86_64-efi --prefix /EFI/test $(<modules)
+
+
+sudo install -m 0644 grubx64.efi.signed /tmp/democwNvxL/EFI/BOOT/grubx64.efi
+sudo install -m 0644 grubx64.efi.signed /tmp/democwNvxL/EFI/univention/grubx64.efi
+
+sudo install -m 0644 shimx64.efi.signed /tmp/democwNvxL/EFI/univention/shimx64.efi
+sudo install -m 0644 shimx64.efi.signed /tmp/democwNvxL/EFI/BOOT/BOOTX64.efi
+
+sudo install -m 0644 mmx64.efi.signed /tmp/democwNvxL/EFI/univention/mmx64.efi
+sudo install -m 0644 mmx64.efi.signed /tmp/democwNvxL/EFI/BOOT/mmx64.efi
+
+sudo echo "shimx64.efi,univention,,This is the boot entry for UCS" | iconv -t UCS-2LE >BOOTX64.CSV
+sudo install -m 0644 BOOTX64.CSV /tmp/democwNvxL/EFI/univention/BOOTX64.CSV
+sudo install -m 0644 fbx64.efi.signed /tmp/democwNvxL/EFI/BOOT/fbx64.efi
+
+grub-mkimage \
+  -d /usr/lib/grub/x86_64-efi \
+  -o ./grubx64.efi \
+  -p /efi/boot \
+  -O x86_64-efi \
+    fat iso9660 part_gpt part_msdos normal boot linux configfile loopback chain efifwsetup efi_gop \
+    efi_uga ls search search_label search_fs_uuid search_fs_file gfxterm gfxterm_background \
+    gfxterm_menu test all_video loadenv exfat ext2 ntfs btrfs hfsplus udf
+
+
+qemu-img create -f qcow2 Ubuntu_Xenial-amd64.img 30G
+
+qemu-system-x86_64 \
+    -drive if=pflash,format=raw,readonly,file=microsoft/OVMFKeys/OVMF_CODE.fd \
+    -drive if=pflash,format=raw,file=microsoft/OVMFKeys/OVMF_VARS.fd \
+    -smp 2 \
+    -hda ubuntu.qcow2 \
+    -cdrom ./ubuntu-20.04.2.0-desktop-amd64.iso \
+    -m 4G 
+
+qemu-system-x86_64 \
+    -drive if=pflash,format=raw,readonly,file=microsoft/OVMF_CODE.fd \
+    -drive if=pflash,format=raw,file=microsoft/OVMF_VARS.fd \
+    -smp 4 \
+    -hda ubuntu.qcow2 \
+    -cdrom ./ubuntu-20.04.2.0-desktop-amd64.iso \
+    -m 8G 
+
+
+qemu-system-x86_64 \
+    -drive if=pflash,format=raw,readonly,file=OVMF_CODE.fd \
+    -drive if=pflash,format=raw,file=OVMF_VARS.fd \
+    -smp 4 \
+    -hda 
+    -cdrom ./ubuntu-20.04.2.0-desktop-amd64.iso \
+    -m 8G 
+
+qemu-system-x86_64 -L . \
+  -drive if=pflash,format=raw,readonly,file=OVMF_CODE.fd \
+  -drive if=pflash,format=raw,file=OVMF_VARS.fd \
+  -drive file=fat:rw:hda-contents,media=disk,format=raw \
+  -net none
+
+
+
+  Verification failed
+
+
+ grub-mkimage \
+  -d /usr/lib/grub/x86_64-efi \
+  -o ${MOUNTDIR}/EFI/BOOT/bootx64.efi \
+  -p /EFI/test \
+  --sbat sbat.csv \
+  -O x86_64-efi \
+    fat iso9660 part_gpt part_msdos normal boot linux configfile loopback chain efifwsetup efi_gop \
+    efi_uga ls search search_label search_fs_uuid search_fs_file gfxterm gfxterm_background \
+    gfxterm_menu test all_video loadenv exfat ext2 ntfs btrfs hfsplus udf
+
+cat >grub.cfg <<__CFG__
+set debug=linuxefi
+search --label root --set prefix # << Note again, this searches by the 'root' label!
+configfile ($prefix)/boot/grub/grub.cfg
+__CFG__
+
+cat <<GRUBCFG > grub.cfg
+search --label demoroot --set prefix # << Note again, this searches by the 'demoroot' label!
+configfile (\$prefix)/boot/grub/grub.cfg
+GRUBCFG
+
+cat <<SBATCFG > sbat.csv
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,1,UEFI shim,shim,1,https://github.com/rhboot/shim
+SBATCFG
+
+search.fs_uuid f693d237-5cdf-4817-8599-c5233ebe4439 root hd0,gpt2
+set prefix=(\$root)'/boot/grub'
+configfile \$prefix/grub.cfg
+
+cat >grub.cfg <<__CFG__
+set debug=linuxefi
+search --label demoroot --set prefix # << Note again, this searches by the 'demoroot' label!
+configfile ($prefix)/boot/grub/grub.cfg
+__CFG__
+: >modules
+echo acpi efi{fwsetup,_gop,net,_uga} >>modules
+echo all_video bitmap{,_scale} font gfx{menu,term{,_background}} jpeg png video{,_bochs,_cirrus,_colors,_fb} >>modules
+echo btrfs ext{2,cmd} fat hfsplus iso9660 lvm mdraid{09,1x} part_{apple,gpt,msdos} >>modules
+echo bufio disk{,filter} gzio lvm lzopio mdraid{09,1x} memdisk part_{apple,gpt,msdos} search{,_fs_{file,uuid},_label} >>modules
+echo crypto gcry_sha512 >>modules
+echo chain configfile datetime echo gettext halt keystatus ls{efi{,mmap,systab},sal} loadenv minicmd mmap net normal {password_,}pbkdf2 priority_queue reboot relocator sleep terminal test trig true >>modules
+echo linuxefi >>modules
+grub-mkimage --format x86_64-efi --output grubx64.efi --config grub.cfg --directory /usr/lib/grub/x86_64-efi --prefix /efi/boot $(<modules)
+
+
+
+[Variable]: Rewritten a preexisting variable(0x00000006) with different attributes(0x00000007) - 605DAB50-E046-4300-ABB6-3DD810DD8B23:MokListRT
+[Variable]: Rewritten a preexisting variable(0x00000006) with different attributes(0x00000007) - 605DAB50-E046-4300-ABB6-3DD810DD8B23:MokListXRT
+[Variable]: Rewritten a preexisting variable(0x00000006) with different attributes(0x00000007) - 605DAB50-E046-4300-ABB6-3DD810DD8B23:SbatLevelRT

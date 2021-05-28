@@ -1,0 +1,926 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>x86_64内存寻址 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="summary.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../elf/">
+            
+                <a href="../../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../elf/elf-1.html">
+            
+                <a href="../../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../elf/elf-2.html">
+            
+                <a href="../../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../elf/elf-3.html">
+            
+                <a href="../../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="summary.html">
+            
+                <a href="summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="real_address.html">
+            
+                <a href="real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="segmented_address.html">
+            
+                <a href="segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="page_address.html">
+            
+                <a href="page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="example.html">
+            
+                <a href="example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../disk/">
+            
+                <a href="../disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../disk/summary.html">
+            
+                <a href="../disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../disk/disk-chs-lba.html">
+            
+                <a href="../disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../disk/disk-bios.html">
+            
+                <a href="../disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../disk/uefi.html">
+            
+                <a href="../disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../disk/uefi-example.html">
+            
+                <a href="../disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../disk/end.html">
+            
+                <a href="../disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../inst/">
+            
+                <a href="../inst/">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../inst/inst-1.html">
+            
+                <a href="../inst/inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../inst/inst-2.html">
+            
+                <a href="../inst/inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../inst/inst-3.html">
+            
+                <a href="../inst/inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../inst/inst-4.html">
+            
+                <a href="../inst/inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../inst/inst-5.html">
+            
+                <a href="../inst/inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../inst/inst-6.html">
+            
+                <a href="../inst/inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../inst/inst-7.html">
+            
+                <a href="../inst/inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../inst/inst-8.html">
+            
+                <a href="../inst/inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../inst/inst-9.html">
+            
+                <a href="../inst/inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../inst/inst-10.html">
+            
+                <a href="../inst/inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="../inst/inst-addon-1.html">
+            
+                <a href="../inst/inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="../inst/inst-addon-2.html">
+            
+                <a href="../inst/inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="../inst/inst-addon-3.html">
+            
+                <a href="../inst/inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="../inst/inst-addon-4.html">
+            
+                <a href="../inst/inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../grub/">
+            
+                <a href="../../grub/">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../grub/summary.html">
+            
+                <a href="../../grub/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../grub/bios-make.html">
+            
+                <a href="../../grub/bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../grub/uefi-make.html">
+            
+                <a href="../../grub/uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../grub/secure-uefi-bios.html">
+            
+                <a href="../../grub/secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../grub/debug.html">
+            
+                <a href="../../grub/debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../grub/grub-mod.html">
+            
+                <a href="../../grub/grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../grub/bios-detail.html">
+            
+                <a href="../../grub/bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../grub/uefi-detail.html">
+            
+                <a href="../../grub/uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../grub/memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../other/">
+            
+                <a href="../../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >x86_64内存寻址</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x7CFB;&#x5217;&#x4E3B;&#x8981;&#x8BB2;&#x8FF0;&#x7684;Intel 64&#x4F4D;&#x5904;&#x7406;&#x5668;&#x5185;&#x5B58;&#x5BFB;&#x5740;&#x7684;&#x6587;&#x7AE0;&#xFF0C;&#x4E3B;&#x8981;&#x5206;&#x4E3A;5&#x4E2A;&#x7AE0;&#x8282;&#xFF1A;</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x540D;&#x79F0;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#./summary.adoc">x86_64&#x5185;&#x5B58;&#x5BFB;&#x5740; - &#x6982;&#x8FF0;</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#./real_address.adoc">x86_64&#x5185;&#x5B58;&#x5BFB;&#x5740; - &#x5B9E;&#x5730;&#x5740;&#x5BFB;&#x5740;</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#./segmented_address.adoc">x86_64&#x5185;&#x5B58;&#x5BFB;&#x5740; - &#x5206;&#x6BB5;</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#./page_address.adoc">x86_64&#x5185;&#x5B58;&#x5BFB;&#x5740; - &#x5206;&#x9875;</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#./example.adoc">x86_64&#x5185;&#x5B58;&#x5BFB;&#x5740; - &#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x4F8B;&#x5B50;</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x5E0C;&#x671B;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x4E00;&#x4E9B;&#x53EF;&#x4EE5;&#x8BA9;&#x5E0C;&#x671B;&#x4E86;&#x89E3;&#x5185;&#x5B58;&#x5BFB;&#x5740;&#x6709;&#x4E00;&#x4E2A;&#x6982;&#x62EC;&#x6027;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x7CFB;&#x5217;&#x53EF;&#x4EE5;&#x8BA9;&#x5927;&#x5BB6;&#x4E86;&#x89E3;&#x5904;&#x7406;&#x5668;&#x5BFB;&#x5740;&#x7684;&#x8BE6;&#x7EC6;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E86;&#x89E3;Linux&#x4E2D;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x5E03;&#x5C40;&#x7684;&#x539F;&#x7406;&#x3002;&#x719F;&#x6089;&#x8FD9;&#x4E2A;&#x7CFB;&#x5217;&#x6709;&#x52A9;&#x4E8E;&#x4E86;&#x89E3;Linux&#x5B9E;&#x73B0;&#x4E2D;&#x5206;&#x9875;&#x673A;&#x5236;&#x548C;&#x4E00;&#x4E9B;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x7684;&#x539F;&#x7406;&#x3002;</p>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 硬件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="summary.html" class="navigation navigation-next " aria-label="Next page: 概述">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"x86_64内存寻址","ingore":true,"level":"1.3.1","depth":2,"next":{"title":"概述","level":"1.3.1.1","depth":3,"path":"hardware/address/summary.adoc","ref":"hardware/address/summary.adoc","articles":[]},"previous":{"title":"硬件","level":"1.3","depth":1,"path":"hardware/README.adoc","ref":"hardware/README.adoc","articles":[{"title":"x86_64内存寻址","level":"1.3.1","depth":2,"path":"hardware/address/README.adoc","ref":"hardware/address/README.adoc","articles":[{"title":"概述","level":"1.3.1.1","depth":3,"path":"hardware/address/summary.adoc","ref":"hardware/address/summary.adoc","articles":[]},{"title":"实地址寻址","level":"1.3.1.2","depth":3,"path":"hardware/address/real_address.adoc","ref":"hardware/address/real_address.adoc","articles":[]},{"title":"分段","level":"1.3.1.3","depth":3,"path":"hardware/address/segmented_address.adoc","ref":"hardware/address/segmented_address.adoc","articles":[]},{"title":"分页","level":"1.3.1.4","depth":3,"path":"hardware/address/page_address.adoc","ref":"hardware/address/page_address.adoc","articles":[]},{"title":"一个完整的例子","level":"1.3.1.5","depth":3,"path":"hardware/address/example.adoc","ref":"hardware/address/example.adoc","articles":[]}]},{"title":"计算机启动","level":"1.3.2","depth":2,"path":"hardware/disk/README.adoc","ref":"hardware/disk/README.adoc","articles":[{"title":"概述","level":"1.3.2.1","depth":3,"path":"hardware/disk/summary.adoc","ref":"hardware/disk/summary.adoc","articles":[]},{"title":"CHS/LBA","level":"1.3.2.2","depth":3,"path":"hardware/disk/disk-chs-lba.adoc","ref":"hardware/disk/disk-chs-lba.adoc","articles":[]},{"title":"BIOS/MBR","level":"1.3.2.3","depth":3,"path":"hardware/disk/disk-bios.adoc","ref":"hardware/disk/disk-bios.adoc","articles":[]},{"title":"UEFI/GPT","level":"1.3.2.4","depth":3,"path":"hardware/disk/uefi.adoc","ref":"hardware/disk/uefi.adoc","articles":[]},{"title":"一个UEFI例子","level":"1.3.2.5","depth":3,"path":"hardware/disk/uefi-example.adoc","ref":"hardware/disk/uefi-example.adoc","articles":[]},{"title":"总结","level":"1.3.2.6","depth":3,"path":"hardware/disk/end.adoc","ref":"hardware/disk/end.adoc","articles":[]}]},{"title":"x86/64指令编码内幕","level":"1.3.3","depth":2,"path":"hardware/inst/README.adoc","ref":"hardware/inst/README.adoc","articles":[{"title":"序言","level":"1.3.3.1","depth":3,"path":"hardware/inst/inst-1.adoc","ref":"hardware/inst/inst-1.adoc","articles":[]},{"title":"指令格式","level":"1.3.3.2","depth":3,"path":"hardware/inst/inst-2.adoc","ref":"hardware/inst/inst-2.adoc","articles":[]},{"title":"深入了解prefix","level":"1.3.3.3","depth":3,"path":"hardware/inst/inst-3.adoc","ref":"hardware/inst/inst-3.adoc","articles":[]},{"title":"REX prefix","level":"1.3.3.4","depth":3,"path":"hardware/inst/inst-4.adoc","ref":"hardware/inst/inst-4.adoc","articles":[]},{"title":"指令opcod码","level":"1.3.3.5","depth":3,"path":"hardware/inst/inst-5.adoc","ref":"hardware/inst/inst-5.adoc","articles":[]},{"title":"ModRM寻址模式","level":"1.3.3.6","depth":3,"path":"hardware/inst/inst-6.adoc","ref":"hardware/inst/inst-6.adoc","articles":[]},{"title":"SIB补充寻址","level":"1.3.3.7","depth":3,"path":"hardware/inst/inst-7.adoc","ref":"hardware/inst/inst-7.adoc","articles":[]},{"title":"displacement值","level":"1.3.3.8","depth":3,"path":"hardware/inst/inst-8.adoc","ref":"hardware/inst/inst-8.adoc","articles":[]},{"title":"immediate值","level":"1.3.3.9","depth":3,"path":"hardware/inst/inst-9.adoc","ref":"hardware/inst/inst-9.adoc","articles":[]},{"title":"指令的解析","level":"1.3.3.10","depth":3,"path":"hardware/inst/inst-10.adoc","ref":"hardware/inst/inst-10.adoc","articles":[]},{"title":"ModRM 与 SIB 设计上的 2 个原则","level":"1.3.3.11","depth":3,"path":"hardware/inst/inst-addon-1.adoc","ref":"hardware/inst/inst-addon-1.adoc","articles":[]},{"title":"default（缺省） 与 effective（有效）","level":"1.3.3.12","depth":3,"path":"hardware/inst/inst-addon-2.adoc","ref":"hardware/inst/inst-addon-2.adoc","articles":[]},{"title":"指令的 operand size","level":"1.3.3.13","depth":3,"path":"hardware/inst/inst-addon-3.adoc","ref":"hardware/inst/inst-addon-3.adoc","articles":[]},{"title":"解开指令长度的迷惑","level":"1.3.3.14","depth":3,"path":"hardware/inst/inst-addon-4.adoc","ref":"hardware/inst/inst-addon-4.adoc","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hardware/address/README.adoc","mtime":"2021-04-23T08:34:09.179Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

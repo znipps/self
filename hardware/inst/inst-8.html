@@ -1,0 +1,1425 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>displacement值 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="inst-9.html" />
+    
+    
+    <link rel="prev" href="inst-7.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../elf/">
+            
+                <a href="../../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../elf/elf-1.html">
+            
+                <a href="../../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../elf/elf-2.html">
+            
+                <a href="../../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../elf/elf-3.html">
+            
+                <a href="../../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../address/">
+            
+                <a href="../address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../address/summary.html">
+            
+                <a href="../address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../address/real_address.html">
+            
+                <a href="../address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../address/segmented_address.html">
+            
+                <a href="../address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../address/page_address.html">
+            
+                <a href="../address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../address/example.html">
+            
+                <a href="../address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../disk/">
+            
+                <a href="../disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../disk/summary.html">
+            
+                <a href="../disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../disk/disk-chs-lba.html">
+            
+                <a href="../disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../disk/disk-bios.html">
+            
+                <a href="../disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../disk/uefi.html">
+            
+                <a href="../disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../disk/uefi-example.html">
+            
+                <a href="../disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../disk/end.html">
+            
+                <a href="../disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="inst-1.html">
+            
+                <a href="inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="inst-2.html">
+            
+                <a href="inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="inst-3.html">
+            
+                <a href="inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="inst-4.html">
+            
+                <a href="inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="inst-5.html">
+            
+                <a href="inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="inst-6.html">
+            
+                <a href="inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="inst-7.html">
+            
+                <a href="inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.8" data-path="inst-8.html">
+            
+                <a href="inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="inst-9.html">
+            
+                <a href="inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="inst-10.html">
+            
+                <a href="inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="inst-addon-1.html">
+            
+                <a href="inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="inst-addon-2.html">
+            
+                <a href="inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="inst-addon-3.html">
+            
+                <a href="inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="inst-addon-4.html">
+            
+                <a href="inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../grub/">
+            
+                <a href="../../grub/">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../grub/summary.html">
+            
+                <a href="../../grub/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../grub/bios-make.html">
+            
+                <a href="../../grub/bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../grub/uefi-make.html">
+            
+                <a href="../../grub/uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../grub/secure-uefi-bios.html">
+            
+                <a href="../../grub/secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../grub/debug.html">
+            
+                <a href="../../grub/debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../grub/grub-mod.html">
+            
+                <a href="../../grub/grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../grub/bios-detail.html">
+            
+                <a href="../../grub/bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../grub/uefi-detail.html">
+            
+                <a href="../../grub/uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../grub/memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../other/">
+            
+                <a href="../../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >displacement值</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="&#x91CD;&#x8981;"></i>
+</td>
+<td class="content">
+&#x7531;&#x4E8E;mouseOs&#x7684;&#x7F51;&#x7AD9;&#x4E0D;&#x7EF4;&#x62A4;&#x4E86;&#xFF0C;&#x6211;&#x5728;&#x672C;&#x5730;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4EFD;&#x4E4B;&#x524D;&#x9093;&#x5FD7;&#x5173;&#x4E8E;intel&#x6307;&#x4EE4;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x8FD9;&#x4E2A;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x7AE0;&#x7248;&#x672C;&#x5F52;&#x5C5E;&#x9093;&#x5FD7;&#x6240;&#x6709;&#xFF0C;&#x4EC5;&#x4F9B;&#x501F;&#x9274;&#x3002;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x6211;&#x5C3D;&#x91CF;&#x4E0D;&#x52A8;&#xFF0C;&#x6709;&#x4E9B;&#x4FEE;&#x6539;&#x4E3B;&#x8981;&#x4E3A;&#x4E86;&#x6392;&#x7248;&#x3002;
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>displacement &#x662F; ModRM &#x5730;&#x5740;&#x5BFB;&#x5740;&#x91CC;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;displacement &#x4E3A; base &#x6216; index &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; offset &#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x6307;&#x4EE4;&#x7684;&#x7F16;&#x7801;&#x4E2D;&#x5FC5;&#x987B;&#x8981;&#x63D0;&#x4F9B; ModRM &#x5B57;&#x8282;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x8981;&#x63D0;&#x4F9B; SIB &#x5B57;&#x8282;&#x3002;</p>
+</div>
+<div class="sect1">
+<h2 id="__displacement">&#x5173;&#x4E8E; displacement &#x7684;&#x770B;&#x6CD5;</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x57FA;&#x4E8E; ModRM &#x5B57;&#x8282;&#x5BFB;&#x5740;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;displacement &#x4E0D;&#x662F;&#x6307;&#x4EE4;&#x4E2D;&#x7684; immediate &#x90E8;&#x5206;</p>
+<div class="paragraph">
+<p>&#x4F8B;&#x5982;&#x6307;&#x4EE4;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">mov edx, dword ptr [0x08040400]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x7684;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x662F;&#xFF1A;<span class="red">8b 15 00 04 04 08</span></p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x7684; displacement &#x867D;&#x7136;&#x662F;&#x5D4C;&#x5728; encode &#x4E2D;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x5C5E;&#x4E8E; immediate &#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x662F;&#x9700;&#x8981;&#x901A;&#x8FC7; ModRM.r/m &#x7684;&#x5BFB;&#x5740;&#x3002;</p>
+</div>
+</li>
+<li>
+<p>&#x6709;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x4E0D;&#x9700;&#x8981; ModRM &#x5B57;&#x8282;&#x8FDB;&#x884C;&#x5BFB;&#x5740;&#xFF0C;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x503C;&#x662F; immediate &#x90E8;&#x5206;</p>
+<div class="paragraph">
+<p>&#x6307;&#x4EE4;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">mov eax, dword ptr [0x08040400]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x7684;&#x6307;&#x4EE4;&#x7F16;&#x7801;&#x53EF;&#x4EE5;&#x8BD1;&#x4E3A;&#xFF1A;<span class="red">a1 00 04 04 08</span> &#xFF08;&#x5F53;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x4E0E; eax/rax &#x5BC4;&#x5B58;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x5BFB;&#x5740;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#xFF09;</p>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4E0D;&#x9700;&#x8981; ModRM &#x5B57;&#x8282;&#x8FDB;&#x884C;&#x5BFB;&#x5740;&#xFF0C;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x503C;&#x662F; immediate &#x6982;&#x5FF5;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x4E5F;&#x53EF;&#x4EE5;&#x8BD1;&#x4E3A;&#xFF1A;<span class="red">8b 05 00 04 04 08</span> &#xFF08;&#x901A;&#x8FC7; ModRM &#x8FDB;&#x884C;&#x5BFB;&#x5740;&#xFF09;&#xFF0C;&#x6B64;&#x65F6;&#x5B83;&#x5C31;&#x662F; displacement &#x90E8;&#x5206;&#x3002;</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="__displacement_2">&#x63D0;&#x4F9B; displacement &#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x5F0F;</h3>
+<div class="paragraph">
+<p>&#x7531; ModRM.mod &#x6765;&#x63A7;&#x5236; displacement:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#x63D0;&#x4F9B;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x65B9;&#x5F0F;</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>ModRM</strong></p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>SIB</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x5BFB;&#x5740;</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x8BF4;&#x660E;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r/m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">base</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM = [disp32]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x975E; 64 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x53EA;&#x9700; ModRM &#x5B57;&#x8282;&#x5BFB;&#x5740;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM + SIB = [disp32]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM &#x5B57;&#x8282;&#x914D;&#x5408; SIB &#x5B57;&#x8282;&#x5BFB;&#x5740;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x4E0A;&#x8868;&#x662F;&#x63D0;&#x4F9B;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x5BFB;&#x5740;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x3002;&#x8868;&#x683C;&#x4E2D;&#x7684; XX/XXX &#x8868;&#x793A;&#x53EF;&#x4EE5;&#x4E3A;&#x4EFB;&#x610F;&#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x6CE8;&#x610F;&#x65B9;&#x5F0F; 1 &#x4E2D;&#xFF0C;&#x63D0;&#x4F9B;&#x7684; [disp32] &#x662F;&#x5728; &#x975E; 64 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#x3002;</p>
+</div>
+</li>
+<li>
+<p>&#x4E3A; base &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; offset &#x503C;</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>ModRM</strong></p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>SIB</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x5BFB;&#x5740;</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x8BF4;&#x660E;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r/m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">base</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2260;100</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM = [base + disp8]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7ED9; base &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; 8 &#x4F4D;&#x7684; displacement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2260;100</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM = [base + disp32]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x7ED9; base &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; 32 &#x4F4D;&#x7684; displacement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM + SIB = [base + disp8]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM &#x5B57;&#x8282;&#x914D;&#x5408; SIB &#x5B57;&#x8282;&#x5BFB;&#x5740;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM + SIB = [base + disp32]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM &#x5B57;&#x8282;&#x914D;&#x5408; SIB &#x5B57;&#x8282;&#x5BFB;&#x5740;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x53EF;&#x4EE5;&#x63D0;&#x4F9B; 8 &#x4F4D;&#x548C; 32 &#x4F4D;&#x7684; displacement &#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8868;&#x683C;&#x4E2D;&#x7684; XX/XXX &#x8868;&#x793A;&#x8BE5;&#x9879;&#x4E3A;&#x4EFB;&#x610F;&#x503C;&#xFF0C;8 &#x4F4D;&#x548C; 32 &#x4F4D;&#x7684; displacemnet &#x5404;&#x6709; 2 &#x79CD;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x3002;</p>
+</div>
+</li>
+<li>
+<p>&#x4E3A; index &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; offset &#x503C;</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>ModRM</strong></p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>SIB</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x5BFB;&#x5740;</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x8BF4;&#x660E;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r/m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">base</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2260;100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM + SIB = [index * scale + disp32]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM &#x5B57;&#x8282;&#x914D;&#x5408; SIB &#x5B57;&#x8282;&#x5BFB;&#x5740;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>ModRM &#x914D;&#x5408; SIB &#x5BFB;&#x5740;&#xFF0C;&#x8FD9;&#x91CC; SIB.index &#x2260;100 &#x65F6;&#xFF0C;&#x63D0;&#x4F9B;&#x4EFB;&#x610F;&#x7684; index &#x5BC4;&#x5B58;&#x5668;&#xFF08;&#x9664;&#x4E86; rsp &#x5BC4;&#x5B58;&#x5668;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A; index &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; 32 &#x4F4D;&#x7684; displacement &#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x4EC5;&#x5728;&#x8FD9;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x5141;&#x8BB8; index + base &#x5BFB;&#x5740;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x770B;&#x4E0B;&#x9762;&#x7684;&#x6307;&#x4EE4;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">mov rax, qword ptr [rcx * 8 + 0x0c]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x7684; encode &#x662F;&#xFF1A; <span class="red">48 8b 04 cd 0c 00 00 00</span></p>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x4F7F;&#x7528;&#x7684; [base + index * 8] &#x5BFB;&#x5740;&#x6A21;&#x5F0F;&#xFF0C;&#x5728; SIB.base = 101&#xFF08;&#x5373;&#xFF1A;base = rbp&#xFF09; &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;base &#x6B64;&#x65F6;&#x4E3A; disp32</p>
+</div>
+<div class="paragraph">
+<p>&#x4E0A;&#x9762;&#x7684;&#x6709;&#x51E0;&#x79CD;&#x5BFB;&#x5740;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x4F9D;&#x636E; x32/x64 &#x7684;&#x4E24;&#x5927;&#x539F;&#x5219;&#xFF0C;&#x8BE6;&#x89C1;&#xFF1A;ModRM &#x4E0E; SIB &#x8BBE;&#x8BA1;&#x4E0A;&#x7684; 2 &#x4E2A;&#x539F;&#x5219;</p>
+</div>
+</li>
+<li>
+<p>&#x7ED9; rip &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; displacement &#x503C;</p>
+<div class="paragraph">
+<p>&#x4EC5;&#x5728; 64 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A; rip &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; displacement &#x503C;</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>ModRM</strong></p></td>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock"><strong>SIB</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x5BFB;&#x5740;</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>&#x8BF4;&#x660E;</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r/m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">base</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">---</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ModRM = [rip + disp32]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x4EC5;&#x5728; 64 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B; [rip + disp32]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#x5F53;&#x5728; 64 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;ModRM = 00-XXX-101 &#x662F; [rip + disp32] &#x5BFB;&#x5740;&#xFF0C;&#x8FD9;&#x662F; x64 &#x4F53;&#x7CFB;&#x4E2D;&#x65B0;&#x589E;&#x7684;&#x4E00;&#x4E2A;&#x5BFB;&#x5740;&#x6A21;&#x5F0F;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x79CD;&#x5BFB;&#x5740;&#x6A21;&#x5F0F;&#x5F88;&#x5BB9;&#x6613;&#x5C31;&#x5F97;&#x51FA; rip &#x503C;&#xFF0C;&#x5982;&#x4E0B;&#x6307;&#x4EE4;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">lea rax, [rip]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x8BD1;&#x51FA;&#xFF1A;<span class="red">8d 05 00 00 00 00</span> ----&#x2192; lea rax, [rip + 0x00000000]</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_displacement">displacement &#x7684;&#x7B26;&#x53F7;&#x4F4D;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;displacement &#x662F; signed&#xFF08;&#x7B26;&#x53F7;&#x6570;&#xFF09;&#xFF0C;&#x5728;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x662F; unsigned&#xFF08;&#x65E0;&#x7B26;&#x53F7;&#x6570;&#xFF09;</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>displacement &#x662F; signed&#xFF08;&#x7B26;&#x53F7;&#x6570;&#xFF09;</p>
+<div class="paragraph">
+<p>&#x65E0;&#x8BBA;&#x662F;&#x4E3A; base &#x8FD8; index &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; offset &#x503C;&#xFF0C;&#x6B64;&#x65F6; displacement &#x90FD;&#x662F; singed&#xFF08;&#x7B26;&#x53F7;&#x6570;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x4F1A;&#x6309; singed &#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#xFF0C;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53; displacement &#x662F; disp8 &#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x88AB;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x5230; address size&#xFF08;&#x53D6;&#x51B3;&#x4E8E; effective address size&#xFF09;</p>
+</div>
+<div class="paragraph">
+<p>&#x5173;&#x4E8E; effective address size &#x7684;&#x8BE6;&#x89C1;&#xFF1A;default&#xFF08;&#x7F3A;&#x7701;&#xFF09;&#x4E0E; effective&#xFF08;&#x6709;&#x6548;&#xFF09;</p>
+</div>
+</li>
+<li>
+<p>displacement &#x662F; unsigned&#xFF08;&#x65E0;&#x7B26;&#x53F7;&#x6570;&#xFF09;</p>
+<div class="paragraph">
+<p>&#x5F53; displacement &#x662F;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x662F;&#xFF0C;&#x5B83;&#x662F; unsigned&#xFF08;&#x65E0;&#x7B26;&#x53F7;&#x6570;&#xFF09;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x4F8B;&#x5982;&#xFF1A; mov edx, dword ptr [0x08040400] &#x6B64;&#x65F6; displacement &#x662F;&#x4E00;&#x4E2A; unsigned&#xFF08;&#x65E0;&#x7B26;&#x53F7;&#x6570;&#xFF09;</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_displacement_2">displacement &#x7684;&#x957F;&#x5EA6;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5728; 16 &#x4F4D;&#x4E0B; displacement &#x5206;&#x4E3A; 8 &#x4F4D;&#x548C; 16 &#x4F4D;&#xFF0C;&#x5728; 32 &#x4F4D;&#x4E0B;&#x5206;&#x4E3A; 8 &#x4F4D;&#x548C; 32 &#x4F4D;&#xFF0C;&#x800C;&#x5728; 64 &#x4F4D;&#x4E0B;&#x540C;&#x6837;&#x53EA;&#x6709; 8 &#x4F4D;&#x548C; 32 &#x4F4D;&#x3002;</p>
+</div>
+<div class="sect2">
+<h3 id="_displacement_signed_extended">displacement &#x7684; signed-extended&#xFF08;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#xFF09;</h3>
+<div class="paragraph">
+<p>&#x867D;&#x7136;&#x6709; 8 &#x4F4D;&#x7684; displacement&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x90FD;&#x4F1A;&#x88AB; processor &#x8FDB;&#x884C; signed-extended &#x7B26;&#x53F7;&#x6269;&#x5C55;&#x5230; address size</p>
+</div>
+<div class="paragraph">
+<p>&#x5F53; displacement size &#x662F;&#x5C0F;&#x4E8E; address size &#x7684;&#xFF0C;&#x8FD9;&#x4E2A; displacement &#x5C31;&#x4F1A;&#x88AB; singed-extended &#x5230; address size</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A; address size &#x662F;&#x6307;&#x4EE4;&#x5F53;&#x524D;&#x7684; address size&#xFF0C;&#x5B83;&#x53D6;&#x51B3;&#x4E8E; effective address size&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x6CA1;&#x6709;&#x7ECF;&#x8FC7; address size override &#x7684;&#xFF0C;address size &#x5C31;&#x662F;&#x5B83;&#x7684; default address size</p>
+</li>
+<li>
+<p>&#x7ECF;&#x8FC7; address size override &#x540E;&#xFF0C;address size &#x5C31;&#x7B49;&#x4E8E; override &#x7684; address size</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x5173;&#x4E8E; effective address size &#x7684;&#x8BE6;&#x89C1;&#xFF1A;default&#xFF08;&#x7F3A;&#x7701;&#xFF09;&#x4E0E; effective&#xFF08;&#x6709;&#x6548;&#xFF09;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_x64_64_displacement">x64 &#x4F53;&#x7CFB;&#x7684; 64 &#x4F4D;&#x4E0B;&#x7684; displacement</h3>
+<div class="paragraph">
+<p>64 &#x4F4D;&#x7684; default address size &#x662F; 64 &#x4F4D;&#xFF0C;&#x5728;&#x6CA1;&#x6709; address size override &#x7684;&#xFF0C;&#x65E0;&#x8BBA; disp8 &#x8FD8;&#x662F; disp32 &#x90FD;&#x4F1A;&#x88AB;&#x6269;&#x5C55;&#x5230; 64 &#x4F4D;&#x5730;&#x5740;&#x4E0A;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x7591;&#x95EE;&#xFF0C;&#x5728; x86/x64 &#x7684;&#x6307;&#x4EE4;&#x683C;&#x5F0F;&#x4E2D;&#xFF0C;displacement &#x662F;&#x6CA1;&#x6709; 64 &#x4F4D;&#x7684;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x5230;&#x5EA6;&#x6709;&#x6CA1;&#x6709; 64 &#x4F4D;&#x7684; displacement &#x5462;&#xFF1F;</p>
+</li>
+<li>
+<p>&#x6CA1;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x600E;&#x4E48;&#x4F7F;&#x7528; 64 &#x4F4D;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x5462;&#xFF1F;</p>
+</li>
+<li>
+<p>&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x4F1A;&#x51FA;&#x73B0; 64 &#x4F4D;&#x7684; displacement &#x5462;&#xFF1F;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x5728; x64 &#x4F53;&#x7CFB;&#x7684;&#x7684;&#x7F16;&#x7801;&#x4E2D;&#xFF0C;&#x786E;&#x5B9E;&#x6CA1;&#x6709; 64 &#x4F4D; displacement &#x8FD9;&#x56DE;&#x4E8B;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x8868;&#x793A; 64 &#x4F4D;&#x4E0B;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; 64 &#x4F4D;&#x7684;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x3002; &#x8FD9;&#x4E2A; 64 &#x4F4D;&#x7684;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x5E76;&#x4E0D;&#x662F; displacement &#x7684;&#x610F;&#x601D;&#x3002;</p>
+</div>
+<div class="sect3">
+<h4 id="__1">&#x4F8B; 1</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">mov rax, qword ptr [0xffff800008040400]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x662F;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x4F7F;&#x7528;&#x4E86; 64 &#x4F4D;&#x7684;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x7684; encode &#x662F;&#xFF1A;48 a1 00 04 04 08 00 08 ff ff</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x7684; Opcode &#x662F; a1&#xFF0C;&#x6307;&#x4EE4;&#x5F62;&#x5F0F;&#x4E3A;&#xFF1A;MOV rAX, Ov</p>
+</div>
+<div class="paragraph">
+<p>second operand &#x662F; O &#x8868;&#x793A;&#x5B83;&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x76F4;&#x63A5;&#x7684;&#x5730;&#x5740;&#x5F62;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E2A; operand &#x662F;&#x5141;&#x8BB8;&#x4F7F;&#x7528; 64 &#x4F4D;&#x7684;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981; ModRM &#x5BFB;&#x5740;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x91CC;&#x5730;&#x5740;&#x503C; [0xffff800008040400] &#x5B83;&#x662F;&#x4EE5; immedeate &#x503C;&#x5F62;&#x5F0F;&#x5D4C;&#x5728; encode &#x4E2D;&#xFF0C;&#x5B83;&#x5C5E;&#x4E8E; immediate &#x90E8;&#x5206;,&#x800C;&#x975E; displacement &#x503C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x540C;&#x6837;&#xFF0C;&#x6307;&#x4EE4;&#xFF1A;mov qword ptr [0xffff800008040400], rax &#x4E5F;&#x662F;&#x6B63;&#x786E;&#x7684;</p>
+</div>
+<div class="paragraph">
+<p>&#x5B83;&#x7684; encode &#x662F;&#xFF1A;48 a3 00 04 04 08 00 08 ff ff</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__2">&#x4F8B; 2</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">mov rcx, qword ptr [0xffff800008040400]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x662F;&#x9519;&#x8BEF;&#x7684;&#xFF0C;&#x5B83;&#x4E0D;&#x53EF;&#x80FD;&#x4EA7;&#x751F; encode&#xFF0C;opcode a1 &#x662F;&#x4EC5;&#x4EC5;&#x5BF9; rax &#x5BC4;&#x5B58;&#x5668;&#x53EF;&#x7528;&#xFF0C;&#x56E0;&#x6B64;&#xFF1A;&#x53EA;&#x6709; rax &#x5BC4;&#x5B58;&#x5668;&#x624D;&#x80FD;&#x4F7F;&#x7528; 64 &#x4F4D;&#x7684;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x503C;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_opcode_a1_a3_64">Opcode a1 &#x548C; a3 &#x53EF;&#x4EE5;&#x4F7F;&#x7528; 64 &#x4F4D;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x7684;&#x672C;&#x8D28;</h3>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E24;&#x4E2A; Opcode &#x7684; operand &#x5D4C;&#x5165; encode &#x4E2D;&#xFF0C;&#x5B83;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x4F7F;&#x7528; 64 &#x4F4D;&#x7684;&#x5730;&#x5740;&#x503C;&#xFF08;immediate&#xFF09;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x8BBE;&#x8BA1;&#x4F7F;&#x7528; 64 &#x4F4D;&#x5730;&#x5740;&#x7684;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x5FC5;&#x987B;&#x662F;&#xFF1A; operand &#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#xFF0C;&#x6362;&#x53E5;&#x8BF4;&#x8BF4;&#xFF1A;operand &#x662F;&#x5D4C;&#x5728; Opcode &#x91CC;&#x7684;&#x3002;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__64_displacement">&#x4E0D;&#x80FD;&#x4F7F;&#x7528; 64 &#x4F4D; displacement &#x7684;&#x672C;&#x8D28;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x770B;&#xFF0C;&#x662F;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#x9650;&#x5236;&#x4E86; 64 &#x4F4D; displacement &#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">mov qword ptr [rax + rcx * 8 + 0x11223344], 0x12345678</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#x524D;&#x9762;&#x591A;&#x6B21;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;&#x5B83;&#x7684; encode &#x662F;&#xFF1A;48 c7 84 c8 44 33 22 11 78 56 34 12 (&#x5171; 12 &#x4E2A; bytes&#xFF09;</p>
+</div>
+<div class="paragraph">
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x9650;&#x5236; 64 &#x4F4D; displacement &#x4F7F;&#x7528;&#x7684;&#x539F;&#x56E0;&#x5C31;&#x662F;&#xFF1A;&#x6307;&#x4EE4;&#x957F;&#x5EA6;&#x7684;&#x9650;&#x5236;</p>
+</div>
+<div class="paragraph">
+<p>&#x7531;&#x4E8E; x86/x64 &#x7684;&#x6307;&#x4EE4;&#x957F;&#x5EA6;&#x9650;&#x5236; 15 bytes&#xFF0C; &#x5982;&#x679C;&#x4E0A;&#x9762;&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; 64 &#x4F4D; displacement &#x7684;&#x8BDD;&#xFF0C;&#x6307;&#x4EE4;&#x957F;&#x5EA6;&#x8D85;&#x8FC7;&#x4E86; 15 bytes&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x4F7F;&#x7528; 64 &#x4F4D; displacement &#x7B2C; 2 &#x4E2A;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x662F;&#xFF1A;&#x6307;&#x4EE4;&#x957F;&#x5EA6;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7; 15 bytes</p>
+</div>
+<div class="sect2">
+<h3 id="_operand_o">operand &#x7C7B;&#x578B;&#x4E3A;O&#x7684;&#x6700;&#x7EC8;&#x8BBE;&#x8BA1;&#x524D;&#x63D0;</h3>
+<div class="paragraph">
+<p>operand &#x7C7B;&#x578B;&#x4E3A; O &#xFF08;&#x76F4;&#x63A5;&#x5730;&#x5740;&#x503C;&#xFF0C;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#xFF09;&#x7684;&#x6700;&#x7EC8;&#x8BBE;&#x8BA1;&#x524D;&#x63D0;&#x5C31;&#x662F;&#x524D;&#x9762;&#x6240;&#x8BF4;&#x7684;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>operand &#x4E0D;&#x4F9D;&#x8D56;&#x4E8E; ModRM &#x5BFB;&#x5740;&#xFF0C;&#x6362;&#x53E5;&#x8BF4;&#x8BF4;&#xFF1A;operand &#x662F;&#x5D4C;&#x5728; Opcode &#x91CC;&#x7684;&#x3002;</p>
+</li>
+<li>
+<p>&#x6307;&#x4EE4;&#x957F;&#x5EA6;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7; 15 bytes</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">&#x90A3;&#x4E48;&#xFF1A;&#x80FD;&#x4E0D;&#x80FD;&#x4E3A; x64 &#x4F53;&#x7CFB;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#x683C;&#x5F0F;&#x4E3A;&#x66F4;&#x957F;&#x7684;&#x683C;&#x5F0F;&#x5462;&#xFF1F;</dt>
+<dd>
+<p>&#x663E;&#x7136;&#xFF0C;x64 &#x4F53;&#x7CFB;&#x8BBE;&#x8BA1;&#x8005;&#x4EEC;&#x6CA1;&#x6709;&#x91C7;&#x53D6;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x51FA;&#x4E8E;&#x517C;&#x5BB9;&#x7684;&#x5927;&#x63D0;&#x524D;&#x4E0B;&#xFF0C;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x6709;&#x8FD9;&#x79CD;&#x8003;&#x8651;&#x7684;&#x3002;</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="inst-7.html" class="navigation navigation-prev " aria-label="Previous page: SIB补充寻址">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="inst-9.html" class="navigation navigation-next " aria-label="Next page: immediate值">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"displacement值","keywords":"instruction, x86_64","toc_max":4,"level":"1.3.3.8","depth":3,"next":{"title":"immediate值","level":"1.3.3.9","depth":3,"path":"hardware/inst/inst-9.adoc","ref":"hardware/inst/inst-9.adoc","articles":[]},"previous":{"title":"SIB补充寻址","level":"1.3.3.7","depth":3,"path":"hardware/inst/inst-7.adoc","ref":"hardware/inst/inst-7.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hardware/inst/inst-8.adoc","mtime":"2021-05-28T05:36:02.895Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

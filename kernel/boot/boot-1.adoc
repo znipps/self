@@ -1,0 +1,64 @@
+在Grub的章节中，我们详细的讲解了引导期是如何加载linux内核的。
+
+看一段代码
+
+[source,asm]
+----
+#define rva(X) ((X) - startup_32)
+
+	.code32
+SYM_FUNC_START(startup_32)
+	/*
+	 * 32bit entry is 0 and it is ABI so immutable!
+	 * If we come here directly from a bootloader,
+	 * kernel(text+data+bss+brk) ramdisk, zero_page, command line
+	 * all need to be under the 4G limit.
+	 */
+	cld
+	cli
+
+/*
+ * Calculate the delta between where we were compiled to run
+ * at and where we were actually loaded at.  This can only be done
+ * with a short local call on x86.  Nothing  else will tell us what
+ * address we are running at.  The reserved chunk of the real-mode
+ * data at 0x1e4 (defined as a scratch field) are used as the stack
+ * for this calculation. Only 4 bytes are needed.
+ */
+1   	leal	(BP_scratch+4)(%esi), %esp
+2	    call	1f
+3 1:	popl	%ebp
+4   	subl	$ rva(1b), %ebp
+5
+6	    /* Load new GDT with the 64bit segments using 32bit descriptor */
+7   	leal	rva(gdt)(%ebp), %eax
+----
+
+在Grub的Bios固件的引导中，我们说过这段代码是grub将处理器交给内核执行的第一段代码，这里之所以将这段代码拿出来，我感觉这段代码挺有意思的。首先，我们需要知道这段代码可以计算出内核加载的位置，这段代码是位置无关的代码，用于计算出内核加载在内存中的位置。_ebp_ 寄存器保存了内核加载的内存位置。
+
+这段代码最有意思的就是这里标注的1-4行代码
+
+- 第一行使用了内核参数保留的scratch域，这个域可以作为临时使用目的，这里将这个地址的高四个自己赋值给了esp，作为栈的起始位置。使用lea指令可以计算出真实的有效地址。
+- 第二个使用call指令调用标号为1的地址，我们知道call指令会将下一个执行的地址保存到栈中，此时栈中的数据如下，第一行之所以使用了4个字节，因为此时处理器运行在32位模式，所以压入栈中只需要使用4个字节
+
+[source]
+----
+高地址
++--------+
+|  0x01  | 
+|  0x00  |
+|  0x00  |
+|  0x0d  |  <- esp
++--------+
+低地址
+----
+
+- 第三行指令将栈中的数据赋值给了$ebp寄存器，所以ebp寄存器中存放的是标号1的地址
+- 而第四行就是计算内核加载的绝对位置，它的计算公式如下
+
+[source]
+----
+内核加载的地址 = 标号1加载内存的地址 - 标号1到startup_32之前的偏移量（标号1的地址-startup_32的地址）
+----
+
+通过这种方式可以计算出内核真正加载的地址，这个地址是位置无关的地址，它可以动态计算出内核真实加载的内存位置

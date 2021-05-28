@@ -1,0 +1,1298 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>制作一个使用UEFI的系统 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-asciidoc-admonition-icons/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-add-js-css/d564bc26b98807bc8b8760ad8e43db47-style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-all-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="secure-uefi-bios.html" />
+    
+    
+    <link rel="prev" href="bios-make.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../elf/">
+            
+                <a href="../elf/">
+            
+                    
+                    elf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elf/elf-1.html">
+            
+                <a href="../elf/elf-1.html">
+            
+                    
+                    ELF文件的静态结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../elf/elf-2.html">
+            
+                <a href="../elf/elf-2.html">
+            
+                    
+                    ELF文件的装载与动态连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../elf/elf-3.html">
+            
+                <a href="../elf/elf-3.html">
+            
+                    
+                    示例程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hardware/">
+            
+                <a href="../hardware/">
+            
+                    
+                    硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hardware/address/">
+            
+                <a href="../hardware/address/">
+            
+                    
+                    x86_64内存寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hardware/address/summary.html">
+            
+                <a href="../hardware/address/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hardware/address/real_address.html">
+            
+                <a href="../hardware/address/real_address.html">
+            
+                    
+                    实地址寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hardware/address/segmented_address.html">
+            
+                <a href="../hardware/address/segmented_address.html">
+            
+                    
+                    分段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../hardware/address/page_address.html">
+            
+                <a href="../hardware/address/page_address.html">
+            
+                    
+                    分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../hardware/address/example.html">
+            
+                <a href="../hardware/address/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hardware/disk/">
+            
+                <a href="../hardware/disk/">
+            
+                    
+                    计算机启动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hardware/disk/summary.html">
+            
+                <a href="../hardware/disk/summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hardware/disk/disk-chs-lba.html">
+            
+                <a href="../hardware/disk/disk-chs-lba.html">
+            
+                    
+                    CHS/LBA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hardware/disk/disk-bios.html">
+            
+                <a href="../hardware/disk/disk-bios.html">
+            
+                    
+                    BIOS/MBR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hardware/disk/uefi.html">
+            
+                <a href="../hardware/disk/uefi.html">
+            
+                    
+                    UEFI/GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hardware/disk/uefi-example.html">
+            
+                <a href="../hardware/disk/uefi-example.html">
+            
+                    
+                    一个UEFI例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../hardware/disk/end.html">
+            
+                <a href="../hardware/disk/end.html">
+            
+                    
+                    总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hardware/inst/">
+            
+                <a href="../hardware/inst/">
+            
+                    
+                    x86/64指令编码内幕
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hardware/inst/inst-1.html">
+            
+                <a href="../hardware/inst/inst-1.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hardware/inst/inst-2.html">
+            
+                <a href="../hardware/inst/inst-2.html">
+            
+                    
+                    指令格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hardware/inst/inst-3.html">
+            
+                <a href="../hardware/inst/inst-3.html">
+            
+                    
+                    深入了解prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hardware/inst/inst-4.html">
+            
+                <a href="../hardware/inst/inst-4.html">
+            
+                    
+                    REX prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hardware/inst/inst-5.html">
+            
+                <a href="../hardware/inst/inst-5.html">
+            
+                    
+                    指令opcod码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../hardware/inst/inst-6.html">
+            
+                <a href="../hardware/inst/inst-6.html">
+            
+                    
+                    ModRM寻址模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../hardware/inst/inst-7.html">
+            
+                <a href="../hardware/inst/inst-7.html">
+            
+                    
+                    SIB补充寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../hardware/inst/inst-8.html">
+            
+                <a href="../hardware/inst/inst-8.html">
+            
+                    
+                    displacement值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../hardware/inst/inst-9.html">
+            
+                <a href="../hardware/inst/inst-9.html">
+            
+                    
+                    immediate值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../hardware/inst/inst-10.html">
+            
+                <a href="../hardware/inst/inst-10.html">
+            
+                    
+                    指令的解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="../hardware/inst/inst-addon-1.html">
+            
+                <a href="../hardware/inst/inst-addon-1.html">
+            
+                    
+                    ModRM 与 SIB 设计上的 2 个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="../hardware/inst/inst-addon-2.html">
+            
+                <a href="../hardware/inst/inst-addon-2.html">
+            
+                    
+                    default（缺省） 与 effective（有效）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="../hardware/inst/inst-addon-3.html">
+            
+                <a href="../hardware/inst/inst-addon-3.html">
+            
+                    
+                    指令的 operand size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="../hardware/inst/inst-addon-4.html">
+            
+                <a href="../hardware/inst/inst-addon-4.html">
+            
+                    
+                    解开指令长度的迷惑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    引导器GRUB2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="summary.html">
+            
+                <a href="summary.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bios-make.html">
+            
+                <a href="bios-make.html">
+            
+                    
+                    制作一个使用BIOS的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="uefi-make.html">
+            
+                <a href="uefi-make.html">
+            
+                    
+                    制作一个使用UEFI的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="secure-uefi-bios.html">
+            
+                <a href="secure-uefi-bios.html">
+            
+                    
+                    制作一个可同时支持BIOS和UEFI安全启动的系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="debug.html">
+            
+                <a href="debug.html">
+            
+                    
+                    如何调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="grub-mod.html">
+            
+                <a href="grub-mod.html">
+            
+                    
+                    如何编写一个Grub2的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="bios-detail.html">
+            
+                <a href="bios-detail.html">
+            
+                    
+                    BIOS版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="uefi-detail.html">
+            
+                <a href="uefi-detail.html">
+            
+                    
+                    UEFI版本实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="memory.adoc">
+            
+                <span>
+            
+                    
+                    内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../other/">
+            
+                <a href="../other/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../other/gdb/kernel-debug-qemu.html">
+            
+                <a href="../other/gdb/kernel-debug-qemu.html">
+            
+                    
+                    使用qemu/gdb进行内核调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >制作一个使用UEFI的系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="paragraph">
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x4F60;&#x5C06;&#x5B66;&#x4F1A;&#x5982;&#x4F55;&#x4F7F;&#x7528;Busybox&#x548C;grub&#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;UEFI&#x542F;&#x52A8;&#x7684;&#x7CFB;&#x7EDF;&#x3002;&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x57FA;&#x4E8E;qemu&#x6A21;&#x62DF;&#x5668;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x7AE0;&#x8282;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x8FD0;&#x884C;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x4F7F;&#x7528;UEFI&#x63D0;&#x4F9B;&#x7684;&#x529F;&#x80FD;&#x5B8C;&#x6210;&#x5185;&#x6838;&#x7684;&#x5F15;&#x5BFC;&#x5DE5;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x4F7F;&#x7528;OVMF&#xFF08;&#x5728;&#x4E4B;&#x524D;&#x4ECB;&#x7ECD;&#x8FC7;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x5E7F;&#x6CDB;&#x7684;EFI&#x7684;&#x5F00;&#x6E90;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF09;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x6A21;&#x62DF;UEFI&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x548C;BIOS&#x4E00;&#x6837;&#x540C;&#x6837;&#x9700;&#x8981;&#x7F16;&#x8BD1;GRUB&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E00;&#x6B21;&#x662F;&#x4F7F;&#x7528;EFI&#x7248;&#x672C;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3002;</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;grub&#x7684;&#x5B89;&#x88C5;&#x53EF;&#x80FD;&#x4F1A;&#x6BC1;&#x574F;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x5176;&#x4E0D;&#x662F;&#x5F88;&#x4E86;&#x89E3;&#x4EE5;&#x4E0B;&#x7684;&#x4F8B;&#x5B50;&#x5EFA;&#x8BAE;&#x5728;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x8981;&#x5728;&#x771F;&#x5B9E;&#x7684;&#x7269;&#x7406;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x3002;</p>
+</div>
+</blockquote>
+</div>
+<div class="sect1">
+<h2 id="__grub">&#x7F16;&#x8BD1;GRUB</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#xFF0C;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;Red Hat&#x63D0;&#x4F9B;&#x7684;&#x6E90;&#x7801;&#x5E93;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ WORKSPACE=/opt/workspace/
+$ cd $WORKSPACE
+$ git clone https://github.com/rhboot/grub2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FDB;&#x884C;&#x914D;&#x7F6E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ ./bootstrap
+$ ./configure --prefix=$WORKSPACE/grub-efi --with-platform=efi HOST_CFLAGS=&apos;-g&apos;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528; <em>HOST_CFLAGS</em> &#x9009;&#x9879;&#x589E;&#x52A0;&#x4E86; <em>-g</em> &#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;grub&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x3002;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x7F16;&#x8BD1;&#x5E76;&#x8FDB;&#x884C;&#x5B89;&#x88C5;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ make
+$ make install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7F16;&#x8BD1;&#x7684;GRUB&#x7248;&#x672C;&#x5C31;&#x88AB;&#x5B89;&#x88C5;&#x5728;&#x4E86; <em>$WORKSPACE/grub-efi</em> &#x76EE;&#x5F55;&#x4E2D;&#x4E86;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x300A;Grub2&#x90A3;&#x4E9B;&#x4E8B; - &#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;BIOS&#x7684;&#x7CFB;&#x7EDF;&#x300B;&#x4E2D;&#x7F16;&#x8BD1;Busybox&#x6240;&#x4EA7;&#x751F;&#x7684;rootfs.tar&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__ovmf">&#x7F16;&#x8BD1;OVMF</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x4E4B;&#x524D;&#x7684;&#x6587;&#x7AE0;&#x4E5F;&#x8BF4;&#x8FC7;OVMF&#x7684;&#x7F16;&#x8BD1;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91CD;&#x65B0;&#x63CF;&#x8FF0;&#x4EE5;&#x4E0B;</p>
+</div>
+<div class="paragraph">
+<p>&#x83B7;&#x53D6;&#x6E90;&#x4EE3;&#x7801;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">$ mkdir $WORKSPACE/tianocore
+$ cd $WORKSPACE/tianocore
+$ git clone git://github.com/tianocore/edk2.git
+$ cd edk2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#xFF0C;&#x8FD9;&#x4E9B;&#x5DE5;&#x5177;&#x662F;&#x540E;&#x7EED;&#x7F16;&#x8BD1;&#x6240;&#x9700;&#x8981;&#x7684;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">$ make -C BaseTools</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>edk2&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x7F16;&#x8BD1;&#x6240;&#x9700;&#x8981;&#x7684;&#x57FA;&#x672C;&#x73AF;&#x5883;&#x914D;&#x7F6E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">$ . edksetup.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x7136;&#x540E;&#xFF0C;&#x8BBE;&#x7F6E;&#x7F16;&#x8BD1;&#x6240;&#x9700;&#x8981;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x90FD;&#x4FDD;&#x5B58;&#x5728;Conf/target.txt&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">$ vi Conf/target.txt
+
+&#x627E;&#x5230;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;
+
+ ACTIVE_PLATFORM       = Nt32Pkg/Nt32Pkg.dsc
+
+&#x4FEE;&#x6539;&#x4E3A;
+
+ ACTIVE_PLATFORM       = MdeModulePkg/MdeModulePkg.dsc
+
+&#x627E;&#x5230;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;
+
+ TOOL_CHAIN_TAG        = MYTOOLS
+
+&#x4FEE;&#x6539;&#x4E3A;
+
+ TOOL_CHAIN_TAG        = GCC5
+
+&#x627E;&#x5230;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;
+
+ TARGET_ARCH           = IA32
+
+&#x4FEE;&#x6539;&#x4E3A;
+
+ TARGET_ARCH           = X64
+
+&#x627E;&#x5230;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;
+
+ ACTIVE_PLATFORM       = MdeModulePkg/MdeModulePkg.dsc
+
+&#x4FEE;&#x6539;&#x4E3A;&#xFF0C;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x8BF4;&#x660E;&#x4F7F;&#x7528;OVMF&#xFF08;Open Virtual Machine Firmware &#xFF09;&#x6765;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x865A;&#x62DF;&#x673A;&#x73AF;&#x5883;&#x6240;&#x9700;&#x8981;&#x7684;
+
+ ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.dsc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x662F;&#x8FD0;&#x884C;&#x5728;X86_64&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5E73;&#x53F0;&#x9700;&#x8981;&#x505A;&#x5BF9;&#x5E94;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x6211;&#x4EEC;&#x7684;&#x7F16;&#x8BD1;&#x5DE5;&#x4F5C;&#x4E86;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asm" data-lang="asm">$ build -DDEBUG_ON_SERIAL_PORT=TRUE -DSECURE_BOOT_ENABLE=TRUE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86; <em>-DDEBUG_ON_SERIAL_PORT=TRUE -DSECURE_BOOT_ENABLE=TRUE</em> &#x4E24;&#x4E2A;&#x9009;&#x9879;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;UEFI&#x7A0B;&#x5E8F;&#x3002;&#x5728;&#x540E;&#x9762;&#x7684;&#x8C03;&#x6574;&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x8BE6;&#x7EC6;&#x7684;&#x8BF4;&#x660E;&#x6211;&#x518D;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#x6240;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x5927;&#x6982;&#x8FC7;&#x51E0;&#x5206;&#x949F;&#xFF0C;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#xFF0C;&#x7F16;&#x8BD1;&#x7684;&#x7ED3;&#x679C;&#x5728; <em>Build/OvmfX64/DEBUG_GCC5/FV/</em> &#x4E2D;&#x3002;&#x6587;&#x4EF6; <strong>OVMF.fd</strong> &#x5C31;&#x662F;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x6240;&#x9700;&#x8981;&#x7684;UEFI&#x56FA;&#x4EF6;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5728;Qemu&#x4E2D;&#x8FD0;&#x884C;efi&#x7A0B;&#x5E8F;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__uefi">&#x5236;&#x4F5C;&#x57FA;&#x4E8E;UEFI&#x542F;&#x52A8;&#x7684;&#x78C1;&#x76D8;&#x955C;&#x50CF;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x867D;&#x7136;&#x4E4B;&#x524D;&#x6574;&#x4F53;&#x6B65;&#x9AA4;&#x548C;BIOS&#x4E2D;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x8FD9;&#x91CC;&#x5C31;&#x5F00;&#x59CB;&#x51FA;&#x73B0;&#x4E86;&#x5DEE;&#x5F02;&#xFF0C;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x7AE0;&#x4E2D;&#x8BF4;&#x8FC7;UEFI&#x56FA;&#x4EF6;&#x4F1A;&#x81EA;&#x52A8;&#x67E5;&#x627E;&#x78C1;&#x76D8;&#x7684;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#xFF0C;&#x5B83;&#x5C06;&#x4F1A;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;EFI&#x7A0B;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x4E2A;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x5236;&#x4F5C;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;EFI&#x7248;&#x672C;&#x7684;GRUB&#x653E;&#x5165;&#x5230;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x3002;</p>
+</div>
+<div class="sect2">
+<h3 id="__">&#x5236;&#x4F5C;&#x78C1;&#x76D8;&#x955C;&#x50CF;</h3>
+<div class="paragraph">
+<p>&#x9996;&#x5148;&#xFF0C;&#x548C;BIOS&#x4E2D;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x955C;&#x50CF;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7A0D;&#x5FAE;&#x5C06;&#x955C;&#x50CF;&#x589E;&#x5927;&#x4E00;&#x70B9;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x78C1;&#x76D8;&#x5206;&#x533A;&#xFF0C;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x4F5C;&#x4E3A;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#xFF0C;&#x4E00;&#x4E2A;&#x4F5C;&#x4E3A;root&#x5206;&#x533A;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ mkdir uefi
+$ cd uefi
+$ dd if=/dev/zero of=uefi-disk.img bs=1M count=64</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5C06;&#x955C;&#x50CF;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ gdisk uefi-disk.img
+GPT fdisk (gdisk) version 1.0.5
+
+Partition table scan:
+  MBR: not present
+  BSD: not present
+  APM: not present
+  GPT: not present
+
+Creating new GPT entries in memory.
+
+Command (? for help): o
+This option deletes all partitions and creates a new protective MBR.
+Proceed? (Y/N): y
+
+Command (? for help): n
+Partition number (1-128, default 1):
+First sector (34-131038, default = 2048) or {+-}size{KMGTP}:
+Last sector (2048-131038, default = 131038) or {+-}size{KMGTP}: 64000
+Current type is 8300 (Linux filesystem)
+Hex code or GUID (L to show codes, Enter = 8300): ef00
+Changed type of partition to &apos;EFI system partition&apos;
+
+Command (? for help): n
+Partition number (2-128, default 2):
+First sector (34-131038, default = 65536) or {+-}size{KMGTP}:
+Last sector (65536-131038, default = 131038) or {+-}size{KMGTP}:
+Current type is 8300 (Linux filesystem)
+Hex code or GUID (L to show codes, Enter = 8300):
+Changed type of partition to &apos;Linux filesystem&apos;
+
+Command (? for help): w
+
+Final checks complete. About to write GPT data. THIS WILL OVERWRITE EXISTING
+PARTITIONS!!
+
+Do you want to proceed? (Y/N): y
+OK; writing new GUID partition table (GPT) to uefi-disk.img.
+Warning: The kernel is still using the old partition table.
+The new table will be used at the next reboot or after you
+run partprobe(8) or kpartx(8)
+The operation has completed successfully.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;gdisk&#x8FDB;&#x884C;&#x4E86;&#x78C1;&#x76D8;&#x5206;&#x533A;&#xFF0C;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#x4F7F;&#x7528;fdisk&#x3002;gdisk&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;gpt&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x683C;&#x5F0F;&#x3002;&#x7136;&#x540E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;gdisk&#x8FDB;&#x884C;&#x67E5;&#x770B;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ gdisk -l uefi-disk.img
+GPT fdisk (gdisk) version 1.0.5
+
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
+
+Found valid GPT with protective MBR; using GPT.
+Disk uefi-disk.img: 131072 sectors, 64.0 MiB
+Sector size (logical): 512 bytes
+Disk identifier (GUID): E8AF193F-28AD-4546-8C25-D3B577349B0F
+Partition table holds up to 128 entries
+Main partition table begins at sector 2 and ends at sector 33
+First usable sector is 34, last usable sector is 131038
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 3549 sectors (1.7 MiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048           64000   30.3 MiB    EF00  EFI system partition
+   2           65536          131038   32.0 MiB    8300  Linux filesystem</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;gdisk&#x5DE5;&#x5177;&#x5EFA;&#x7ACB;&#x4E86;&#x7528;&#x4E8E;&#x5F15;&#x5BFC;uefi&#x7684;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x4F5C;&#x4E3A;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x78C1;&#x76D8;&#x5206;&#x533A;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__uefi_grub">&#x5236;&#x4F5C;UEFI&#x7248;&#x672C;&#x7684;GRUB</h3>
+<div class="paragraph">
+<p>UEFI&#x4F1A;&#x4ECE;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x67E5;&#x627E;efi&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;GRUB&#x540C;&#x6837;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x4E8E;uefi&#x5F00;&#x53D1;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x5728;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x589E;&#x52A0;&#x4E86;efi&#x9009;&#x9879;&#x6784;&#x5EFA;grub&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6839;&#x636E;&#x9700;&#x6C42;&#x5EFA;&#x7ACB;efi&#x7248;&#x672C;&#x7684;grub&#x7A0B;&#x5E8F;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ $WORKSPACE/grub-efi/bin/grub-mkimage \
+  -d $WORKSPACE/grub-efi/lib/grub/x86_64-efi/ \
+  -o grubx64.efi \
+  -p /EFI/BOOT \
+  -O x86_64-efi \
+    fat iso9660 part_gpt part_msdos normal boot linux configfile loopback chain efifwsetup efi_gop \
+    efi_uga ls search search_label search_fs_uuid search_fs_file gfxterm gfxterm_background \
+    gfxterm_menu test all_video loadenv exfat ext2 ntfs btrfs hfsplus udf</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5F97;&#x5230;efi&#x7248;&#x672C;&#x7684;grub&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E3A; <em>grubx64.efi</em> &#x3002;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__uefi_2">&#x5236;&#x505A;&#x57FA;&#x4E8E;UEFI&#x7248;&#x672C;&#x7684;&#x78C1;&#x76D8;&#x955C;&#x50CF;</h3>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5F97;&#x5230;&#x4E86;&#x5177;&#x6709;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x7684;&#x78C1;&#x76D8;&#x955C;&#x50CF;&#xFF0C;&#x4E5F;&#x83B7;&#x5F97;&#x7684;EFI&#x7248;&#x672C;&#x7684;grub&#x3002;&#x4E0B;&#x9762;&#x8FDB;&#x5165;&#x6B63;&#x9898;&#xFF0C;&#x5F00;&#x59CB;&#x5236;&#x4F5C;&#x57FA;&#x4E8E;UEFI&#x7684;&#x78C1;&#x76D8;&#x955C;&#x50CF;&#xFF0C;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x4F7F;&#x7528;UEFI&#x56FA;&#x4EF6;&#x8FDB;&#x884C;&#x7CFB;&#x7EDF;&#x5F15;&#x5BFC;&#x542F;&#x52A8;&#x3002;&#x548C;BIOS&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x540C;&#x6837;&#x4F7F;&#x7528;&#x56DE;&#x73AF;&#x8BBE;&#x5907;&#x64CD;&#x4F5C;&#x78C1;&#x76D8;&#x955C;&#x50CF;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ LOOPDEV=$(sudo losetup --find --show uefi-disk.img)
+$ sudo partprobe ${LOOPDEV}
+$ sudo mkfs.vfat -n boot ${LOOPDEV}p1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x56DE;&#x73AF;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x6302;&#x5728;&#x78C1;&#x76D8;&#x955C;&#x50CF;&#xFF0C;&#x4E4B;&#x524D;&#x4E5F;&#x4ECB;&#x7ECD;&#x8FC7;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x5FC5;&#x987B;&#x662F;fat&#x683C;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x4F7F;&#x7528; <em>mkfs.vfat</em> &#x547D;&#x4EE4;&#x5BF9;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#x3002;&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x6302;&#x5728;&#x5230;&#x7CFB;&#x7EDF;&#x76EE;&#x5F55;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ MOUNTDIR=$(mktemp -d -t workXXXXXX)
+$ sudo mount ${LOOPDEV}p1 $MOUNTDIR</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x4F7F;&#x7528;busyboxy&#x63D0;&#x4F9B;&#x7684;uefi&#x7F16;&#x8BD1;&#x9009;&#x9879;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x624B;&#x5DE5;&#x5C06;grub&#x5BFC;&#x5165;&#x5230;EFI&#x7CFB;&#x7EDF;&#x5206;&#x533A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ sudo mkdir -p $MOUNTDIR/EFI/BOOT/
+$ sudo cp grubx64.efi $MOUNTDIR/EFI/BOOT/BOOTX64.EFI</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5728;UEFI&#x4E2D;&#xFF0C;UEFI&#x56FA;&#x4EF6;&#x9ED8;&#x8BA4;&#x4F1A;&#x4ECE; <em>/EFI/BOOT/BOOTX64.EFI</em> &#x4F5C;&#x4E3A;&#x9ED8;&#x8BA4;&#x8FD0;&#x884C;&#x7684;EFI&#x7A0B;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;grub&#x7684;efi&#x7A0B;&#x5E8F;&#x653E;&#x5230;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x4F7F;&#x7528;blkid&#x547D;&#x4EE4;&#x83B7;&#x53D6;&#x5206;&#x533A;&#x7684;UUID&#xFF0C;&#x8FD9;&#x4E2A;UUID&#x5728;&#x6211;&#x4EEC;&#x914D;&#x7F6E; <em>grub.cfg</em> &#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x7528;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ sudo blkid ${LOOPDEV}p2
+/dev/loop9p2: LABEL=&quot;root&quot; UUID=&quot;f693d237-5cdf-4817-8599-c5233ebe4439&quot; TYPE=&quot;ext4&quot; PARTLABEL=&quot;Linux filesystem&quot; PARTUUID=&quot;4c242545-e944-46b6-a8b1-a02c78ea9568&quot;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5F97;&#x5230;&#x8FD9;&#x4E2A;UUID&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8FDB;&#x884C; <em>grub.cfg</em> &#x7684;&#x914D;&#x7F6E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ cat &lt;&lt;GRUBCFG &gt; grub.cfg
+search.fs_uuid f693d237-5cdf-4817-8599-c5233ebe4439 root hd0,gpt2
+set prefix=($root)&apos;/boot/grub&apos;
+configfile $prefix/grub.cfg
+GRUBCFG
+$ sudo cp grub.cfg ${MOUNTDIR}/EFI/BOOT/grub.cfg
+$ sudo umount ${MOUNTDIR}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x91CC;&#xFF0C;<em>grub.cfg</em> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;grub&#x63D0;&#x4F9B;&#x7684;&#x6307;&#x4EE4;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x8BBE;&#x7F6E;&#x6839;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x78C1;&#x76D8;&#x955C;&#x50CF;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x4F7F;&#x7528;blkid&#x83B7;&#x5F97;&#x5BF9;&#x5E94;&#x7684;UUID&#xFF0C;&#x5E76;&#x4E14;&#x5C06;root&#x8BBE;&#x7F6E;&#x4E3A; <em>hd0,gpt2</em> &#x3002;<em>hd0,gpt2</em> &#x4E2D;gpt2&#x8868;&#x660E;&#x4F7F;&#x7528;&#x78C1;&#x76D8;&#x7B2C;&#x4E8C;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;hd0&#x8868;&#x660E;&#x7B2C;&#x4E00;&#x5757;&#x78C1;&#x76D8;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4F1A;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x4ECB;&#x8D28;&#x524D;&#x7F00;&#x53EF;&#x80FD;&#x4E0D;&#x540C;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x6BB5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x7684;grub&#x4F1A;&#x4ECE;&#x7B2C;&#x4E8C;&#x4E2A;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x7684; <em>/boot/grub/grub.cfg</em> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F5C;&#x4E3A;&#x540E;&#x7EED;&#x7684;GRUB&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x4E0B;&#x9762;&#x5C31;&#x5F00;&#x59CB;&#x8FD9;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x78C1;&#x76D8;&#x5206;&#x533A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ sudo mkfs.ext4 -L root ${LOOPDEV}p2
+$ sudo mount ${LOOPDEV}p2 $MOUNTDIR
+$ sudo tar -C $MOUNTDIR -xf $WORKSPACE/buildroot/output/images/rootfs.tar
+$ sudo cp /opt/linux/arch/x86_64/boot/bzImage $MOUNTDIR/boot/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5C06;&#x7B2C;&#x4E8C;&#x4E2A;&#x78C1;&#x76D8;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x683C;&#x5F0F;&#x5316;&#x4E3A;ext4&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x6302;&#x5728;&#x5230;&#x7CFB;&#x7EDF;&#x76EE;&#x5F55;&#xFF0C;&#x63A5;&#x7740;&#x548C;&#x5728;bios&#x4E2D;&#x4E00;&#x6837;&#xFF0C;&#x5C06;busybox&#x7684;rootfs&#x89E3;&#x538B;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x78C1;&#x76D8;&#x5206;&#x533A;&#xFF0C;&#x4F5C;&#x4E3A;&#x6839;&#x8BBE;&#x5907;&#x3002;&#x5728;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x4E86;grub&#x4F1A;&#x67E5;&#x627E;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x7684;  <em>/boot/grub/grub.cfg</em>  &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x4E3A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>set default=&quot;0&quot;
+set timeout=&quot;5&quot;
+
+menuentry &quot;Buildroot&quot; {
+        set root=&apos;hd0,gpt2&apos;
+        linux /boot/bzImage root=/dev/sda2 rootwait console=tty1
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x8BA9;grub&#x52A0;&#x8F7D;&#x5F53;&#x524D;&#x5206;&#x533A;&#x7684; <em>/boot/bzImage</em> &#x6587;&#x4EF6;&#x4F5C;&#x4E3A;linux&#x5185;&#x6838;&#x955C;&#x50CF;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x6839;&#x8BBE;&#x5907;&#x3002;&#x914D;&#x7F6E;&#x5B8C;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x8BA9;&#x7CFB;&#x7EDF;&#x540C;&#x6B65;&#x6570;&#x636E;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ sudo sync /dev/loop9</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5B8C;&#x6210;&#x8FD9;&#x4E9B;&#x6B65;&#x9AA4;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x4E86;efi&#x7248;&#x672C;&#x7684;&#x955C;&#x50CF;&#x5236;&#x4F5C;&#x3002;&#x6700;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x56DE;&#x73AF;&#x8BBE;&#x5907;&#x5F52;&#x8FD8;&#x7ED9;&#x7CFB;&#x7EDF;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ sudo umount $MOUNTDIR
+$ sudo partx -d $LOOPDEV
+$ sudo losetup -d  $LOOPDEV</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">&#x8FD0;&#x884C;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5DF2;&#x7ECF;&#x5236;&#x4F5C;&#x4E86;&#x57FA;&#x4E8E;BIOS&#x7CFB;&#x7EDF;&#x7684;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#xFF0C;&#x63A5;&#x7740;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5728;qemu&#x4E2D;&#x8FD0;&#x884C;&#x5427;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ qemu-system-x86_64 -bios OVMF.fd -m 512 -drive file=uefi-disk.img,format=raw</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x4E0D;&#x51FA;&#x610F;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8FDB;&#x5165;grub&#x7684;&#x83DC;&#x5355;&#x9009;&#x9879;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/7.jpg" alt="grub&#x542F;&#x52A8;&#x83DC;&#x5355;"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x6700;&#x7EC8;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x6B63;&#x5E38;&#x542F;&#x52A8;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/8.jpg" alt="busybox&#x542F;&#x52A8;"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___3">&#x603B;&#x7ED3;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0A;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x6211;&#x4EEC;&#x5236;&#x4F5C;&#x4E86;&#x57FA;&#x4E8E;UEFI&#x7248;&#x672C;&#x7684;GRUB&#x3002;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5728;OVMF&#x6A21;&#x62DF;&#x56FA;&#x4EF6;&#x4E2D;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;UEFI&#x5B89;&#x5168;&#x542F;&#x52A8;&#x7684;&#x955C;&#x50CF;&#x5236;&#x4F5C;&#x3002;</p>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bios-make.html" class="navigation navigation-prev " aria-label="Previous page: 制作一个使用BIOS的系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="secure-uefi-bios.html" class="navigation navigation-next " aria-label="Next page: 制作一个可同时支持BIOS和UEFI安全启动的系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"制作一个使用UEFI的系统","publish":false,"level":"1.4.3","depth":2,"next":{"title":"制作一个可同时支持BIOS和UEFI安全启动的系统","level":"1.4.4","depth":2,"path":"grub/secure-uefi-bios.adoc","ref":"grub/secure-uefi-bios.adoc","articles":[]},"previous":{"title":"制作一个使用BIOS的系统","level":"1.4.2","depth":2,"path":"grub/bios-make.adoc","ref":"grub/bios-make.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["asciidoc-admonition-icons","asciidoc-include","code","collapsible-menu","add-js-css","all-navigator","livereload"],"pluginsConfig":{"disqus":{"shortName":"znipps"},"asciidoc-include":{"syntax":"gitbook"},"collapsible-menu":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"asciidoc-admonition-icons":{},"search":{},"page-toc":{"selector":".markdown-section h2","position":"top","showByDefault":true},"all-navigator":{"showNumber":true,"showTitle":true},"add-js-css":{"js":["./style/style.js"],"css":["./style/style.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"devops":{"livere_token":"MTAyMC8zMjk4MC85NTQy"},"livere":{"uid":"MTAyMC81MzQ5Ni8yOTk3MA=="},"admonitions":{"note":{"classes":"fa icon-note","title":"提示","content":""},"tip":{"classes":"fa icon-tip","title":"小贴士","content":""},"important":{"classes":"fa icon-important","title":"重要","content":""},"caution":{"classes":"fa icon-caution","title":"注意","content":""},"warning":{"classes":"fa icon-warning","title":"警告","content":""}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"grub/uefi-make.adoc","mtime":"2021-05-20T12:21:25.856Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2021-05-28T09:45:19.968Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-add-js-css/bb4b3e0e16f0bfdb86d817bf7bebcc4a-style.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-all-navigator/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
